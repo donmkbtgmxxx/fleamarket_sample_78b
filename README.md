@@ -52,8 +52,8 @@ Things you may want to cover:
 |prefecture|string|null: false|
 |city|string|null: false|
 |block|string|null: false|
-|building|string||
-|tel|integer||
+|building|string|-------|
+|tel|string|-------|
 |user_id|references|foreign_key: true|
 
 ### Association
