@@ -48,7 +48,7 @@ Things you may want to cover:
 |first_name_kanji|string|null: false|
 |family_name_kana|string|null: false|
 |first_name_kana|string|null: false|
-|postcode|integer|null: false|
+|postcode|string|null: false|
 |prefecture|string|null: false|
 |city|string|null: false|
 |block|string|null: false|
