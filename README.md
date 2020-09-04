@@ -112,7 +112,7 @@ Things you may want to cover:
 ## Imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|body|text||
+|body|text|null: false|
 |item_id|references|foreign_key: true|
 
 ### Association
