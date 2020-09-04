@@ -62,14 +62,14 @@ Things you may want to cover:
 - belongs_to :user
 
 
-## Cardsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|number|integer|null: false|
-|user_id|references|foreign_key: true|
+<!-- ## Cardsテーブル -->
+<!-- |Column|Type|Options| -->
+<!-- |------|----|-------| -->
+<!-- |number|integer|null: false| -->
+<!-- |user_id|references|foreign_key: true| -->
 
-### Association
-- belongs_to :user
+<!-- ### Association -->
+<!-- - belongs_to :user -->
 
 
 ## Itemsテーブル
