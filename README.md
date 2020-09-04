@@ -135,5 +135,6 @@ Things you may want to cover:
 |category_id|references|foreign_key: true|
 
 ### Association
-- has_many :items, through: :item_category
+- belongs_to :item
+- belongs_to :category
 
