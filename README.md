@@ -35,9 +35,9 @@ Things you may want to cover:
 |first_name_kanji|string|null: false|
 |family_name_kana|string|null: false|
 |first_name_kana|string|null: false|
-|birth_year_id|date|null: false|
-|birth_month_id|date|null: false|
-|birth_day_id|date|null: false|
+|birth_year_id|integer|null: false|
+|birth_month_id|integer|null: false|
+|birth_day_id|integer|null: false|
 
 ### Association
 - has_many :items
@@ -54,6 +54,7 @@ Things you may want to cover:
 |first_name_kanji|string|null: false|
 |family_name_kana|string|null: false|
 |first_name_kana|string|null: false|
+|perchase|references|foreign_key: true|
 |postcode|string|null: false|
 |prefecture_id|integer|null: false|
 |city|string|null: false|
@@ -62,7 +63,7 @@ Things you may want to cover:
 |tel|string|-------|
 
 ### Association
-- has_many :perchases
+- belongs_to :perchase
 - belongs_to_active_hash :prefecture
 
 
@@ -72,8 +73,8 @@ Things you may want to cover:
 |name|string|null: false|
 |description|text|null: false|
 |price|integer|null: false|
-|user_id|references|foreign_key: true|
-|brand_id|references|foreign_key: true|
+|user|references|foreign_key: true|
+|brand|references|foreign_key: true|
 |category_id|integer|null: false|
 |condition_id|integer|null: false|
 |shipping_fee_id|integer|null: false|
@@ -95,14 +96,13 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |date|date|null: false|
-|user_id|references|foreign_key: true|
-|item_id|references|foreign_key: true|
-|send_id|references|foreign_key: true|
+|user|references|foreign_key: true|
+|item|references|foreign_key: true|
 
 ## Association
 - belongs_to :user
 - belongs_to :item
-- belongs_to :send
+- has_one :send
 
 
 ## Brandsテーブル
@@ -118,7 +118,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |body|text|null: false|
-|item_id|references|foreign_key: true|
+|item|references|foreign_key: true|
 
 ### Association
 - belongs_to :item
