@@ -1,2 +1,259 @@
-%h1 Welcome#index
-%p Find me in app/views/welcome/index.html.haml
+%header.header
+  .header__content
+    .header__content--upper
+      %h1.header__upper--icon
+        %a(href="index.html") 
+          %img(src="assets/logo.png" alt="ヘッダーロゴ")/
+      .header__upper--search
+        %form{:action => "/", :method => "post"}
+          %input{:name => "search", :placeholder => "キーワードから探す", :type => "search"}/
+          %button{type: "submit"}
+            .searchButton
+              %img(src="app/assets/images/icon/icon-search 1.png" alt="")/
+            
+
+    .header__content--bottom
+      %ul.bottom-left
+        %li.header__bottom--category
+          %a(href="#") カテゴリー
+        %li.header__bottom--brand
+          %a(href="#") ブランド
+      %ul.bottom-right
+        %li.header__bottom--sighin
+          = link_to "ログイン"
+        %li.header__bottom--signup
+          = link_to "新規登録"
+
+.main
+  %section.topbanner
+    .topbanner__content
+      %h2.topbanner__content--subtitle 人生を変えるアプリ
+      %p.topbanner__content--message
+        FURIMAは誰でも簡単に出品・購入できる
+        %br フリマアプリです
+      .dlButton
+        .dlButton__apple
+          %img(src="app/assets/images/icon/appledownloadicon.png" alt="appstoreのアイコン")/
+        .dlButton__google
+        %img(src="app/assets/images/icon/googledownloadicon.png" alt="GooglePlayのアイコン")/
+  %section.topintroduction
+    %h2.topintroduction__subtitle FURIMAが選ばれる3つの理由
+    %ul.reasons
+      %li.reasons__reason
+        .reasons__pic
+          %img(src="app/assets/images/pict/pict-reason-01.jpg" alt="理由1")/
+        %h3
+          %span> 3分
+          ですぐに出品
+        %p スマホで入力するだけで簡単に出品できる！
+      %li.reasons__reason
+        .reasons__pic
+          %img(src="app/assets/images/pict/pict-reason-02.jpg" alt="理由2")/
+        %h3 
+          %span> シンプル 
+          で使いやすい
+        %p めんどくさい入力は必要なく、検索も購入もスムーズ！
+      %li.reasons__reason
+        .reasons__pic
+          %img(src="app/assets/images/pict/pict-reason-03.jpg" alt="理由3")/
+        %h3 
+          %span> 手数料 
+          業界最安
+        %p 最大3%でお得に出品&購入！
+  %section.topmiddle
+    .topmiddle__content
+      %h2.topmiddle__content--subtitle 会員数日本一位
+      %p.topmiddle__content--message 
+        FURIMAは、フリマアプリで最も人気。
+        %br/
+        出品・購入回数も業界最多です！
+        %br/
+        ほしかったあの商品に出会えるかもしれません。
+      .dlButton
+        .dlButton__apple
+          %img(src="app/assets/images/icon/appledownloadicon.png" alt="appstoreのアイコン")/
+        .dlButton__google
+          %img(src="app/assets/images/icon/googledownloadicon.png" alt="GooglePlayのアイコン")/
+
+  %section.topfeatures
+    %h2.topfeatures__subtitle FURIMAの特徴
+    %ul.features
+      %li.features__feature
+        .feature__pic
+          %img(src="app/assets/images/icon/icon-01.png" alt="特徴1")/
+        %h3 簡単に売り買いできる
+        %p スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+      %li.features__feature
+        .reasons__pic
+          %img(src="app/assets/images/icon/icon-03.png" alt="特徴2")/
+        %h3 売上金は即日振込みに対応
+        %p 午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
+      %li.features__feature
+        .features__pic
+          %img(src="app/assets/images/icon/icon-04.png" alt="特徴3")/
+        %h3 様々な支払いに対応
+        %p お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+  %section.pickupcontainer
+    .head
+      ピックアップカテゴリー
+    .productHead
+      新規投稿商品
+    .lists
+      .lists__product
+        %img(src="" alt="商品1")/
+        .product__detail
+          %h3.product__detail--name
+            テスト
+          %ul
+            %li.product__detail--price 
+              1000円
+            %li.product__detail--likeButton
+              %button
+                <i class="far fa-heart"></i> 1
+          .product__detail--tax
+            (税込)
+      .lists__product
+        %img(src="" alt="商品2")/
+        .product__detail
+          %h3.product__detail--name
+            テスト2
+          %ul
+            %li.product__detail--price 
+              500円
+            %li.product__detail--likeButton
+              %button
+                <i class="far fa-heart"></i> 3
+          .product__detail--tax
+            (税込)
+      .lists__product
+        %img(src="" alt="商品3")/
+        .product__detail
+          %h3.product__detail--name
+            テスト3
+          %ul
+            %li.product__detail--price 
+              2000円
+            %li.product__detail--likeButton
+              %button
+                <i class="far fa-heart"></i> 
+          .product__detail--tax
+            (税込)
+      .lists__product
+        %img(src="" alt="商品4")/
+        .product__detail
+          %h3.product__detail--name
+            テスト4
+          %ul
+            %li.product__detail--price 
+              100円
+            %li.product__detail--likeButton
+              %button
+                <i class="far fa-heart"></i> 5
+          .product__detail--tax
+            (税込)
+                
+  %section.pickupcontainer.padding-bottom
+    .head
+      ピックアップブランド
+    .productHead
+      アーカイバ
+    .lists
+      .lists__product
+        %img(src="" alt="商品1")/
+        .product__detail
+          %h3.product__detail--name
+            テスト
+          %ul
+            %li.product__detail--price 
+              1000円
+            %li.product__detail--likeButton
+              %button
+                <i class="far fa-heart"></i> 1
+          .product__detail--tax
+            (税込)
+      .lists__product
+        %img(src="" alt="商品1")/
+        .product__detail
+          %h3.product__detail--name
+            テスト
+          %ul
+            %li.product__detail--price 
+              1000円
+            %li.product__detail--likeButton
+              %button
+                <i class="far fa-heart"></i> 1
+          .product__detail--tax
+            (税込)
+      .lists__product
+        %img(src="" alt="商品1")/
+        .product__detail
+          %h3.product__detail--name
+            テスト
+          %ul
+            %li.product__detail--price 
+              1000円
+            %li.product__detail--likeButton
+              %button
+                <i class="far fa-heart"></i> 1
+          .product__detail--tax
+            (税込)
+      .lists__product
+        %img(src="" alt="商品1")/
+        .product__detail
+          %h3.product__detail--name
+            テスト
+          %ul
+            %li.product__detail--price 
+              1000円
+            %li.product__detail--likeButton
+              %button
+                <i class="far fa-heart"></i> 1
+          .product__detail--tax
+            (税込)
+  %aside.bottombanner
+    .bottombanner__content
+      %h2.bottombanner__subtitle
+        だれでもかんたん、人生を変えるフリマアプリ
+      %p.bottombanner__message
+        今すぐ無料ダウンロード！
+      .dlButton
+        .dlButton__apple
+          %img(src="app/assets/images/icon/appledownloadicon.png" alt="appstoreのアイコン")/
+        .dlButton__google
+        %img(src="app/assets/images/icon/googledownloadicon.png" alt="GooglePlayのアイコン")/
+
+%footer.footer
+  .footer__content
+    .menu__lists
+      .menu__lists--list
+        %h3.menu__list--subtitle FURIMAについて
+        %ul
+          %li
+            %a(href="/") 会社概要（運営会社)
+          %li
+            %a(href="/") プライバシーポリシー
+          %li
+            %a(href="/") FURIMA利用規約
+          %li
+            %a(href="/") ポイントに関する特約
+      .menu__lists--list
+        %h3.menu__list--subtitle
+          FURIMAを見る
+        %ul
+          %li
+            %a(href="/") カテゴリー一覧
+          %li
+            %a(href="/") ブランド一覧
+      .menu__lists--list
+        %h3.menu__list--subtitle
+          ヘルプ＆ガイド
+        %ul
+          %li
+            %a(href="/") FURIMAガイド
+          %li
+            %a(href="/") FURIMAロゴ利用ガイドライン
+          %li
+            %a(href="/") お知らせ
+    .footer__logo
+      %img(src="app/assets/images/logo/logo-white.png" alt="フッターロゴ")/
+    %p ©︎FURIMA
