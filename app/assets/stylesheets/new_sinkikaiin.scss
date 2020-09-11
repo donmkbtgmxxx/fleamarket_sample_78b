@@ -1,18 +1,24 @@
+.body{
+  overflow: scroll
+}
+
 .header{
   text-align: center;
   font-size: 30px;
   margin: 0 auto;
   width: 700px;
+  background-color: #fff;
 }
 
 .data{
   width: 700px;
   margin: 0 auto;
+  background-color: #fff;
 }
 
 .field{
   text-align: center;
-  margin: 8px 0 0;
+  padding: 36px 0 0;
 }
 
 .actions{
