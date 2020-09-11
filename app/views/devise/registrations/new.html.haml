@@ -4,50 +4,51 @@
   .field
     = f.label :nickname
     %br/
-    = f.text_field :nickname
+    = f.text_field :nickname, :placeholder => "例) フリマー"
+    %br/
   .field
     = f.label :email
     %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
+    = f.email_field :email, autofocus: true, autocomplete: "email" , :placeholder => "PC携帯どちらもOK!"
   .field
     = f.label :password
     - if @minimum_password_length
       %em
         (#{@minimum_password_length} characters minimum)
     %br/
-    = f.password_field :password, autocomplete: "new-password"
+    = f.password_field :password, autocomplete: "new-password", :placeholder => "半角英数字7文字以上"
   .field
     = f.label :password_confirmation
     %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
+    = f.password_field :password_confirmation, autocomplete: "new-password", :placeholder => "パスワード確認用"
   .field
     = f.label :family_name_kanji
     %br/
-    = f.text_field :family_name_kanji
+    = f.text_field :family_name_kanji, :placeholder => "例) 山田"
   .field
     = f.label :first_name_kanji
     %br/
-    = f.text_field :first_name_kanji
+    = f.text_field :first_name_kanji, :placeholder => "例) 花子"
   .field
     = f.label :family_name_kana
     %br/
-    = f.text_field :family_name_kana
+    = f.text_field :family_name_kana, :placeholder => "例) ヤマダ"
   .field
     = f.label :first_name_kana
     %br/
-    = f.text_field :first_name_kana
+    = f.text_field :first_name_kana, :placeholder => "例) ハナコ"
   .field
     = f.label :birth_year_id
     %br/
-    = f.number_field :birth_year_id
+    = f.number_field :birth_year_id, :placeholder => "選択してください"
   .field
     = f.label :birth_month_id
     %br/
-    = f.number_field :birth_month_id
+    = f.number_field :birth_month_id, :placeholder => "選択してください"
   .field
     = f.label :birth_day_id
     %br/
-    = f.number_field :birth_day_id
+    = f.number_field :birth_day_id, :placeholder => "選択してください"
   .actions
     = f.submit "Sign up"
 = render "devise/shared/links"
