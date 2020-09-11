@@ -1,0 +1,191 @@
+.main
+  %section.topbanner
+    .topbanner__content
+      %h2.topbanner__content--subtitle 人生を変えるフリマアプリ
+      %p.topbanner__content--message
+        FURIMAはだれでも簡単に出品・購入できる
+        %br フリマアプリです
+      .dlButton
+        %a.dlButton__apple
+          =image_tag('icon/appledownloadicon.svg', alt: "appstoreのアイコン")
+        %a.dlButton__google
+          =image_tag('icon/googledownloadicon.png', alt: "GooglePlayのアイコン")
+  %section.topintroduction
+    %h2.topintroduction__subtitle FURIMAが選ばれる3つの理由
+    %ul.reasons
+      %li.reasons__reason
+        .reasons__reason--pic
+          %span.number 1
+          =image_tag('pict/pict-reason-01.jpg', alt: "理由1")
+        %h3
+          %span> 3分
+          ですぐに出品
+        %p スマホで入力するだけで簡単に出品できる！
+      %li.reasons__reason
+        .reasons__reason--pic
+          %span.number 2
+          =image_tag('pict/pict-reason-02.jpg', alt: "理由2")
+        %h3 
+          %span> シンプル 
+          で使いやすい
+        %p めんどくさい入力は必要なく、検索も購入もスムーズ！
+      %li.reasons__reason
+        .reasons__reason--pic
+          %span.number 3
+          =image_tag('pict/pict-reason-03.jpg', alt: "理由3")
+        %h3 
+          %span> 手数料 
+          業界最安
+        %p 最大3%でお得に出品&購入！
+  %section.topmiddle
+    .topmiddle__content
+      %h2.topmiddle__content--subtitle 会員数日本一位
+      %p.topmiddle__content--message 
+        FURIMAは、フリマアプリで最も人気。
+        %br/
+        出品・購入回数も業界最多です！
+        %br/
+        ほしかったあの商品に出会えるかもしれません。
+      .dlButton
+        %a.dlButton__apple
+          =image_tag('icon/appledownloadicon.svg', alt: "appstoreのアイコン")
+        %a.dlButton__google
+          =image_tag('icon/googledownloadicon.png', alt: "GooglePlayのアイコン")
+
+  %section.topfeatures
+    %h2.topfeatures__subtitle FURIMAの特徴
+    %ul.features
+      %li.features__feature
+        .features__feature--pic
+          = image_tag('icon/icon-01.png', alt: "特徴1")
+        %h3 簡単に売り買いできる
+        %p スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+      %li.features__feature
+        .features__feature--pic
+          = image_tag('icon/icon-03.png', alt: "特徴2")
+        %h3 売上金は即日振込みに対応
+        %p 午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
+      %li.features__feature
+        .features__feature--pic
+          = image_tag('icon/icon-04.png', alt: "特徴3")
+        %h3 様々な支払いに対応
+        %p お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+  %section.pickupcontainer
+    .pickupcontainer__head
+      ピックアップカテゴリー
+    .pickupcontainer__productHead
+      新規投稿商品
+    .lists
+      .lists__product
+        =image_tag('pict/cleanroom_boujinfuku.png', alt: "商品1")
+        .product__detail
+          %h3.product__detail--name
+            テスト
+          %ul
+            %li.product__detail--price 
+              1000円
+            %li.product__detail--likeButton
+              %button
+                <i class="far fa-heart"></i> 1
+          .product__detail--tax
+            (税込)
+      .lists__product
+        =image_tag('pict/game_gaming_chair.png', alt: "商品2")
+        .product__detail
+          %h3.product__detail--name
+            テスト2
+          %ul
+            %li.product__detail--price 
+              500円
+            %li.product__detail--likeButton
+              %button
+                <i class="far fa-heart"></i> 3
+          .product__detail--tax
+            (税込)
+      .lists__product
+        =image_tag('pict/fashion_fishing_vest.png', alt: "商品3")
+        .product__detail
+          %h3.product__detail--name
+            テスト3
+          %ul
+            %li.product__detail--price 
+              2000円
+            %li.product__detail--likeButton
+              %button
+                <i class="far fa-heart"></i> 
+          .product__detail--tax
+            (税込)
+      .lists__product
+        =image_tag('pict/money_saifu_kozeni_compact.png', alt: "商品4")
+        .product__detail
+          %h3.product__detail--name
+            テスト4
+          %ul
+            %li.product__detail--price 
+              100円
+            %li.product__detail--likeButton
+              %button
+                <i class="far fa-heart"></i> 5
+          .product__detail--tax
+            (税込)
+                
+  %section.pickupcontainer.padding-bottom
+    .pickupcontainer__head
+      ピックアップブランド
+    .pickupcontainer__productHead
+      アーカイバ
+    .lists
+      .lists__product
+        =image_tag('pict/smartphone_new.png', alt: "商品4")
+        .product__detail
+          %h3.product__detail--name
+            テスト
+          %ul
+            %li.product__detail--price 
+              1000円
+            %li.product__detail--likeButton
+              %button
+                <i class="far fa-heart"></i> 1
+          .product__detail--tax
+            (税込)
+      .lists__product
+        =image_tag('pict/travel_bag.png', alt: "商品4")
+        .product__detail
+          %h3.product__detail--name
+            テスト
+          %ul
+            %li.product__detail--price 
+              1000円
+            %li.product__detail--likeButton
+              %button
+                <i class="far fa-heart"></i> 1
+          .product__detail--tax
+            (税込)
+      .lists__product
+        =image_tag('pict/watch_face_arm_woman.png', alt: "商品4")
+        .product__detail
+          %h3.product__detail--name
+            テスト
+          %ul
+            %li.product__detail--price 
+              1000円
+            %li.product__detail--likeButton
+              %button
+                <i class="far fa-heart"></i> 1
+          .product__detail--tax
+            (税込)
+      .lists__product
+        =image_tag('pict/medical_cream_tube_close.png', alt: "商品4")
+        .product__detail
+          %h3.product__detail--name
+            テスト
+          %ul
+            %li.product__detail--price 
+              1000円
+            %li.product__detail--likeButton
+              %button
+                <i class="far fa-heart"></i> 1
+          .product__detail--tax
+            (税込)
+
+
