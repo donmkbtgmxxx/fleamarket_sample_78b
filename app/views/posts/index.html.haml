@@ -5,12 +5,28 @@
   %body
     .Maincontents
       .Rogo-header
-        FURIMA
-      .Touroku
+        %h1
+          %img{:alt => "FURIMA", :src => "/fleamarket_sample_78b/app/assets/images/FURIMAロゴ　最終課題用.jpg"}/
+      .Touroku-Middle
         .Touroku-Sections
-          .Touroku-Section
-            .kaiintouroku
-              新規会員登録
-          .Mainform-Section
-            .Mailform
-              メールアドレスで登録する
+          .Touroku-Section 新規会員登録
+          .Mailform-Section
+            .Mailform-Content
+              %a.btn-default.btn-mail{:href => "#"}
+                %i.icon-mail
+                  .Mailform
+                    メールアドレスで登録する
+
+          .Privacypolicy
+            %p.Privacypolicy-Text
+              登録することで、
+              %a{:href => "#", :target => "_blank"}> 利用規約
+              と
+              %a{:href => "#", :target => "_blank"}> プライバシーポリシー
+              に同意したものとみなされます。
+      .footer
+        %nav
+          .ul
+            .li プライバシーポリシー
+            .li FURIMA利用規約
+            .li 特定商取引に関する表記

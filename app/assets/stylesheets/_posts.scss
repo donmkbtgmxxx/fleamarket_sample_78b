@@ -5,6 +5,8 @@
 .body{
   margin: 0;
   padding: 0;
+  min-height: 100%;
+  background-color: #b3d4fc;
 }
 
 .Maincontents{
@@ -18,7 +20,10 @@
   margin: 40px 0 0;
 }
 
-.Touroku{
+.h1{
+}
+
+.Touroku-Middle{
   margin: 0;
   display: block;
 }
@@ -26,18 +31,29 @@
 .Touroku-Sections{
   width: 700px;
   margin: 0 auto;
+  background-color: #fff;
 }
 
 .Touroku-Section{
-}
-
-.kaiintouroku{
   padding: 32px;
   font-size: 22px;
+  text-align: center;
+  border-bottom: 1px solid;
+  border-color: lightgray;
 }
 
-.Mainform-Section{
+.Mailform-Section{
+  padding: 40px 0 0 0;
+}
 
+.Mailform-Content{
+  max-width: 343px;
+  margin: 0 auto;
+}
+
+.btn-default{
+  line-height: 48px;
+  text-decoration: none;
 }
 
 .Mailform{
@@ -46,4 +62,31 @@
   border-radius: 4px;
   border-width: 0;
   border-style: solid;
+  text-align: center;
+}
+
+.Privacypolicy{
+  margin: 40px 0 0;
+}
+
+.Privacypolicy-Text{
+  text-align: center;
+  font-size: 14px;
+}
+
+.footer{
+  width: 456px;
+  height: 220px;
+  margin: 0 auto;
+  padding: 40px 0;
+  text-align: center;
+
+  .nav{
+    text-align: center;
+  }
+
+  .ul{
+    list-style: none;
+    display: flex
+  }
 }
