@@ -40,11 +40,12 @@ Things you may want to cover:
 |birth_day_id|integer|null: false|
 
 ### Association
-- has_many :items
+- has_one :send
 - has_many :perchases
-- belongs_to_active_hash :birth_year
-- belongs_to_active_hash :birth_month
-- belongs_to_active_hash :birth_day
+- has_many :items
+- belongs_to_active_hash :year4
+- belongs_to_active_hash :month
+- belongs_to_active_hash :day
 
 
 ## Sendsテーブル
@@ -54,17 +55,31 @@ Things you may want to cover:
 |first_name_kanji|string|null: false|
 |family_name_kana|string|null: false|
 |first_name_kana|string|null: false|
-|perchase|references|foreign_key: true|
 |postcode|string|null: false|
 |prefecture_id|integer|null: false|
 |city|string|null: false|
 |block|string|null: false|
 |building|string|-------|
 |tel|string|-------|
+|user|references|foreign_key: true|
 
 ### Association
-- belongs_to :perchase
+- belongs_to :user
 - belongs_to_active_hash :prefecture
+
+
+## Cardsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|number|integer|null: false, unique: true|
+|year|integer|null: false|
+|month|integer|null: false|
+|user|references|foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to_active_hash :year2
+- belongs_to_active_hash :month
 
 
 ## Itemsテーブル
@@ -102,7 +117,6 @@ Things you may want to cover:
 ## Association
 - belongs_to :user
 - belongs_to :item
-- has_one :send
 
 
 ## Brandsテーブル
