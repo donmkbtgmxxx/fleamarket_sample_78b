@@ -1,0 +1,23 @@
+%header.header
+  .header__content
+    .header__content--upper
+      %h1.header__upper--icon
+        %a(href="/") 
+          =image_tag('logo/logo.png', alt: "ヘッダーロゴ")
+      .header__upper--search
+        %form{:action => "/", :method => "post"}
+          %input{:name => "search", :placeholder => "キーワードから探す", :type => "search"}/
+          %button{type: "submit"}
+            .searchButton
+              = image_tag('icon/icon-search 1.png', alt: "サーチボタン")
+    .header__content--bottom
+      %ul.bottom-left
+        %li.header__bottom--category
+          %a(href="#") カテゴリー
+        %li.header__bottom--brand
+          %a(href="#") ブランド
+      %ul.bottom-right
+        %li.header__bottom--sighin
+          = link_to "ログイン"
+        %li.header__bottom--signup
+          = link_to "新規会員登録"
