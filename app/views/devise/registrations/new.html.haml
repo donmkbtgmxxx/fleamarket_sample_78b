@@ -5,7 +5,7 @@
   .data
     .nickname
       .field
-        = f.label :nickname
+        = f.label :ニックネーム
         %br/
         = f.text_field :nickname, :placeholder => "例) フリマー"
         %br/
@@ -16,36 +16,30 @@
         = f.email_field :email, autofocus: true, autocomplete: "email" , :placeholder => "PC携帯どちらもOK!"
     .password
       .field
-        = f.label :password
+        = f.label :パスワード
         - if @minimum_password_length
           %em
             (#{@minimum_password_length} characters minimum)
         %br/
         = f.password_field :password, autocomplete: "new-password", :placeholder => "半角英数字7文字以上"
       .field
-        = f.label :password_confirmation
+        = f.label :パスワード確認
         %br/
         = f.password_field :password_confirmation, autocomplete: "new-password", :placeholder => "パスワード確認用"
     .name
-      .field
-        = f.label :family_name_kanji
-        %br/
-        = f.text_field :family_name_kanji, :placeholder => "例) 山田"
-      .field
-        = f.label :first_name_kanji
-        %br/
-        = f.text_field :first_name_kanji, :placeholder => "例) 花子"
-      .field
-        = f.label :family_name_kana
-        %br/
-        = f.text_field :family_name_kana, :placeholder => "例) ヤマダ"
-      .field
-        = f.label :first_name_kana
-        %br/
-        = f.text_field :first_name_kana, :placeholder => "例) ハナコ"
-        %br/
-        .honnin 
-          %span 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+      .namefield_kanji
+        = f.label :お名前（漢字）
+        .namefield_kanjifield
+          = f.text_field :family_name_kanji, :placeholder => "例) 山田"
+          = f.text_field :first_name_kanji, :placeholder => "例) 花子"
+      .namefield_kana
+        = f.label :お名前（カナ）
+        .namefield_kanafield
+          = f.text_field :family_name_kana, :placeholder => "例) ヤマダ"
+          = f.text_field :first_name_kana, :placeholder => "例) ハナコ"
+          %br/
+      .honnin 
+        %span 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
     .birth
       .field
         = f.label :birth_year_id
