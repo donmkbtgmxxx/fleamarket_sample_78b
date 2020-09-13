@@ -9,9 +9,7 @@ FactoryBot.define do
     first_name_kanji      {"太郎"}
     family_name_kana      {"やまだ"}
     first_name_kana       {"たろう"}
-    birth_year_id         {"2020"}
-    birth_month_id        {"12"}
-    birth_day_id          {"31"}
+    birthday              {"2020-12-31"}
   end
 
 end

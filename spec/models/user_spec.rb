@@ -138,26 +138,12 @@ describe User do
       user.valid?
       expect(user.errors[:first_name_kana]).to include("is invalid")
     end
-  
-    it "birth_year_idが空では登録できないこと" do
-    # it "is invalid without a birth_year_id" do
-      user = build(:user, birth_year_id: nil)
-      user.valid?
-      expect(user.errors[:birth_year_id]).to include("can't be blank")
-    end
 
-    it "birth_month_idが空では登録できないこと" do
-    # it "is invalid without a birth_month_id" do
-      user = build(:user, birth_month_id: nil)
+    it "birth_dayが空では登録できないこと" do
+    # it "is invalid without a birth_day" do
+      user = build(:user, birthday: nil)
       user.valid?
-      expect(user.errors[:birth_month_id]).to include("can't be blank")
-    end
-
-    it "birth_day_idが空では登録できないこと" do
-    # it "is invalid without a birth_day_id" do
-      user = build(:user, birth_day_id: nil)
-      user.valid?
-      expect(user.errors[:birth_day_id]).to include("can't be blank")
+      expect(user.errors[:birthday]).to include("can't be blank")
     end
   end
 end
