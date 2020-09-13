@@ -97,9 +97,10 @@
 .birhtday{
 }
 
-.birth_fields{
+.birth_sentaku{
   display: flex;
-  text-align: center;
+  justify-content: space-between;
+  margin: 0 130px;
 }
 
 .birth_field{
