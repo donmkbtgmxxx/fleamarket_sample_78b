@@ -37,17 +37,9 @@
     %br/
     = f.text_field :first_name_kana
   .field
-    = f.label :birth_year_id
+    = f.label :birthday
     %br/
-    = f.number_field :birth_year_id
-  .field
-    = f.label :birth_month_id
-    %br/
-    = f.number_field :birth_month_id
-  .field
-    = f.label :birth_day_id
-    %br/
-    = f.number_field :birth_day_id
+    = f.date_field :birthday
   .actions
     = f.submit "Sign up"
 = render "devise/shared/links"
