@@ -35,17 +35,12 @@ Things you may want to cover:
 |first_name_kanji|string|null: false|
 |family_name_kana|string|null: false|
 |first_name_kana|string|null: false|
-|birth_year_id|integer|null: false|
-|birth_month_id|integer|null: false|
-|birth_day_id|integer|null: false|
+|birth_day|date|null: false|
 
 ### Association
 - has_one :send
 - has_many :purchases
 - has_many :items
-- belongs_to_active_hash :year4
-- belongs_to_active_hash :month
-- belongs_to_active_hash :day
 
 
 ## Sendsテーブル
@@ -78,7 +73,7 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user
-- belongs_to_active_hash :year2
+- belongs_to_active_hash :year
 - belongs_to_active_hash :month
 
 
@@ -93,8 +88,8 @@ Things you may want to cover:
 |category_id|integer|null: false|
 |condition_id|integer|null: false|
 |shipping_fee_id|integer|null: false|
-|delay|integer|null: false|
-|prefecture|integer|null: false|
+|delay_id|integer|null: false|
+|prefecture_id|integer|null: false|
 
 ### Association
 - has_one :purchase
@@ -128,7 +123,7 @@ Things you may want to cover:
 - has_many :items
 
 
-## Imagesテーブル
+## Item_imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |body|text|null: false|
