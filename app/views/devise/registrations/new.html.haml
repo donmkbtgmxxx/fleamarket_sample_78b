@@ -6,7 +6,7 @@
     .Rogo-header
       %h1.Rogo
         %a(href="/")
-          =image_tag('/images/furimalogo.jpg', alt: "フリマロゴ")
+          =image_tag 'furimalogo.jpg'
     .header 会員情報登録
     .data
       .nickname
@@ -46,20 +46,11 @@
             %br/
         .honnin 
           %span 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
-      .birth
-        .birth_text ご自身の生年月日を選択してください
-        .birhtday
-          .birth_sentaku
-            .nen
-              = f.label :年
-            .tuki
-              = f.label :月
-            .hi
-              = f.label :日
-          .birth_field
-            = f.number_field :birth_year_id, :placeholder => "選択してください"
-            = f.number_field :birth_month_id, :placeholder => "選択してください"
-            = f.number_field :birth_day_id, :placeholder => "選択してください"
+      .field
+        = f.label :birthday
+        %br/
+        = f.date_field :birthday
+
       .actions
         .touroku_button
           = f.submit "登録"
