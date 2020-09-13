@@ -4,7 +4,9 @@
   = render "devise/shared/error_messages", resource: resource
   .all
     .Rogo-header
-      %h1
+      %h1.Rogo
+        %a(href="/")
+          =image_tag('/images/furimalogo.jpg', alt: "フリマロゴ")
     .header 会員情報登録
     .data
       .nickname
@@ -59,5 +61,6 @@
             = f.number_field :birth_month_id, :placeholder => "選択してください"
             = f.number_field :birth_day_id, :placeholder => "選択してください"
       .actions
-        = f.submit "登録"
+        .touroku_button
+          = f.submit "登録"
 = render "devise/shared/links"
