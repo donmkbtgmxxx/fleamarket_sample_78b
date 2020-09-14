@@ -139,8 +139,8 @@ describe User do
       expect(user.errors[:first_name_kana]).to include("is invalid")
     end
 
-    it "birth_dayが空では登録できないこと" do
-    # it "is invalid without a birth_day" do
+    it "birthdayが空では登録できないこと" do
+    # it "is invalid without a birthday" do
       user = build(:user, birthday: nil)
       user.valid?
       expect(user.errors[:birthday]).to include("can't be blank")
