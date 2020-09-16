@@ -361,8 +361,14 @@
               display: flex;
               justify-content: space-between;
               align-items: center;
-              li {
+              .product__detail--price {
                 font-weight: bold;
+              }
+              .product__detail--likeButton {
+                a {
+                  text-decoration: none;
+                  color: #333;
+                }
               }
             }
             &--tax {
