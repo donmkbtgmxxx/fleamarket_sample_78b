@@ -23,6 +23,7 @@ Things you may want to cover:
 
 * ...
 
+
 # DB設計
 
 ## usersテーブル
@@ -38,12 +39,12 @@ Things you may want to cover:
 |birth_day|date|null: false|
 
 ### Association
-- has_one :send
+- has_one :address
 - has_many :purchases
 - has_many :items
 
 
-## Sendsテーブル
+## Addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |family_name_kanji|string|null: false|
