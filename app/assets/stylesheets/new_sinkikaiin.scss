@@ -1,5 +1,5 @@
 .all{
-  margin: 30px 0;
+  margin: 30px 0 60px 0;
 }
 
 .Rogo-header{
@@ -34,6 +34,22 @@
 .field{
   text-align: center;
   padding: 36px 0 18px 0;
+}
+
+.text_region{
+  box-sizing:border-box;
+  width: 50%;
+}
+
+.name_region{
+  box-sizing:border-box;
+  width: 25%;
+}
+
+.form-require{
+  background: #ea352d;
+  color: #fff;
+  padding: 2px 4px;
 }
 
 .nickname{
@@ -111,4 +127,10 @@
 
 .actions{
   text-align: center;
+}
+
+.touroku{
+  box-sizing:border-box;
+  width: 25%;
+  background-color: lightcyan;
 }

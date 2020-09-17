@@ -2,6 +2,7 @@
 %html{lang: "ja"}
   %head
     %meta{charset: "utf-8"}
+    %link{:href => "“_posts.scss”", :rel => "“stylesheet”"}/
   %body
     .Maincontents
       .Rogo-header
@@ -27,6 +28,9 @@
       .footer
         %nav
           .ul
-            .li プライバシーポリシー
-            .li FURIMA利用規約
-            .li 特定商取引に関する表記
+            %a(href="/")
+              .li プライバシーポリシー
+            %a(href="/")
+              .li FURIMA利用規約
+            %a(href="/")
+              .li 特定商取引に関する表記
