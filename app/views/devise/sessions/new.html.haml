@@ -16,3 +16,55 @@
     .actions
       = f.submit "Log in"
   = render "devise/shared/links"
+
+
+
+--
+  !!!
+%html{lang: "ja"}
+  %head
+    %meta{charset: "utf-8"}
+    %link{:href => "“rogin.scss”", :rel => "“stylesheet”"}/
+  %body
+    .Maincontents
+      .Rogo-header
+        %h1
+          %a(href="/")
+          =image_tag 'furimalogo.jpg'
+      .Touroku-Middle
+        .Touroku-Sections
+          .Touroku-Section ログイン画面
+          .Mailform-Section
+            .Mailform-Content
+              %a.btn-default.btn-mail{:href => "#"}
+                %i.icon-mail
+                  .Touroku
+                    %a{:href => "/users/sign_up"} アカウントをお持ちでない方はこちらから
+          .Privacypolicy
+            %p.Privacypolicy-Text
+              登録することで、
+              %a{:href => "#", :target => "_blank"}> 利用規約
+              と
+              %a{:href => "#", :target => "_blank"}> プライバシーポリシー
+              に同意したものとみなされます。
+      .footer
+        %nav
+          .ul
+            %a(href="/")
+              .li プライバシーポリシー
+            %a(href="/")
+              .li FURIMA利用規約
+            %a(href="/")
+              .li 特定商取引に関する表記
+
+.Touroku{
+  text-decoration: none;
+  background-color: lightblue;
+  color: #fff;
+  border-radius: 4px;
+  border-width: 0;
+  border-style: solid;
+  text-align: center;
+}
+
+--
