@@ -1,0 +1,92 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.body{
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background-color: #b3d4fc;
+}
+
+.Maincontents{
+  height: 100vh;
+  padding: 0 0 220px;
+}
+
+.Rogo-header{
+  height: 128px;
+  text-align: center;
+  margin: 40px 0 0;
+}
+
+.Touroku-Middle{
+  margin: 0;
+  display: block;
+}
+
+.Touroku-Sections{
+  width: 700px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+.Touroku-Section{
+  padding: 32px;
+  font-size: 22px;
+  text-align: center;
+  border-bottom: 1px solid;
+  border-color: lightgray;
+}
+
+.Mailform-Section{
+  padding: 40px 0 0 0;
+}
+
+.Mailform-Content{
+  max-width: 343px;
+  margin: 0 auto;
+}
+
+
+.Mailform{
+  background-color: #ea352d;
+  color: #fff;
+  border-radius: 4px;
+  border-width: 0;
+  border-style: solid;
+  text-align: center;
+}
+
+.btn-default{
+  line-height: 48px;
+}
+.a{
+  text-decoration: none;
+}
+
+.Privacypolicy{
+  margin: 40px 0 0;
+}
+
+.Privacypolicy-Text{
+  text-align: center;
+  font-size: 14px;
+}
+
+.footer{
+  width: 456px;
+  height: 220px;
+  margin: 0 auto;
+  padding: 40px 0;
+  text-align: center;
+
+  .nav{
+    text-align: center;
+  }
+
+  .ul{
+    list-style: none;
+    display: flex
+  }
+}

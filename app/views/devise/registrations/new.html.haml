@@ -1,51 +1,68 @@
-%h2 Sign up
-= form_for(@user, url: user_registration_path) do |f|
-  = render "devise/shared/error_messages", resource: @user
-  .field
-    = f.label :nickname
-    %br/
-    = f.text_field :nickname
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .field
-    = f.label :family_name_kanji
-    %br/
-    = f.text_field :family_name_kanji
-  .field
-    = f.label :first_name_kanji
-    %br/
-    = f.text_field :first_name_kanji
-  .field
-    = f.label :family_name_kana
-    %br/
-    = f.text_field :family_name_kana
-  .field
-    = f.label :first_name_kana
-    %br/
-    = f.text_field :first_name_kana
-  .field
-    = f.label :birthday
-    %br/
-    = f.date_select :birthday, use_month_numbers: true, start_year: 1900, default: Date.new(1989, 1, 1)
-  .actions
-    = f.submit "Sign up"
-    
-= render "devise/shared/links"
+%link{:href => "“new_sinkikaiin.scss”", :rel => "“stylesheet”"}/
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = render "devise/shared/error_messages", resource: resource
+  .all
+    .Rogo-header
+      %h1.Rogo
+        %a(href="/")
+          =image_tag 'furimalogo.jpg'
+    .header 会員情報登録
+    .data
+      .nickname
+        .field
+          = f.label :ニックネームを入力してください
+          %span.form-require 必須
+          %br/
+          = f.text_field :nickname, :placeholder => "例) フリマー", class:'text_region'
+          %br/
+      .email
+        .field
+          = f.label :emailアドレスを入力してください
+          %span.form-require 必須
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email" , :placeholder => "PC携帯どちらもOK!", class:'text_region'
+      .password
+        .field
+          = f.label :パスワードを入力してください
+          %span.form-require 必須
+          - if @minimum_password_length
+            %em
+              (#{@minimum_password_length} characters minimum)
+          %br/
+          = f.password_field :password, autocomplete: "new-password", :placeholder => "半角英数字7文字以上", class:'text_region'
+        .field
+          = f.label :パスワードを再入力してください
+          %span.form-require 必須
+          %br/
+          = f.password_field :password_confirmation, autocomplete: "new-password", :placeholder => "パスワード確認用", class:'text_region'
+      .name
+        .namefield_kanji
+          = f.label :お名前（漢字）を入力してください
+          %span.form-require 必須
+          .namefield_kanjifield
+            = f.text_field :family_name_kanji, :placeholder => "例) 山田", class:'name_region'
+            = f.text_field :first_name_kanji, :placeholder => "例) 花子", class:'name_region'
+        .namefield_kana
+          = f.label :お名前（カナ）を入力してください
+          %span.form-require 必須
+          .namefield_kanafield
+            = f.text_field :family_name_kana, :placeholder => "例) ヤマダ", class:'name_region'
+            = f.text_field :first_name_kana, :placeholder => "例) ハナコ", class:'name_region'
+            %br/
+        .honnin 
+          %span 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+      .field
+        = f.label :あなたのお誕生日を選択してください
+        %span.form-require 必須
+        %br/
+        = f.date_field :birthday, class:'text_region'
 
-.fixedButton
+      .actions
+        .touroku_button
+          %a(href="app/views/items/new.html.haml")
+            = f.submit "登録", class:'touroku'
+            
+  .fixedButton
   %p 出品する
   .fixedButton__image
     = link_to '#' do
