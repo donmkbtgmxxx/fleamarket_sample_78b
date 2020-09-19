@@ -2,10 +2,6 @@
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = render "devise/shared/error_messages", resource: resource
   .all
-    .Rogo-header
-      %h1.Rogo
-        %a(href="/")
-          =image_tag 'furimalogo.jpg'
     .header 会員情報登録
     .data
       .nickname
@@ -62,8 +58,8 @@
           %a(href="app/views/items/new.html.haml")
             = f.submit "登録", class:'touroku'
             
-  .fixedButton
-  %p 出品する
-  .fixedButton__image
-    = link_to '#' do
-      =image_tag('icon/icon_camera.png', alt: "出品ボタン")
+    .fixedButton
+    %p 出品する
+    .fixedButton__image
+      = link_to '#' do
+        =image_tag('icon/icon_camera.png', alt: "出品ボタン")
