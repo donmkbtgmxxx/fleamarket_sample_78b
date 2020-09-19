@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   end
 
   root to: 'welcome#index'
+  resources :items, only: [:index, :new]
 end
