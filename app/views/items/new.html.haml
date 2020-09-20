@@ -1,0 +1,99 @@
+.SellingPage
+  .SellingPage__header
+    .SellingPage__header__icon
+      = link_to root_path do
+        = image_tag('logo/logo.png', alt: "ヘッダーロゴ")
+  .SellingPage__content
+    .SellingPage__content__form
+      = form_with model: @item, local: true do |f|
+        .FormField
+          .FormField__label
+            .FormField__label__title
+              .FormField__label__title__name 出品画像
+              .FormField__label__title--must 必須
+          %h1 最大10枚までアップロードできます
+          .ImageUploader
+            %p.ImageUploader__text 
+              ドラッグ&ドロップ
+              %br またはクリックしてファイルをアップロード
+            = f.label :image, class: 'ImageUploader__image' do
+              = icon('fas', 'camera fa-2x')
+              = f.file_field :image, class: 'ImageUploader__image__file'
+        .Underline
+        .FormField
+          .FormField__label
+            .FormField__label__title
+              .FormField__label__title__name 商品名
+              .FormField__label__title--must 必須
+          .FormField__input
+            = f.text_field :name, class: 'FormField__input--short', placeholder: '40文字まで'
+        .FormField
+          .FormField__label
+            .FormField__label__title
+              .FormField__label__title__name 商品の説明
+              .FormField__label__title--must 必須
+          .FormField__input
+            = f.text_area :description, class: 'FormField__input--long', placeholder: '商品の説明（必須1,000文字以内)&#13;&#10;(色、素材、重さ、定価、注意点など)&#13;&#10;&#13;&#10;例) 2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'.html_safe
+        .Underline
+        .FormField
+          %h1 商品の詳細
+          .FormField__label
+            .FormField__label__title
+              .FormField__label__title__name カテゴリー
+              .FormField__label__title--must 必須
+          .FormField__input
+            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {}, {class: "FormField__input--short"}
+        .FormField
+          .FormField__label
+            .FormField__label__title
+              .FormField__label__title__name ブランド
+              .FormField__label__title--free 任意
+          .FormField__input
+            = f.text_field :brand, class: 'FormField__input--short', placeholder: '例）シャネル'
+        .FormField
+          .FormField__label
+            .FormField__label__title
+              .FormField__label__title__name 商品の状態
+              .FormField__label__title--must 必須
+          .FormField__input
+            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {}, {class: "FormField__input--short"}
+        .Underline
+        .FormField
+          %h1 配送について
+          .FormField__label
+            .FormField__label__title
+              .FormField__label__title__name 配送料の負担
+              .FormField__label__title--must 必須
+          .FormField__input
+            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {}, {class: "FormField__input--short"}
+        .FormField
+          .FormField__label
+            .FormField__label__title
+              .FormField__label__title__name 発送元の地域
+              .FormField__label__title--must 必須
+          .FormField__input
+            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {}, {class: "FormField__input--short"}
+        .FormField
+          .FormField__label
+            .FormField__label__title
+              .FormField__label__title__name 発送までの日数
+              .FormField__label__title--must 必須
+          .FormField__input
+            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {}, {class: "FormField__input--short"}
+        .Underline
+        .FormField
+          %h1 価格（¥300〜¥9,999,999）
+          .FormField__label
+            .FormField__label__title
+              .FormField__label__title__name 販売価格
+              .FormField__label__title--must 必須
+            .FormField__label__price
+              ¥
+              = f.number_field :price, class: 'FormField__label__price__value'
+        .Submit
+          = f.submit '出品する', class: 'Submit__btn'
+        .Notice 禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
+  .SellingPage__footer
+    .SellingPage__footer__icon
+      = link_to root_path do
+        = image_tag('logo/logo.png', alt: "フッターロゴ")
