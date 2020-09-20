@@ -1,5 +1,5 @@
 #welcome-index {
-  position: relative;
+
   * {
     box-sizing: border-box;
   }
@@ -32,99 +32,7 @@
     vertical-align: bottom;
   }
 
-  .header {
-    padding: 0 60px;
-    &__content {
-      max-width: 1040px;
-      width: 100%;
-      min-height: 82px;
-      margin: 0 auto;
-      padding: 15px 0 0;
-      &--upper {
-        display: flex;
-        h1 {
-          padding-bottom: 10px;
-          margin-right: 30px;
-          border-radius: 4px;
-          a {
-            width: 140px;
-            display: block;
-            img {
-              width: 100%;
-            }
-          }
-          
-        }
-        .header__upper--search {
-          width: 100%;
-          display: flex;
-          form {
-            width: 100%;
-            display: flex;
-            margin-bottom: 5px;
-            align-items: center;
-            input {
-              width: calc(100% - 26px);
-              height: 36px;
-              padding: 0 0 0 5px;
-              display: flex;
-            }
-          }
-          button {
-            width: 36px;
-            border: 0;
-            cursor: pointer;
-            background-color: #3CCACE;
-            padding: 8px;
-            height: 36px;
-            .searchButton {
-              img {
-                width: 100%;
-                vertical-align: bottom;
-              }
-            }
-            &:hover {
-              opacity: 80%;
-            }
-          }
-        }
-      }
-      &--bottom {
-        display: flex;
-        justify-content: space-between;
-        font-size: 14px;
-        margin-bottom: 10px;
-        ul.bottom-left {
-          display: flex;
-          li {
-            padding-right: 30px;
-            a {
-              text-decoration: none;
-              color: #333;
-              line-height: 32px;
-              &:hover {
-                color: #ca7a39;
-              }
-            }
-          }
-          li.header__bottom--brand {
-            padding-left: 16px;
-          }
-        }
-        ul.bottom-right {
-          display: flex;
-          li {
-            padding-left: 16px;
-            a {
-              text-decoration: none;
-              color: #333;
-              line-height: 32px;
-            }
-          }
-        }
-      }
-    }
-  }
+  
   .main {
     background: #f8f8f8;
     .topbanner {
@@ -352,12 +260,20 @@
             color: #333;
             padding: 16px;
             &--name {
+              text-align: left;
             }
             ul {
               display: flex;
               justify-content: space-between;
               align-items: center;
-              li {
+              .product__detail--price {
+                font-weight: bold;
+              }
+              .product__detail--likeButton {
+                a {
+                  text-decoration: none;
+                  color: #333;
+                }
               }
             }
             &--tax {
@@ -370,107 +286,6 @@
     }
     .padding-bottom {
       padding-bottom: 80px;
-    }
-  }
-  .bottomBanner {
-    background-image: image-url("pict/bg-appBanner-pict.jpg");
-    background-size: cover;
-    background-position: center;
-    padding: 100px 40px;
-    &__content {
-      max-width: 1040px;
-      width: 100%;
-      margin: 0 auto;
-      text-align: center;
-      color: #fff;
-      text-shadow: 0 0 5px rgba(0,0,0,0.4);
-      h2 {
-        font-size: 24px;
-        font-weight: bold;
-        color: #fff;
-        text-shadow: 0 0 5px rgba(0,0,0,0.4);
-      }
-      p {
-        font-size: 35px;
-        color: #fff;
-        text-shadow: 0 0 5px rgba(0,0,0,0.4);
-      }
-      .dlButton {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        margin: 20px auto 0;
-        @include app-g__icon
-      }
-    }
-    
-  }
-    
-  footer {
-    padding: 60px 0;
-    color: #fff;
-    background-color: #272727;
-    text-align: center;
-    .footer__content {
-      max-width: 1040px;
-      width: 100%;
-      margin: 0 auto;
-      text-align: center;
-      .menu__lists {
-        display: flex;
-        justify-content: space-around;
-        &--list {
-          h3 {
-            font-size: 16px;
-            font-weight: bold;
-            margin-bottom: 20px;
-          }
-          ul {
-            list-style: none;
-            li {
-              a {
-                color: #fff;
-                text-decoration: none;
-                font-size: 12px;
-                line-height: 32px;
-                &:hover {
-                  border-bottom: 1px solid #fff;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    .footer__logo {
-      max-width: 160px;
-      width: 100%;
-      margin: 0 auto;
-        img {
-          width: 100%;
-          vertical-align: bottom;
-        }
-    }
-  }
-
-  .fixedButton {
-    color: #fff;
-    background: #3CCACE;
-    text-align: center;
-    border-radius: 5px;
-    position: fixed;
-    width: 120px;
-    height: 120px;
-    bottom: 30px;
-    right: 30px;
-    p {
-      margin: 13px 0 10px 0;
-    }
-    img {
-      width: 50px;
-    }
-    &:hover {
-      opacity: 80%;
     }
   }
     

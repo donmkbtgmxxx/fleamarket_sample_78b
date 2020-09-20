@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-
-
+  root 'welcome#index'
+  resources :items
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
@@ -11,4 +11,5 @@ Rails.application.routes.draw do
 
   root to: 'welcome#index'
   resources :items, only: [:index, :new]
+  
 end

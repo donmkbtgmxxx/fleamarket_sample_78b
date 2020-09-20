@@ -44,3 +44,9 @@
     = f.submit "Sign up"
     
 = render "devise/shared/links"
+
+.fixedButton
+  %p 出品する
+  .fixedButton__image
+    = link_to '#' do
+      =image_tag('icon/icon_camera.png', alt: "出品ボタン")

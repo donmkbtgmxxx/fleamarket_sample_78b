@@ -17,11 +17,13 @@
         %li.header__bottom--brand
           %a(href="#") ブランド
       %ul.bottom-right
-      - if user_signed_in?
-        %h2.header__bottom--signout マイページ
-        = link_to "ログアウト", destroy_user_session_path, method: :delete
-      - else
-        %li.header__bottom--sighin
-          = link_to "ログイン", new_user_session_path
-        %li.header__bottom--signup
-          = link_to "新規会員登録", new_user_registration_path
+        - if user_signed_in?
+          %li.header__bottom--mypage
+            = link_to "マイページ"
+          %li.header__bottom--signout  
+            = link_to "ログアウト", destroy_user_session_path, method: :delete
+        - else
+          %li.header__bottom--sighin
+            = link_to "ログイン", new_user_session_path
+          %li.header__bottom--signup
+            = link_to "新規会員登録", new_user_registration_path
