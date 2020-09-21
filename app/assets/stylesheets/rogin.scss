@@ -57,10 +57,7 @@
 
 .mail_field{
   text-align: left;
-  margin: 20px 0 0 20px;
-  font-weight: bold;
-  font-size: small;
-  
+  margin: 20px 0 0 20px; 
 }
 
 .mail_nyuryoku_area{
@@ -70,11 +67,14 @@
 .password_field{
   text-align: left;
   margin: 20px 0 0 20px;
-  font-weight: bold;
-  font-size: small;
 }
 
 .password_nyuryoku_area{
   margin-right: 20px;
 }
 
+.label{
+  font-weight: bold;
+  font-size: small;
+  margin: 0 0 10px 0;
+}
