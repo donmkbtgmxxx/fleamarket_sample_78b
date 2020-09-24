@@ -1,7 +1,7 @@
 .all{
   margin: 0 auto 50px auto;
   width: 70%;
-  background-color: #EEEEEE;;
+  background-color: #f8f8f8;
 }
 
 .body{
@@ -10,10 +10,8 @@
 
 .gaiyou{
   font-size: 30px;
-  margin: 0 auto;
-  width: 100%;
   border-bottom: 1px solid;
-  border-color: lightgray;
+  border-color: #f8f8f8;
   height: 80px;
   display:flex;
   align-items: center;
@@ -24,62 +22,63 @@
 .data{
   width: 70%;
   margin: 0 auto;
+  background-color: #fff;
 }
 
 .nickname{
   border-bottom: 1px solid;
-  border-color: lightgray;
+  border-color: #f8f8f8;
+  margin: 0 20px;
 }
 
 .email{
   border-bottom: 1px solid;
-  border-color: lightgray;
+  border-color: #f8f8f8;
+  margin: 0 20px;
 }
 
 .password{
   border-bottom: 1px solid;
-  border-color: lightgray;
+  border-color: #f8f8f8;
+  margin: 0 20px;
 }
 
 .name{
   border-bottom: 1px solid;
-  border-color: lightgray;
+  border-color: #f8f8f8;
+  padding: 0 20px;
 }
 
 .name_region{
   box-sizing:border-box;
-  width: 175px;
+  width: 50%;
 }
 
 .form-require{
   background: #ea352d;
   color: #fff;
   padding: 2px 4px;
-}
-
-
-
-
-
-
-.name{
-  border-bottom: 1px solid;
-  border-color: lightgray;
+  border-width: 0;
+  border-radius: 4px;
 }
 
 .namefield_kanji{
-  text-align: center;
-  padding: 18px 0 0 0;
+  margin: 36px 0 18px 0;
+  font-weight: bold;
+  font-size: small;
 }
 
 .namefield_kanjifield{
   display: flex;
   justify-content:center ;
-  padding: 0 0 18px 0;
+  margin: 0 0 18px 0;
+  width: 100%;
 }
 
 .namefield_kana{
-  text-align: center;
+  margin: 18px 0 18px 0;
+  font-weight: bold;
+  font-size: small;
 }
 
 .namefield_kanafield{
@@ -89,50 +88,46 @@
 
 .honnin{
   width: 350px;
-  margin: 0 auto;
+  margin: 18px auto;
   text-align: left;
-  padding: 18px 0 18px 0;
 }
 
-.birth{
-  border-bottom: 1px solid;
-  border-color: lightgray;
-  margin: 0 10px 0 10px;
-}
-
-.birth_text{
-  text-align: center;
-  padding: 18px 0 0 0;
-}
-
-.birth_sentaku{
-  display: flex;
-  justify-content: space-between;
-  margin: 0 130px;
-}
-
-.birth_field{
-  display: flex;
-  justify-content: center;
-}
-
-.field{
-  text-align: center;
-  padding: 36px 0 18px 0;
+.field_label{
+  margin: 36px 0 18px 0;
+  font-weight: bold;
+  font-size: small;
 }
 
 .text_region{
-  box-sizing:border-box;
-  width: 350px;
+  width: 100%;
+}
+
+
+.birth{
+  margin-left: 20px;
+}
+
+.birthfield_label{
+  margin: 36px 0 18px 0;
+  font-weight: bold;
+  font-size: small;
+}
+
+.sentaku_field{
+  margin-bottom: 18px;
 }
 
 .actions{
   text-align: center;
 }
 
-.touroku{
+.tugiesusumu{
   box-sizing:border-box;
   width: 25%;
   background-color: #3CCACE;
+  border-width: 0;
+  border-radius: 4px;
+  padding: 10px;
+  color: #fff;
 }
 
