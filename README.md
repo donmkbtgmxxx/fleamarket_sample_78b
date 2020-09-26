@@ -23,6 +23,7 @@ Things you may want to cover:
 
 * ...
 
+
 # DB設計
 
 ## usersテーブル
@@ -35,36 +36,46 @@ Things you may want to cover:
 |first_name_kanji|string|null: false|
 |family_name_kana|string|null: false|
 |first_name_kana|string|null: false|
-|birth_year_id|integer|null: false|
-|birth_month_id|integer|null: false|
-|birth_day_id|integer|null: false|
+|birth_day|date|null: false|
 
 ### Association
+- has_one :address
+- has_many :purchases
 - has_many :items
-- has_many :perchases
-- belongs_to_active_hash :birth_year
-- belongs_to_active_hash :birth_month
-- belongs_to_active_hash :birth_day
 
 
-## Sendsテーブル
+## Addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |family_name_kanji|string|null: false|
 |first_name_kanji|string|null: false|
 |family_name_kana|string|null: false|
 |first_name_kana|string|null: false|
-|perchase|references|foreign_key: true|
 |postcode|string|null: false|
 |prefecture_id|integer|null: false|
 |city|string|null: false|
 |block|string|null: false|
 |building|string|-------|
 |tel|string|-------|
+|user|references|foreign_key: true|
 
 ### Association
-- belongs_to :perchase
+- belongs_to :user
 - belongs_to_active_hash :prefecture
+
+
+## Cardsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|number|integer|null: false, unique: true|
+|year|integer|null: false|
+|month|integer|null: false|
+|user|references|foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to_active_hash :year
+- belongs_to_active_hash :month
 
 
 ## Itemsテーブル
@@ -78,11 +89,11 @@ Things you may want to cover:
 |category_id|integer|null: false|
 |condition_id|integer|null: false|
 |shipping_fee_id|integer|null: false|
-|delay|integer|null: false|
-|prefecture|integer|null: false|
+|delay_id|integer|null: false|
+|prefecture_id|integer|null: false|
 
 ### Association
-- has_one :perchase
+- has_one :purchase
 - has_many :images
 - belongs_to :user
 - belongs_to :brand
@@ -92,7 +103,7 @@ Things you may want to cover:
 - belongs_to_active_hash :delay
 - belongs_to_active_hash :prefecture
 
-## Perchasesテーブル
+## Purchasesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |date|date|null: false|
@@ -102,7 +113,6 @@ Things you may want to cover:
 ## Association
 - belongs_to :user
 - belongs_to :item
-- has_one :send
 
 
 ## Brandsテーブル
@@ -114,7 +124,7 @@ Things you may want to cover:
 - has_many :items
 
 
-## Imagesテーブル
+## Item_imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |body|text|null: false|
