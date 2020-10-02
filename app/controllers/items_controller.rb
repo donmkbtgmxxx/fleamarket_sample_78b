@@ -1,13 +1,18 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
+  def index
+  end
+
   def new
+    @parents = Category.where(ancestry: nil)
     flash[:notice] = "ログイン済みユーザーのみ出品できます" unless user_signed_in?
     @item = Item.new
     @item.item_images.new
   end
 
   def create
+    @parents = Category.where(ancestry: nil)
     @item = Item.new(item_params)
     if @item.save
       redirect_to root_path
