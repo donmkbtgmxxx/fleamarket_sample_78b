@@ -12,8 +12,7 @@
               = image_tag('icon/icon-search 1.png', alt: "サーチボタン")
     .header__content--bottom
       %ul.bottom-left
-        %li.header__bottom--category
-          %a(href="#") カテゴリー
+        = render 'shared/category'
         %li.header__bottom--brand
           %a(href="#") ブランド
       %ul.bottom-right
