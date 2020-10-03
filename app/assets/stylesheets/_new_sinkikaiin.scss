@@ -85,9 +85,45 @@
         &_field{
           .text_region{
             width: 80%;
+            margin-left: -20px;
+          }
+        }
+        &_sai_label{
+          margin: 36px 0 18px 0;
+          font-weight: bold;
+          font-size: small;
+          .form-require{
+            background-color: red;
+            border-width: 0;
+            border-radius: 4px;
+            padding: 2px;
+            color: #fff;
+          }
+        }
+        &_sai_field{
+          .text_region{
+            width: 80%;
           }
         }
       }
+
+      .name_kanji{
+        &_label{
+          margin: 36px 0 18px 0;
+          font-weight: bold;
+          font-size: small;
+          .form-require{
+            background-color: red;
+            border-width: 0;
+            border-radius: 4px;
+            padding: 2px;
+            color: #fff;
+          }
+        }
+        &_field{
+        }
+      }
+    }
 
     .actions{
       text-align: center;
@@ -100,7 +136,6 @@
         padding: 10px;
         color: #fff;
       }
-    }
     }
   }
 }
