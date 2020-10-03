@@ -1,18 +1,27 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
+  before_action :set_category, only: [:new, :create]
+
+  #jsonで親の名前で検索し、紐づく小カテゴリーの配列を取得
+  def get_category_children
+    @category_children = Category.find(params[:parent_name]).children
+  end
+
+  #jsonで子カテゴリーに紐づく孫カテゴリーの配列を取得
+  def get_category_grandchildren
+    @category_grandchildren = Category.find("#{params[:child_id]}").children
+  end
 
   def index
   end
 
   def new
-    @parents = Category.where(ancestry: nil)
     flash[:notice] = "ログイン済みユーザーのみ出品できます" unless user_signed_in?
     @item = Item.new
     @item.item_images.new
   end
 
   def create
-    @parents = Category.where(ancestry: nil)
     @item = Item.new(item_params)
     if @item.save
       redirect_to root_path
@@ -22,6 +31,10 @@ class ItemsController < ApplicationController
   end
   
   private
+  # 親カテゴリー
+  def set_category
+    @parents = Category.where(ancestry: nil)
+  end
   
   def item_params
     params.require(:item).permit(
