@@ -12,6 +12,9 @@
     position: absolute;
     height: 560px;
     background-color: white;
+    top: 89px;
+    left: 60px;
+    z-index: 1;
     // border-right: 1px solid $whitesmoke;
   }
   
@@ -30,8 +33,9 @@
     padding-bottom: 10px;
     &:hover{
       .category__parent{
-        top: 122px;
         display: block;
+
+        position: absolute;
         &--name{
           width: 100%;
           color: black;
