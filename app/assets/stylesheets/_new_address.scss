@@ -1,6 +1,220 @@
 .all{
-  margin: 0 auto 50px auto;
-  width: 70%;
   background-color: #f8f8f8;
-}
 
+  .data{
+    overflow: scroll;
+    width: 70%;
+    margin: 0 auto;
+    background-color: #fff;
+
+    .gaiyou{
+      font-size: 30px;
+      border-bottom: 1px solid;
+      border-color: #f8f8f8;
+      height: 80px;
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+
+    .nyuuryokuform{
+      padding: 0 20px;
+
+      .name_kanji{
+        width: 80%;
+        margin: 0 auto;
+        &_label{
+          margin: 36px 0 18px 0;
+          font-weight: bold;
+          font-size: small;
+          .form-require{
+            background-color: red;
+            border-width: 0;
+            border-radius: 4px;
+            padding: 2px;
+            color: #fff;
+          }
+        }
+        &_field{
+          display: flex;
+          justify-content: space-between;
+          .name_region{
+            width: 49%;
+          }
+        }
+      }
+
+      .name_kana{
+        width: 80%;
+        margin: 0 auto;
+        &_label{
+          margin: 36px 0 18px 0;
+          font-weight: bold;
+          font-size: small;
+          .form-require{
+            background-color: red;
+            border-width: 0;
+            border-radius: 4px;
+            padding: 2px;
+            color: #fff;
+          }
+        }
+        &_field{
+          display: flex;
+          justify-content: space-between;
+          .name_region{
+            width: 49%;
+          }
+        }
+      }
+
+      .yuubinbangou{
+        width: 80%;
+        margin: 0 auto;
+        &_label{
+          margin: 36px 0 18px 0;
+          font-weight: bold;
+          font-size: small;
+          .form-require{
+            background-color: red;
+            border-width: 0;
+            border-radius: 4px;
+            padding: 2px;
+            color: #fff;
+          }
+        }
+        &_field{
+          .postcode{
+            width: 100%;
+          }
+        }
+      }
+
+      .todouhuken{
+        width: 80%;
+        margin: 0 auto;
+        &_label{
+          margin: 36px 0 18px 0;
+          font-weight: bold;
+          font-size: small;
+          .form-require{
+            background-color: red;
+            border-width: 0;
+            border-radius: 4px;
+            padding: 2px;
+            color: #fff;
+          }
+        }
+        &_field{
+          .todouhuken_sentaku{
+            width: 100%;
+          }
+        }
+      }
+
+      .sityouson{
+        width: 80%;
+        margin: 0 auto;
+        &_label{
+          margin: 36px 0 18px 0;
+          font-weight: bold;
+          font-size: small;
+          .form-require{
+            background-color: red;
+            border-width: 0;
+            border-radius: 4px;
+            padding: 2px;
+            color: #fff;
+          }
+        }
+        &_field{
+          .city{
+            width: 100%;
+          }
+        }
+      }
+
+      .banti{
+        width: 80%;
+        margin: 0 auto;
+        &_label{
+          margin: 36px 0 18px 0;
+          font-weight: bold;
+          font-size: small;
+          .form-require{
+            background-color: red;
+            border-width: 0;
+            border-radius: 4px;
+            padding: 2px;
+            color: #fff;
+          }
+        }
+        &_field{
+          .block{
+            width: 100%;
+          }
+        }
+      }
+
+      .heyabangou{
+        width: 80%;
+        margin: 0 auto;
+        &_label{
+          margin: 36px 0 18px 0;
+          font-weight: bold;
+          font-size: small;
+          .form-require{
+            background-color: red;
+            border-width: 0;
+            border-radius: 4px;
+            padding: 2px;
+            color: #fff;
+          }
+        }
+        &_field{
+          .building{
+            width: 100%;
+          }
+        }
+      }
+
+      .denwabangou{
+        width: 80%;
+        margin: 0 auto 18px auto;
+        &_label{
+          margin: 36px 0 18px 0;
+          font-weight: bold;
+          font-size: small;
+          .form-require{
+            background-color: red;
+            border-width: 0;
+            border-radius: 4px;
+            padding: 2px;
+            color: #fff;
+          }
+        }
+        &_field{
+          .tel{
+            width: 100%;
+          }
+        }
+      }
+    }
+    
+    .actions{
+      .touroku_btm{
+        text-align: center;
+        .tourokusuru{
+          box-sizing:border-box;
+          width: 25%;
+          background-color: #3CCACE;
+          border-width: 0;
+          border-radius: 4px;
+          padding: 10px;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
