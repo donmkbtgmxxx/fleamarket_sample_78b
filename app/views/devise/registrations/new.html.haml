@@ -46,14 +46,14 @@
             = f.text_field :family_name_kana, :placeholder => "例) ヤマダ", class:'name_region'
             = f.text_field :first_name_kana, :placeholder => "例) ハナコ", class:'name_region'
               
-          .honnin 
-            %span 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
-      .birth
-        .birthfield_label
-          = f.label :あなたのお誕生日を選択してください
-          %span.form-require 必須
-        .sentaku_field
-          = f.date_select :birthday, class:'text_region'
+        .honnin 
+          %span 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+        .birth
+          .birth_label
+            = f.label :あなたのお誕生日を選択してください
+            %span.form-require 必須
+          .birth_sentaku_field
+            = f.date_select :birthday, class:'text_region'
 
       .actions
         .tugihesusumu_button
