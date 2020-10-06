@@ -2,8 +2,8 @@ FactoryBot.define do
   factory :address do
     family_name_kanji     {"山田"}
     first_name_kanji      {"太郎"}
-    family_name_kana      {"やまだ"}
-    first_name_kana       {"たろう"}
+    family_name_kana      {"ヤマダ"}
+    first_name_kana       {"タロウ"}
     postcode              {"555-5555"}
     prefecture_id         {5}
     city                  {"名古屋"}
