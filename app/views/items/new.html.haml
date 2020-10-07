@@ -17,7 +17,7 @@
             %label.item-num-0#image-box__container{for: "img-file"}
               %i.fas.fa-camera
               %p クリックしてアップロード
-            = f.fields_for :images do |i|
+            = f.fields_for :item_images do |i|
               .input-area
                 = i.file_field :image, type: 'file', name: "item[item_images_attributes][][src]", value:"", style: "display:none", id:"img-file"
 
@@ -64,7 +64,8 @@
               .FormField__label__title__name ブランド
               .FormField__label__title--free 任意
           .FormField__input
-            = f.text_field :brand_id, class: 'FormField__input--short', placeholder: '例）シャネル'
+            = f.fields_for :brand do |i|
+              = i.text_field :brand_name, class: 'FormField__input--short', placeholder: '例）シャネル'
         .FormField
           .FormField__label
             .FormField__label__title

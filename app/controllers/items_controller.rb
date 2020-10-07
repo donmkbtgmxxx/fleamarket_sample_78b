@@ -19,6 +19,7 @@ class ItemsController < ApplicationController
     flash[:notice] = "ログイン済みユーザーのみ出品できます" unless user_signed_in?
     @item = Item.new
     @item.item_images.new
+    @item.build_brand
   end
 
   def create
@@ -38,7 +39,7 @@ class ItemsController < ApplicationController
   
   def item_params
     params.require(:item).permit(
-      :product_name, :description, :category_id, :brand_id, :condition_id, :shipping_fee_id, :prefecture_id, :day_to_ship_id, :price, item_images_attributes: [:src]
+      :product_name, :description, :category_id, :condition_id, :shipping_fee_id, :prefecture_id, :day_to_ship_id, :price, item_images_attributes: [:src], brand_attributes: [:brand_name]
     ).merge(user_id: current_user.id)
   end
 end
