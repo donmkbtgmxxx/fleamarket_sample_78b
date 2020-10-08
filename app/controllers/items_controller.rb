@@ -13,6 +13,7 @@ class ItemsController < ApplicationController
   end
 
   def index
+    @parents = Category.where(ancestry: nil)
   end
 
   def new
