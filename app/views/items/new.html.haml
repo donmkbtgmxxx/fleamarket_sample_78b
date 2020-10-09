@@ -7,6 +7,7 @@
   .SellingPage__content
     .SellingPage__content__form
       = form_for(@item) do |f|
+        = render 'error_form', locals: { item: @item }
         .FormField
           .FormField__label
             .FormField__label__title
@@ -44,8 +45,6 @@
               .FormField__label__title__name カテゴリー
               .FormField__label__title--must 必須
 
-
-
           .FormField__input#category_box
             .pulldown#partent_box
               = f.collection_select :category_id, @parents.all, :id, :name, {include_blank: "選択してください"}, {class: "FormField__input--short", id: "parent_category", name: ""}
@@ -54,9 +53,6 @@
               -#親カテゴリー選択によって子カテゴリー表示
             .pulldown.item_input__body__category__grandchildren#grandchildren_box
               -#子カテゴリー選択によって孫カテゴリー表示
-
-
-
 
         .FormField
           .FormField__label

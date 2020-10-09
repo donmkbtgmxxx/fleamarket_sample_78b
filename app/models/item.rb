@@ -5,25 +5,23 @@ class Item < ApplicationRecord
   belongs_to :brand, optional: true, dependent: :destroy
   accepts_nested_attributes_for :brand, allow_destroy: true
   has_one :purchase
-  belongs_to :category
-
+  # belongs_to :category, optional: true
+  
 extend ActiveHash::Associations::ActiveRecordExtensions
 belongs_to_active_hash :condition
 belongs_to_active_hash :ShippingFee
 belongs_to_active_hash :DayToShip
 belongs_to_active_hash :prefecture
 
-  with_options presence: true do
-    validates :product_name
-    validates :description
-    validates :category_id
-    validates :condition_id
-    validates :shipping_fee_id
-    validates :prefecture_id
-    validates :day_to_ship_id
-    validates :price
-    validates :item_image_ids
-  end
+validates :item_image_ids, presence: { message: "は1枚以上選択してください。" }
+validates :product_name, presence: { message: "を入力してください。" }
+validates :description, presence: { message: "入力してください。" }
+validates :category_id, presence: { message: "を選択してください。" }
+validates :condition_id, presence: { message: "を選択してください。" }
+validates :shipping_fee_id, presence: { message: "を選択してください。" }
+validates :prefecture_id, presence: { message: "を選択してください。" }
+validates :day_to_ship_id, presence: { message: "を選択してください。" }
+validates :price, presence: { message: "を入力してください。" }
 
-  validates :price, format: {with: /\A[0-9０-９]+\z/}
+validates :price, format: {with: /\A[0-9０-９]+\z/}
 end
