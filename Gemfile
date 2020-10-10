@@ -38,8 +38,9 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
   gem 'capistrano-rails-console'
-  gem 'rspec-rails', '~> 4.0.0.beta2'
+  gem "rspec-rails", "4.0.1"
   gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 group :development do
@@ -76,3 +77,8 @@ gem 'ancestry'
 gem 'jquery-rails'
 gem 'fog-aws'
 gem 'rails-i18n'
+
+# 消さないでください
+# gem 'public_suffix','4.0.5'
+# gem 'warden','1.2.8'
+# gem 'minitest','5.14.1'
