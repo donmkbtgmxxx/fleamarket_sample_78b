@@ -12,14 +12,14 @@ describe Purchase do
     # it "is invalid without a user_id" do
       purchase = build(:purchase, user_id: nil)
       purchase.valid?
-      expect(purchase.errors[:user_id]).to include("can't be blank")
+      expect(purchase.errors[:user_id]).to include("を入力してください")
     end
 
     it "item_idが空では登録できないこと" do
       # it "is invalid without a item_id" do
         purchase = build(:purchase, item_id: nil)
         purchase.valid?
-        expect(purchase.errors[:item_id]).to include("can't be blank")
+        expect(purchase.errors[:item_id]).to include("を入力してください")
       end
   end
 end
