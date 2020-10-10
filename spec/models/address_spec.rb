@@ -54,15 +54,15 @@ describe Address do
         expect(address.errors[:family_name_kana]).to include("を入力してください")
       end
   
-      it "family_name_kanaが全角文字なら登録できること" do
-      # it "is valid with a family_name_kanna that is double-byte character" do
-        address = build(:address, family_name_kana: "やまだ")
+      it "family_name_kanaがカタカナなら登録できること" do
+      # it "is valid with a family_name_kanna that is katakana character" do
+        address = build(:address, family_name_kana: "ヤマダ")
         expect(address).to be_valid
       end
   
-      it "family_name_kanaが半角文字では登録できないこと" do
-      # it "is invalid with a family_name_kana that is one-byte character" do
-        address = build(:address, family_name_kana: "yamada")
+      it "family_name_kanaがひらがなでは登録できないこと" do
+      # it "is invalid with a family_name_kana that is hiragana character" do
+        address = build(:address, family_name_kana: "やまだ")
         address.valid?
         expect(address.errors[:family_name_kana]).to include("は不正な値です")
       end
@@ -74,15 +74,15 @@ describe Address do
         expect(address.errors[:first_name_kana]).to include("は不正な値です")
       end
   
-      it "first_name_kanaが全角文字なら登録できること" do
-      # it "is valid with a family_name_kanna that is double-byte character" do
-        address = build(:address, first_name_kana: "たろう")
+      it "first_name_kanaがカタカナなら登録できること" do
+      # it "is valid with a family_name_kanna that is カタカナ character" do
+        address = build(:address, first_name_kana: "タロウ")
         expect(address).to be_valid
       end
   
-      it "first_name_kanaが半角文字では登録できないこと" do
-      # it "is invalid with a first_name_kana that is one-byte character" do
-        address = build(:address, first_name_kana: "taro")
+      it "first_name_kanaがひらがなでは登録できないこと" do
+      # it "is invalid with a first_name_kana that is hiragana character" do
+        address = build(:address, first_name_kana: "たろう")
         address.valid?
         expect(address.errors[:first_name_kana]).to include("は不正な値です")
       end
