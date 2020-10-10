@@ -1,5 +1,7 @@
 class WelcomeController < ApplicationController
-  def index
+  
+  
+  def mypage
     @parents = Category.where(ancestry: nil)
   end
 end
