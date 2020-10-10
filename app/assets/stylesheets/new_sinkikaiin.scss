@@ -23,7 +23,8 @@
 
       .nickname{
         margin: 0 auto;
-        width: 80%;
+        width: 60%;
+        text-align: center;
         &_label{
           margin: 36px 0 18px 0;
           font-weight: bold;
@@ -37,9 +38,7 @@
           }
         }
         &_field{
-          display: flex;
-          justify-content: space-between;
-          .text_region{
+          .text-region{
             width: 80%;
           }
         }
@@ -47,7 +46,8 @@
 
       .email{
         margin: 0 auto;
-        width: 80%;
+        width: 60%;
+        text-align: center;
         &_label{
           margin: 36px 0 18px 0;
           font-weight: bold;
@@ -61,7 +61,7 @@
           }
         }
         &_field{
-          .text_region{
+          .text-region{
             width: 80%;
           }
         }
@@ -69,7 +69,8 @@
 
       .password{
         margin: 0 auto;
-        width: 80%;
+        width: 60%;
+        text-align: center;
         &_label{
           margin: 36px 0 18px 0;
           font-weight: bold;
@@ -83,10 +84,8 @@
           }
         }
         &_field{
-          width: 80%;
-          .text_region{
-            width: 100%;
-            margin-left: -20px;
+          .text-region{
+            width: 80%;
           }
         }
         &_sai_label{
@@ -102,7 +101,7 @@
           }
         }
         &_sai_field{
-          .text_region{
+          .text-region{
             width: 80%;
           }
         }
@@ -110,6 +109,7 @@
 
       .name_kanji{
         margin: 0 auto;
+        text-align: center;
         &_label{
           margin: 36px 0 18px 0;
           font-weight: bold;
@@ -123,13 +123,18 @@
           }
         }
         &_field{
-          width: 80%;
+          width: 60%;
+          margin: 0 auto;
+          .name-region{
+            width: 49%;
+          }
         }
       }
 
       .name_kana{
         width: 80%;
         margin: 0 auto;
+        text-align: center;
         &_label{
           margin: 36px 0 18px 0;
           font-weight: bold;
@@ -143,23 +148,28 @@
           }
         }
         &_field{
-          width: 80%;
-          margin: 0 0 18px 0;
+          width: 60%;
+          margin: 0 auto 18px auto;
+          .name-region{
+            width: 49%;
+          }
         }
       }
 
       .honnin{
-        width: 80%;
+        width: 60%;
         margin: 0 auto;
         .ansin{
           word-wrap: normal;
-          text-align: left;
+          text-align: center;
           width: 80%;
+          margin: 0 auto;
         }
       }
 
       .birth{
         margin: 0 57.953px 0 57.953px;
+        text-align: center;
         &_label{
           margin: 36px 0 18px 0;
           font-weight: bold;
