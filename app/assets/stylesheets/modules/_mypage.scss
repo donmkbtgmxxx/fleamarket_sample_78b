@@ -1,0 +1,45 @@
+#welcome-mypage, #cards-new, #cards-show {
+  * {
+    box-sizing: border-box;
+  }
+
+  .UserMyPage{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    &__content {
+      width: 100%;
+      background-color: #f8f8f8;
+      padding: 50px;
+      display: flex;
+      justify-content: flex-start;
+      &__sidebar {
+        width: 280px;
+        height: 100%;
+        margin-right: 50px;
+        .PageTitle {background-color: rgb(230, 230, 230);}
+        .link {
+          height: 50px;
+          display: flex;
+          align-items: center;
+          background-color: white;
+          justify-content: space-between;
+          padding: 0 20px;
+          border-bottom: solid 2px #f8f8f8;
+          &:hover {opacity: 0.2;}
+          .text {
+            font-size: 14px;
+            color: rgb(95, 95, 95);
+            width: 250px;
+            text-decoration: none;
+          }
+        }
+      }
+      &__main {
+        width: 100%;
+        height: 100%;
+        background-color: white;
+      }
+    }
+  }
+}
