@@ -14,6 +14,7 @@ belongs_to_active_hash :DayToShip
 belongs_to_active_hash :prefecture
 
 validates :item_image_ids, presence: { message: "は1枚以上選択してください。" }
+validates :item_image_ids, length: { minimum: 1, maximum: 10 }
 validates :product_name, presence: { message: "を入力してください。" }
 validates :description, presence: { message: "入力してください。" }
 validates :category_id, presence: { message: "を選択してください。" }
