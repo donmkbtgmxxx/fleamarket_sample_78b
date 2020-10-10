@@ -22,6 +22,7 @@ validates :shipping_fee_id, presence: { message: "を選択してください。
 validates :prefecture_id, presence: { message: "を選択してください。" }
 validates :day_to_ship_id, presence: { message: "を選択してください。" }
 validates :price, presence: { message: "を入力してください。" }
+validates :user_id, presence: { message: "ログインしてください"}
 
 validates :price, format: {with: /\A[0-9０-９]+\z/}
 end
