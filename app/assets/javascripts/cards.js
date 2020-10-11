@@ -3,7 +3,6 @@ $(function() {
 
   $('#card-registration').on('submit', function(e) {
     e.preventDefault();
-    console.log('発火')
 
     let card = {
         number: $('#card-number').val(),
