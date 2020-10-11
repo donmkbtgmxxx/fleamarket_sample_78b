@@ -32,6 +32,11 @@ class ItemsController < ApplicationController
     end
   end
   
+  def show
+    @item = Item.find(params[:id])
+    @purchase = Purchase.where(item_id: @item.id)
+  end
+  
   private
   # 親カテゴリー
   def set_category
