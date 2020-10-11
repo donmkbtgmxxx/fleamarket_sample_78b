@@ -1,0 +1,12 @@
+= render 'shared/header'
+.UserMyPage
+  .UserMyPage__content
+    = render 'sidebar'
+    .UserMyPage__content__main
+      .UserMypage__content__main__button
+        = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'text'
+.fixedButton
+  %p 出品する
+  .fixedButton__image
+    = link_to 'items/new' do
+      =image_tag('icon/icon_camera.png', alt: "出品ボタン")
