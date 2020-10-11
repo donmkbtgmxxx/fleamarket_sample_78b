@@ -1,0 +1,40 @@
+= render 'shared/header'
+.UserMyPage
+  .UserMyPage__content
+    = render 'welcome/sidebar'
+    .CardFormPage
+      .CardFormPage__content
+        .CardFormPage__content__title クレジットカード情報入力
+        .Underline
+        .CardFormPage__content__form
+          = form_with url: cards_path, id: 'card-registration' do |f|
+            .FormField
+              .FormField__label
+                .FormField__label__title
+                  .FormField__label__title__name カード番号
+                  .FormField__label__title--must 必須
+              .FormField__input
+                = f.number_field :number, class: 'FormField__input--short', id: 'card-number', placeholder: '半角数字のみ'
+            .FormField
+              .FormField__label
+                .FormField__label__title
+                  .FormField__label__title__name 有効期限
+                  .FormField__label__title--must 必須
+              .FormField__input
+                .FormField__input__month
+                  = f.select :exp_month, [["01",1],["02",2],["03",3],["04",4],["05",5],["06",6],["07",7],["08",8],["09",9],["10",10],["11",11],["12",12]],{} , class: 'FormField__input__month--xx', id: 'card-expire-month'
+                  %h2 月
+                .FormField__input__year
+                  = f.select :exp_year, [["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029],["30",2030]],{} , class: 'FormField__input__year--xx', id: 'card-expire-year'
+                  %h2 年
+            .FormField
+              .FormField__label
+                .FormField__label__title
+                  .FormField__label__title__name セキュリティコード
+                  .FormField__label__title--must 必須
+              .FormField__input
+                = f.number_field :cvc, class: 'FormField__input--short', id: 'card-cvc', placeholder: 'カード背面4桁もしくは3桁の番号'
+            .Submit
+              = f.submit '追加する', id: 'card-save', class: 'Submit__btn'
+            .Back
+              = link_to 'もどる', '/', class: 'Back__text'
