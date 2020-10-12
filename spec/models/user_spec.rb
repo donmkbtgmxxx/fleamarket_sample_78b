@@ -13,14 +13,14 @@ describe User do
     # it "is invalid without a nickname" do
       user = build(:user, nickname: nil)
       user.valid?
-      expect(user.errors[:nickname]).to include("can't be blank")
+      expect(user.errors[:nickname]).to include("を入力してください")
     end
 
     it "emailが空では登録できないこと" do
     # it "is invalid without an email" do
       user = build(:user, email: nil)
       user.valid?
-      expect(user.errors[:email]).to include("can't be blank")
+      expect(user.errors[:email]).to include("を入力してください")
     end
 
     it "重複したemailが存在する場合登録できないこと" do
@@ -28,21 +28,21 @@ describe User do
       user = create(:user)
       another_user = build(:user, email: user.email)
       another_user.valid?
-      expect(another_user.errors[:email]).to include("has already been taken")
+      expect(another_user.errors[:email]).to include("はすでに存在します")
     end
 
     it "passwordが空では登録できないこと" do
     # it "is invalid without a password" do
       user = build(:user, password: nil)
       user.valid?
-      expect(user.errors[:password]).to include("can't be blank")
+      expect(user.errors[:password]).to include("を入力してください")
     end
 
     it "passwordが存在してもpassword_confirmationが空では登録できないこと" do
     # it "is invalid without a password_confirmation although with a password" do
       user = build(:user, password_confirmation: "")
       user.valid?
-      expect(user.errors[:password_confirmation]).to include("doesn't match Password")
+      expect(user.errors[:password_confirmation]).to include("とPasswordの入力が一致しません")
     end
 
 
@@ -56,14 +56,14 @@ describe User do
     # it "is invalid with a password that has less than 6 characters" do
       user = build(:user, password: "123456", password_confirmation: "123456")
       user.valid?
-      expect(user.errors[:password]).to include("is too short (minimum is 7 characters)")
+      expect(user.errors[:password]).to include("は7文字以上で入力してください")
     end
 
     it "family_name_kanjiが空では登録できないこと" do
     # it "is invalid without a family_name_kanji" do
       user = build(:user, family_name_kanji: nil)
       user.valid?
-      expect(user.errors[:family_name_kanji]).to include("can't be blank")
+      expect(user.errors[:family_name_kanji]).to include("を入力してください")
     end
 
     it "family_name_kanjiが全角文字なら登録できること" do
@@ -76,14 +76,14 @@ describe User do
     # it "is invalid with a family_name_kanji that is one-byte character" do
       user = build(:user, family_name_kanji: "yamada")
       user.valid?
-      expect(user.errors[:family_name_kanji]).to include("is invalid")
+      expect(user.errors[:family_name_kanji]).to include("は不正な値です")
     end
     
     it "first_name_kanjiが空では登録できないこと" do
     # it "is invalid without a first_name_kanji" do
       user = build(:user, first_name_kanji: nil)
       user.valid?
-      expect(user.errors[:first_name_kanji]).to include("can't be blank")
+      expect(user.errors[:first_name_kanji]).to include("を入力してください")
     end
 
     it "first_name_kanjiが全角文字なら登録できること" do
@@ -96,14 +96,14 @@ describe User do
     # it "is invalid with a first_name_kanji that is one-byte character" do
       user = build(:user, first_name_kanji: "taro")
       user.valid?
-      expect(user.errors[:first_name_kanji]).to include("is invalid")
+      expect(user.errors[:first_name_kanji]).to include("は不正な値です")
     end
     
     it "family_name_kanaが空では登録できないこと" do
     # it "is invalid without a family_name_kana" do
       user = build(:user, family_name_kana: nil)
       user.valid?
-      expect(user.errors[:family_name_kana]).to include("can't be blank")
+      expect(user.errors[:family_name_kana]).to include("を入力してください")
     end
 
     it "family_name_kanaがカタカナなら登録できること" do
@@ -116,14 +116,14 @@ describe User do
     # it "is invalid with a family_name_kana that is hiragana character" do
       user = build(:user, family_name_kana: "やまだ")
       user.valid?
-      expect(user.errors[:family_name_kana]).to include("is invalid")
+      expect(user.errors[:family_name_kana]).to include("は不正な値です")
     end
 
     it "first_name_kanaが空では登録できないこと" do
     # it "is invalid without a first_name_kana" do
       user = build(:user, first_name_kana: nil)
       user.valid?
-      expect(user.errors[:first_name_kana]).to include("can't be blank")
+      expect(user.errors[:first_name_kana]).to include("を入力してください")
     end
 
     it "first_name_kanaがカタカナなら登録できること" do
@@ -136,14 +136,14 @@ describe User do
     # it "is invalid with a first_name_kana that is hiragana character" do
       user = build(:user, first_name_kana: "たろう")
       user.valid?
-      expect(user.errors[:first_name_kana]).to include("is invalid")
+      expect(user.errors[:first_name_kana]).to include("は不正な値です")
     end
 
     it "birthdayが空では登録できないこと" do
     # it "is invalid without a birthday" do
       user = build(:user, birthday: nil)
       user.valid?
-      expect(user.errors[:birthday]).to include("can't be blank")
+      expect(user.errors[:birthday]).to include("を入力してください")
     end
   end
 end

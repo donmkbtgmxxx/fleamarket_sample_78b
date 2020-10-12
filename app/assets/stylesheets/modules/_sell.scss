@@ -1,4 +1,4 @@
-#items-new {
+#items-new, #items-create {
   * {
     box-sizing: border-box;
   }
@@ -66,32 +66,24 @@
             color: rgb(100, 100, 100);
             margin-bottom: 15px;
           }
-          .ImageUploader {
+          #image-box-1 {
             width: 100%;
-            height: 150px;
-            display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
-            &__text {
-              background-color: rgb(243, 243, 243);
-              width: 100%;
-              height: 100%;
-              font-size: 10px;
-              color: gray;
-              padding-top: 90px;
+            display: flex;
+            #image-box__container {
+              margin-bottom: 10px;
               text-align: center;
-              border: lightgray dashed 1px;
-              border-radius: 3px;
-            }
-            &__image {
-              padding-top: 50px;
-              text-align: center;
-              width: 100%;
-              height: 100%;
-              position: absolute;
-              &__file {
-                display: none;
+              display: block;
+              border: 1px dashed #ccc;
+              background: rgb(243, 243, 243);
+              height: 162px;
+              cursor: pointer;
+              i {
+                padding-top: 67px;
+              }
+              p {
+                color: rgb(100, 100, 100);
               }
             }
           }
@@ -149,6 +141,22 @@
               height: 120px;
             }
           }
+          #category_box {
+            display: block;
+          }
+          &__input {
+            display: flex;
+            align-items: flex-end;
+            .pulldown {
+              width: 100%;
+              .FormField__input--short {
+                @include input_form();
+                width: 100%;
+                height: 40px;
+                margin-bottom: 5px;
+              }
+            }
+          }
         }
         .Submit {
           width: 100%;
@@ -183,4 +191,36 @@
       @include logo();
     }
   }
+}
+
+.item-num-0{
+  width: 100%;
+}
+.item-num-1{
+  width: 491px;
+}
+.item-num-2{
+  width: 363px;
+}
+.item-num-3{
+  width: 234px;
+}
+.item-num-4{
+  width: 106px;
+}
+//下段のfile_field
+.item-num-5{
+  width: 100%;
+}
+.item-num-6{
+  width: 491px;
+}
+.item-num-7{
+  width: 363px;
+}
+.item-num-8{
+  width: 234px;
+}
+.item-num-9{
+  width: 106px;
 }
