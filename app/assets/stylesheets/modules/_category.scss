@@ -3,17 +3,12 @@
     display: none;
   }
   
-  .category__icon,.brands__icon{
-    // color: $mainblueColor;
-  }
-  
   // カテゴリーの大枠の要素の共通項
   .category__list{
     position: absolute;
     height: 560px;
     background-color: white;
     z-index: 1;
-    // border-right: 1px solid $whitesmoke;
   }
   
   // 子要素はカテゴリー名の共通項
@@ -24,7 +19,6 @@
     padding: 3px 15px;
     font-size: 11px;
     letter-spacing: 2px;
-    // @include hover__color(black, $lightgray, 1);
   }
   
   .categories{
@@ -41,7 +35,6 @@
           padding: 10px 20px;
           font-size: 13px;
           letter-spacing: 2px;
-          // @include hover__color(white, $skyblue, 1);
         }
         li {
           &:hover{
