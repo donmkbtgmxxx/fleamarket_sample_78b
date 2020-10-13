@@ -1,5 +1,6 @@
 .all{
   background-color: #f8f8f8;
+  padding: 50px 0 50px 0;
 
   .data{
     overflow: scroll;
@@ -20,6 +21,11 @@
 
     .nyuuryokuform{
       padding: 0 20px;
+
+      .field{
+        text-align: center;
+        margin-bottom: 18px;
+      }
 
       .nickname{
         margin: 0 auto;
@@ -350,8 +356,34 @@
       }
     }
 
+
+    .acount_sakusei{
+      text-align: center;
+      margin-bottom: 40px;
+      .btn-default.btn-mail{
+        text-decoration: none;
+        box-sizing:border-box;
+        width: 25%;
+        background-color: darkgreen;
+        border-width: 0;
+        border-radius: 4px;
+        padding: 10px;
+        color: #fff;
+      }
+    }
+
     .actions{
       text-align: center;
+      .rogin-btn{
+        box-sizing:border-box;
+        width: 25%;
+        background-color: #3CCACE;
+        border-width: 0;
+        border-radius: 4px;
+        padding: 10px;
+        color: #fff;
+        margin-bottom: 40px;
+      }
       .tugiesusumu{
         box-sizing:border-box;
         width: 25%;
@@ -360,6 +392,7 @@
         border-radius: 4px;
         padding: 10px;
         color: #fff;
+        margin-bottom: 40px;
       }
       .tourokusuru{
         box-sizing:border-box;
@@ -369,6 +402,7 @@
         border-radius: 4px;
         padding: 10px;
         color: #fff;
+        margin-bottom: 40px;
       }
     }
   }
