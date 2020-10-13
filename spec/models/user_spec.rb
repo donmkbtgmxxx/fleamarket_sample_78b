@@ -106,15 +106,15 @@ describe User do
       expect(user.errors[:family_name_kana]).to include("は不正な値です")
     end
 
-    it "family_name_kanaが全角文字なら登録できること" do
-    # it "is valid with a family_name_kanna that is double-byte character" do
-      user = build(:user, family_name_kana: "やまだ")
+    it "family_name_kanaがカタカナなら登録できること" do
+    # it "is valid with a family_name_kanna that is katakana character" do
+      user = build(:user, family_name_kana: "ヤマダ")
       expect(user).to be_valid
     end
 
-    it "family_name_kanaが半角文字では登録できないこと" do
-    # it "is invalid with a family_name_kana that is one-byte character" do
-      user = build(:user, family_name_kana: "yamada")
+    it "family_name_kanaがひらがなでは登録できないこと" do
+    # it "is invalid with a family_name_kana that is hiragana character" do
+      user = build(:user, family_name_kana: "やまだ")
       user.valid?
       expect(user.errors[:family_name_kana]).to include("は不正な値です")
     end
@@ -126,15 +126,15 @@ describe User do
       expect(user.errors[:first_name_kana]).to include("は不正な値です")
     end
 
-    it "first_name_kanaが全角文字なら登録できること" do
-    # it "is valid with a family_name_kanna that is double-byte character" do
-      user = build(:user, first_name_kana: "たろう")
+    it "first_name_kanaがカタカナなら登録できること" do
+    # it "is valid with a family_name_kanna that is katakana character" do
+      user = build(:user, first_name_kana: "タロウ")
       expect(user).to be_valid
     end
 
-    it "first_name_kanaが半角文字では登録できないこと" do
-    # it "is invalid with a first_name_kana that is one-byte character" do
-      user = build(:user, first_name_kana: "taro")
+    it "first_name_kanaがひらがなでは登録できないこと" do
+    # it "is invalid with a first_name_kana that is hiragana character" do
+      user = build(:user, first_name_kana: "たろう")
       user.valid?
       expect(user.errors[:first_name_kana]).to include("は不正な値です")
     end

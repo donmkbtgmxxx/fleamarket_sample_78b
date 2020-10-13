@@ -10,7 +10,7 @@ module FleamarketSample78b
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
-    #118n
+    #i18n
     config.i18n.default_locale = :ja
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.yml').to_s]
     config.active_model.i18n_customize_full_message = true
