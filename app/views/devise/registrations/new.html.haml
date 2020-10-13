@@ -7,62 +7,62 @@
       .nyuuryokuform
 
         .nickname
-          .nickname_label
+          .nickname__label
             = f.label :ニックネームを入力してください
-            %span.form-require 必須
-          .nickname_field
-            = f.text_field :nickname, :placeholder => "例) フリマー", class:'text-region'
+            %span.form__require 必須
+          .nickname__field
+            = f.text_field :nickname, :placeholder => "例) フリマー", class:'text__region'
 
         .email
-          .email_label
+          .email__label
             = f.label :emailアドレスを入力してください
-            %span.form-require 必須
-          .email_field
-            = f.email_field :email, autofocus: true, autocomplete: "email" , :placeholder => "PC携帯どちらもOK!", class:'text-region'
+            %span.form__require 必須
+          .email__field
+            = f.email_field :email, autofocus: true, autocomplete: "email" , :placeholder => "PC携帯どちらもOK!", class:'text__region'
 
         .password
-          .password_label
+          .password__label
             = f.label :パスワードを入力してください
-            %span.form-require 必須
+            %span.form__require 必須
             - if @minimum_password_length
               %em
-          .password_field
-            = f.password_field :password, autocomplete: "new-password", :placeholder => "半角英数字7文字以上", class:'text-region'
-          .password_sai_label
+          .password__field
+            = f.password_field :password, autocomplete: "new-password", :placeholder => "半角英数字7文字以上", class:'text__region'
+          .password__sai__label
             = f.label :パスワードを再入力してください
-            %span.form-require 必須
-          .password_sai_field
-            = f.password_field :password_confirmation, autocomplete: "new-password", :placeholder => "パスワード確認用", class:'text-region'
+            %span.form__require 必須
+          .password__sai__field
+            = f.password_field :password_confirmation, autocomplete: "new-password", :placeholder => "パスワード確認用", class:'text__region'
 
-        .name_kanji
-          .name_kanji_label
+        .name__kanji
+          .name__kanji__label
             = f.label :お名前（漢字）を入力してください
-            %span.form-require 必須
-          .name_kanji_field
-            = f.text_field :family_name_kanji, :placeholder => "例) 山田", class:'name-region'
-            = f.text_field :first_name_kanji, :placeholder => "例) 花子", class:'name-region'
+            %span.form__require 必須
+          .name__kanji__field
+            = f.text_field :family_name_kanji, :placeholder => "例) 山田", class:'name__region'
+            = f.text_field :first_name_kanji, :placeholder => "例) 花子", class:'name__region'
 
-        .name_kana
-          .name_kana_label
-            = f.label :お名前（カナ）を入力してください
-            %span.form-require 必須
-          .name_kana_field
-            = f.text_field :family_name_kana, :placeholder => "例) ヤマダ", class:'name-region'
-            = f.text_field :first_name_kana, :placeholder => "例) ハナコ", class:'name-region'
+        .name__kana
+          .name__kana__label
+            = f.label :お名前（かな）を入力してください
+            %span.form__require 必須
+          .name_kana__field
+            = f.text_field :family_name_kana, :placeholder => "例) やまだ", class:'name__region'
+            = f.text_field :first_name_kana, :placeholder => "例) はなこ", class:'name__region'
               
         .honnin 
           .ansin
-            .ansin_text 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+            .ansin__text 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
 
         .birth
-          .birth_label
+          .birth__label
             = f.label :あなたのお誕生日を選択してください
             %span.form-require 必須
-          .birth_sentaku_field
-            = f.date_select :birthday, class:'text-region'
+          .birth__sentaku__field
+            = f.date_select :birthday, class:'text__region'
 
       .actions
-        .tugihesusumu_button
+        .tugihesusumu__button
           %a(href="app/views/items/new.html.haml")
             = f.submit "次へ進む", class:'tugiesusumu'
           

@@ -31,11 +31,11 @@
         margin: 0 auto;
         width: 80%;
         text-align: center;
-        &_label{
+        &__label{
           margin: 36px 0 18px 0;
           font-weight: bold;
           font-size: small;
-          .form-require{
+          .form__require{
             background-color: red;
             border-width: 0;
             border-radius: 4px;
@@ -43,10 +43,10 @@
             color: #fff;
           }
         }
-        &_field{
+        &__field{
           width: 60%;
           margin: 0 auto;
-          .text-region{
+          .text__region{
             width: 80%;
           }
         }
@@ -56,11 +56,11 @@
         margin: 0 auto;
         width: 80%;
         text-align: center;
-        &_label{
+        &__label{
           margin: 36px 0 18px 0;
           font-weight: bold;
           font-size: small;
-          .form-require{
+          .form__require{
             background-color: red;
             border-width: 0;
             border-radius: 4px;
@@ -68,10 +68,10 @@
             color: #fff;
           }
         }
-        &_field{
+        &__field{
           width: 60%;
           margin: 0 auto;
-          .text-region{
+          .text__region{
             width: 80%;
           }
         }
@@ -81,11 +81,11 @@
         margin: 0 auto;
         width: 80%;
         text-align: center;
-        &_label{
+        &__label{
           margin: 36px 0 18px 0;
           font-weight: bold;
           font-size: small;
-          .form-require{
+          .form__require{
             background-color: red;
             border-width: 0;
             border-radius: 4px;
@@ -93,18 +93,18 @@
             color: #fff;
           }
         }
-        &_field{
+        &__field{
           width: 60%;
           margin: 0 auto;
-          .text-region{
+          .text__region{
             width: 80%;
           }
         }
-        &_sai_label{
+        &__sai__label{
           margin: 36px 0 18px 0;
           font-weight: bold;
           font-size: small;
-          .form-require{
+          .form__require{
             background-color: red;
             border-width: 0;
             border-radius: 4px;
@@ -112,24 +112,24 @@
             color: #fff;
           }
         }
-        &_sai_field{
+        &__sai__field{
           width: 60%;
           margin: 0 auto;
-          .text-region{
+          .text__region{
             width: 80%;
           }
         }
       }
 
-      .name_kanji{
+      .name__kanji{
         width: 80%;
         margin: 0 auto;
         text-align: center;
-        &_label{
+        &__label{
           margin: 36px 0 18px 0;
           font-weight: bold;
           font-size: small;
-          .form-require{
+          .form__require{
             background-color: red;
             border-width: 0;
             border-radius: 4px;
@@ -137,24 +137,24 @@
             color: #fff;
           }
         }
-        &_field{
+        &__field{
           width: 60%;
           margin: 0 auto;
-          .name-region{
+          .name__region{
             width: 40%;
           }
         }
       }
 
-      .name_kana{
+      .name__kana{
         width: 80%;
         margin: 0 auto;
         text-align: center;
-        &_label{
+        &__label{
           margin: 36px 0 18px 0;
           font-weight: bold;
           font-size: small;
-          .form-require{
+          .form__require{
             background-color: red;
             border-width: 0;
             border-radius: 4px;
@@ -162,10 +162,10 @@
             color: #fff;
           }
         }
-        &_field{
+        &__field{
           width: 60%;
           margin: 0 auto 18px auto;
-          .name-region{
+          .name__region{
             width: 40%;
           }
         }
@@ -177,7 +177,7 @@
         .ansin{
           width: 60%;
           margin: 0 auto;
-          &_text{
+          &__text{
           word-wrap: normal;
           width: 80%;
           margin: 0 auto;
@@ -188,11 +188,11 @@
       .birth{
         margin: 0 57.953px 0 57.953px;
         text-align: center;
-        &_label{
+        &__label{
           margin: 36px 0 18px 0;
           font-weight: bold;
           font-size: small;
-          .form-require{
+          .form__require{
             background-color: red;
             border-width: 0;
             border-radius: 4px;
@@ -200,7 +200,7 @@
             color: #fff;
           }
         }
-        &_sentaku_field{
+        &__sentaku__field{
           margin-bottom: 18px;
         }
       }
@@ -209,11 +209,11 @@
         margin: 0 auto;
         width: 80%;
         text-align: center;
-        &_label{
+        &__label{
           margin: 36px 0 18px 0;
           font-weight: bold;
           font-size: small;
-          .form-require{
+          .form__require{
             background-color: red;
             border-width: 0;
             border-radius: 4px;
@@ -221,7 +221,7 @@
             color: #fff;
           }
         }
-        &_field{
+        &__field{
           width: 60%;
           margin: 0 auto;
           .postcode{
@@ -234,11 +234,11 @@
         margin: 0 auto;
         width: 80%;
         text-align: center;
-        &_label{
+        &__label{
           margin: 36px 0 18px 0;
           font-weight: bold;
           font-size: small;
-          .form-require{
+          .form__require{
             background-color: red;
             border-width: 0;
             border-radius: 4px;
@@ -246,10 +246,10 @@
             color: #fff;
           }
         }
-        &_field{
+        &__field{
           width: 60%;
           margin: 0 auto;
-          .todouhuken_sentaku{
+          .todouhuken__sentaku{
             width: 80%;
           }
         }
@@ -259,11 +259,11 @@
         margin: 0 auto;
         width: 80%;
         text-align: center;
-        &_label{
+        &__label{
           margin: 36px 0 18px 0;
           font-weight: bold;
           font-size: small;
-          .form-require{
+          .form__require{
             background-color: red;
             border-width: 0;
             border-radius: 4px;
@@ -271,7 +271,7 @@
             color: #fff;
           }
         }
-        &_field{
+        &__field{
           width: 60%;
           margin: 0 auto;
           .city{
@@ -284,11 +284,11 @@
         margin: 0 auto;
         width: 80%;
         text-align: center;
-        &_label{
+        &__label{
           margin: 36px 0 18px 0;
           font-weight: bold;
           font-size: small;
-          .form-require{
+          .form__require{
             background-color: red;
             border-width: 0;
             border-radius: 4px;
@@ -296,7 +296,7 @@
             color: #fff;
           }
         }
-        &_field{
+        &__field{
           width: 60%;
           margin: 0 auto;
           .block{
@@ -309,11 +309,11 @@
         width: 80%;
         margin: 0 auto;
         text-align: center;
-        &_label{
+        &__label{
           margin: 36px 0 18px 0;
           font-weight: bold;
           font-size: small;
-          .form-require{
+          .form__require{
             background-color: red;
             border-width: 0;
             border-radius: 4px;
@@ -321,7 +321,7 @@
             color: #fff;
           }
         }
-        &_field{
+        &__field{
           width: 60%;
           margin: 0 auto 18px auto;
           .building{
@@ -334,11 +334,11 @@
         margin: 0 auto;
         width: 80%;
         text-align: center;
-        &_label{
+        &__label{
           margin: 36px 0 18px 0;
           font-weight: bold;
           font-size: small;
-          .form-require{
+          .form__require{
             background-color: red;
             border-width: 0;
             border-radius: 4px;
@@ -346,7 +346,7 @@
             color: #fff;
           }
         }
-        &_field{
+        &__field{
           width: 60%;
           margin: 0 auto 18px auto;
           .tel{
@@ -357,7 +357,7 @@
     }
 
 
-    .acount_sakusei{
+    .acount__sakusei{
       text-align: center;
       margin-bottom: 40px;
       .btn-default.btn-mail{
@@ -374,7 +374,7 @@
 
     .actions{
       text-align: center;
-      .rogin-btn{
+      .rogin__btn{
         box-sizing:border-box;
         width: 25%;
         background-color: #3CCACE;
@@ -405,5 +405,20 @@
         margin-bottom: 40px;
       }
     }
+  }
+}
+
+.tourokukanryou{
+  font-size: larger;
+  .tophemodoru{
+    text-align: center;
+    box-sizing:border-box;
+    width: 25%;
+    background-color: #3CCACE;
+    border-width: 0;
+    border-radius: 4px;
+    padding: 10px;
+    color: #fff;
+    margin-bottom: 40px;
   }
 }
