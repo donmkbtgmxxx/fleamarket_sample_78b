@@ -1,4 +1,4 @@
-$(function() {  
+$(document).on('turbolinks:load', function() {  
   Payjp.setPublicKey('pk_test_cfa2bc17ada0dbd5284829d1');
 
   $('#card-registration').on('submit', function(e) {
