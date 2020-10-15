@@ -1,0 +1,17 @@
+- @items.first(5).each do |item|
+  - if item.brand.brand_name != ''
+    .lists__product
+      = image_tag item.item_images[0].src.url
+      .product__detail
+        %h3.product__detail--name
+          = item.product_name
+        %ul
+          %li.product__detail--price 
+            = item.price
+            円
+          %li.product__detail--likeButton
+            = link_to '#' do
+              %i.far.fa-heart
+
+        .product__detail--tax
+          (税込)
