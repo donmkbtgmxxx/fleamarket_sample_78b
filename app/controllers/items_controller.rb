@@ -30,9 +30,11 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     @item.item_images.new
     if @item.save
+      flash[:notice] = '出品に成功しました'
       redirect_to root_path
     else
-      render action: :new, alert: "出品できませんでした"
+      flash.now[:alert] = '出品に失敗しました'
+      render action: :new
     end
   end
   

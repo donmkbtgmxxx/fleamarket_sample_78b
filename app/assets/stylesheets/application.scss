@@ -6,3 +6,16 @@
 @import "font-awesome";
 @import "modules/sell";
 @import "modules/category";
+
+.notifications {
+  color: white;
+  text-align: center;  
+
+  .notice {
+    background-color: lightBlue;
+  }
+
+  .alert {
+    background-color: #f44336;
+  }
+}
