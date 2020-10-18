@@ -6,57 +6,57 @@
         = image_tag('logo/logo.png', alt: "ヘッダーロゴ")
   .PurchaseConfirmPage__content
     .Confirmation
-      .Confirmation__title
-        %h2 購入内容の確認
+      %h1.Confirmation__title1 購入内容の確認
       .Underline
+      %h2.Confirmation__title2 購入商品
       .Confirmation__item
-        %h3 購入商品
         .Confirmation__item__Info
-          .Confirmation__item__Info__name
+          .Confirmation__item__Info__image
+            = image_tag @item.item_images[0].src.url
+        .Confirmation__item__Detail
+          %h3.Confirmation__item__Detail__name
             = @item.product_name
-          .Confirmation__item__Info__price
-            ¥
+          %h3.Confirmation__item__Detail__price
+            送料込み（税込み）¥
             = @item.price
       .Underline
       .Confirmation__Cost
-        .Confirmation__Cost__title
-          %h3 支払い金額
-        .Confirmation__Cost__price
-          ¥
-          = @item.price
+        %h2.Confirmation__Cost__title 支払い金額
+        .Confirmation__Cost__content
+          %h2.Confirmation__Cost__content__expense
+            ¥
+            = @item.price
       .Underline
-      .Confirmation__Credit 
-        %h3 支払い方法
-        .CreditCard
-          .CreditCard__content
-            %h4 クレジットカード
-            .CreditCard__content__Info
-              .brand
-                = @card_info.brand
-              .number
-                **** **** ****
-                = @card_info.last4
-            .CreditCard__content__Expiration
-              %h4 有効期限
-              .CreditCard__content__Expiration__month
-                = @card_info.exp_month
-              %h4 /
-              .CreditCard__content__Expiration__year
-                = @card_info.exp_year - 2000
-          .CreditCard__change
-            = link_to '変更する', card_path(@cards.first.id), method: :get, class: 'CreditCard__change__btn'
+      %h2.Confirmation__title2 支払い方法
+      .Confirmation__Card
+        .Confirmation__Card__content
+          %h3.Confirmation__Card__content__text クレジットカード
+          .Confirmation__Card__content__Info
+            %h3.brand
+              = @card_info.brand
+            %h3.number
+              **** **** ****
+              = @card_info.last4
+          .Confirmation__Card__content__Expiration
+            %h3.Confirmation__Card__content__Expiration__text 有効期限
+            %h3.Confirmation__Card__content__Expiration__month
+              = sprintf("%02d", @card_info.exp_month)
+            %h3 /
+            %h3.Confirmation__Card__content__Expiration__year
+              = @card_info.exp_year - 2000
+        .Confirmation__Card__change
+          = link_to '変更する', card_path(@cards.first.id), method: :get, class: 'Confirmation__Card__change__btn'
       .Underline
-      .Confirmation__ShippingAddress
-        %h3 配送先住所
-        .Address
-          .Address__content
-            .Address__content__postcode
-              〒
-              = @address.postcode
-            .Address__content__ad
-              = Prefecture.find(@address.prefecture_id).name + @address.city + @address.block + @address.building
-          .Address__change
-            = link_to '変更する', '#', method: :get, class: 'Address__change__btn'
+      %h2.Confirmation__title2 配送先住所
+      .Confirmation__Address
+        .Confirmation__Address__content
+          %h3.Confirmation__Address__content__postcode
+            〒
+            = @address.postcode
+          %h3.Address__content__ad
+            = Prefecture.find(@address.prefecture_id).name + @address.city + @address.block + @address.building
+        .Confirmation__Address__change
+          = link_to '変更する', '#', method: :get, class: 'Confirmation__Address__change__btn'
       .Underline
       .Confirmation__submit
         = form_with model: [@item, @purchase] do |f|
