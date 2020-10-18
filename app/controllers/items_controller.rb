@@ -35,7 +35,7 @@ class ItemsController < ApplicationController
   
   def show
     @item = Item.find(params[:id])
-    @purchase = Purchase.where(item_id: @item.id)
+    @purchase = @item.purchase
   end
   
   private
