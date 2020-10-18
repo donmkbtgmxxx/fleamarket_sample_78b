@@ -11,7 +11,7 @@ describe Address do
       # it "is invalid without a family_name_kanji" do
         address = build(:address, family_name_kanji: nil)
         address.valid?
-        expect(address.errors[:family_name_kanji]).to include("を入力してください")
+        expect(address.errors[:family_name_kanji]).to include("は不正な値です")
       end
   
       it "family_name_kanjiが全角文字なら登録できること" do
@@ -31,7 +31,7 @@ describe Address do
       # it "is invalid without a first_name_kanji" do
         address = build(:address, first_name_kanji: nil)
         address.valid?
-        expect(address.errors[:first_name_kanji]).to include("を入力してください")
+        expect(address.errors[:first_name_kanji]).to include("は不正な値です")
       end
   
       it "first_name_kanjiが全角文字なら登録できること" do
@@ -51,7 +51,7 @@ describe Address do
       # it "is invalid without a family_name_kana" do
         address = build(:address, family_name_kana: nil)
         address.valid?
-        expect(address.errors[:family_name_kana]).to include("を入力してください")
+        expect(address.errors[:family_name_kana]).to include("は不正な値です")
       end
   
       it "family_name_kanaがカタカナなら登録できること" do
