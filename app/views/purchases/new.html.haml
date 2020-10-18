@@ -1,0 +1,68 @@
+-# = render 'shared/header'
+.PurcahseConfirmPage
+  .PurchaseConfirmPage__header
+    .PurchaseConfirmPage__header__icon
+      = link_to root_path do
+        = image_tag('logo/logo.png', alt: "ヘッダーロゴ")
+  .PurchaseConfirmPage__content
+    .Confirmation
+      .Confirmation__title
+        %h2 購入内容の確認
+      .Underline
+      .Confirmation__item
+        %h3 購入商品
+        .Confirmation__item__Info
+          .Confirmation__item__Info__name
+            = @item.product_name
+          .Confirmation__item__Info__price
+            ¥
+            = @item.price
+      .Underline
+      .Confirmation__Cost
+        .Confirmation__Cost__title
+          %h3 支払い金額
+        .Confirmation__Cost__price
+          ¥
+          = @item.price
+      .Underline
+      .Confirmation__Credit 
+        %h3 支払い方法
+        .CreditCard
+          .CreditCard__content
+            %h4 クレジットカード
+            .CreditCard__content__Info
+              .brand
+                = @card_info.brand
+              .number
+                **** **** ****
+                = @card_info.last4
+            .CreditCard__content__Expiration
+              %h4 有効期限
+              .CreditCard__content__Expiration__month
+                = @card_info.exp_month
+              %h4 /
+              .CreditCard__content__Expiration__year
+                = @card_info.exp_year - 2000
+          .CreditCard__change
+            = link_to '変更する', card_path(@cards.first.id), method: :get, class: 'CreditCard__change__btn'
+      .Underline
+      .Confirmation__ShippingAddress
+        %h3 配送先住所
+        .Address
+          .Address__content
+            .Address__content__postcode
+              〒
+              = @address.postcode
+            .Address__content__ad
+              = Prefecture.find(@address.prefecture_id).name + @address.city + @address.block + @address.building
+          .Address__change
+            = link_to '変更する', '#', method: :get, class: 'Address__change__btn'
+      .Underline
+      .Confirmation__submit
+        = form_with model: [@item, @purchase] do |f|
+          .Confirmation__submit__button
+            = f.submit '購入する', class: 'Confirmation__submit__button__btn'
+  .PurchaseConfirmPage__footer
+    .PurchaseConfirmPage__footer__icon
+      = link_to root_path do
+        = image_tag('logo/logo.png', alt: "フッターロゴ")

@@ -1,0 +1,73 @@
+#cards-show {
+  * {
+    box-sizing: border-box;
+  }
+  .UserMyPage__content__main {
+    width: 100%;
+    background-color: #f8f8f8;
+    display: flex;
+    justify-content: center;
+    .MainContent {
+      width: 700px;
+      display: flex;
+      flex-direction: column;
+      // background-color: white;
+      &__title {
+        height: 60px;
+        width: 100%;
+        color: rgb(65, 65, 65);
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        padding-top: 20px;
+        font-weight: bold;
+        background-color: white;
+      }
+      .Underline {
+        height: 15px;
+        width: 100%;
+        background-color: white;
+        border-bottom: #f8f8f8 solid 2px;
+      }
+      .Card {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        background-color: white;
+        padding-top: 15px;
+        &__Info {
+          &__brand {
+            width: 100%;
+            font-size: 14px;
+            padding: 3px 0;
+          }
+          &__number {
+            width: 100%;
+            font-size: 14px;
+            padding: 3px 0;
+          }
+          &__exp {
+            display: flex;
+            font-size: 14px;
+            padding: 3px 0;
+            justify-content: flex-start;
+          }
+        }
+        &__delete {
+          border: solid red 1px;
+          border-radius: 3px;
+          display: flex;
+          align-items: center;
+          padding: 5px 10px;
+          .btn {
+            font-size: 14px;
+            font-weight: bold;
+            color: red;
+            text-decoration: none;
+          }
+        }
+
+      }
+    }
+  }
+}

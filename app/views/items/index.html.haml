@@ -86,8 +86,8 @@
             %li.product__detail--price 
               1000円
             %li.product__detail--likeButton
-              = link_to '#' do
-                %i.far.fa-heart 1
+              = link_to item_path(1) do
+                <i class="far fa-heart"></i> 1
           .product__detail--tax
             (税込)
       .lists__product
@@ -99,9 +99,8 @@
             %li.product__detail--price 
               500円
             %li.product__detail--likeButton
-              = link_to '#' do
-                %i.far.fa-heart 3
-
+              = link_to item_path(2) do
+                <i class="far fa-heart"></i> 3
           .product__detail--tax
             (税込)
       .lists__product
@@ -113,8 +112,8 @@
             %li.product__detail--price 
               2000円
             %li.product__detail--likeButton
-              = link_to '#' do
-                %i.far.fa-heart 
+              = link_to item_path(3) do
+                <i class="far fa-heart"></i> 
           .product__detail--tax
             (税込)
       .lists__product
@@ -126,9 +125,8 @@
             %li.product__detail--price 
               100円
             %li.product__detail--likeButton
-              = link_to '#' do
-                <%i.far.fa-heart 5
-
+              = link_to item_path(4) do
+                <i class="far fa-heart"></i> 5
           .product__detail--tax
             (税込)
                 

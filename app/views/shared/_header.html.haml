@@ -18,9 +18,9 @@
       %ul.bottom-right
         - if user_signed_in?
           %li.header__bottom--mypage
-            = link_to "マイページ"
-          %li.header__bottom--signout  
-            = link_to "ログアウト", destroy_user_session_path, method: :delete
+            = link_to "マイページ", mypage_path
+          -# %li.header__bottom--signout  
+          -#   = link_to "ログアウト", destroy_user_session_path, method: :delete
         - else
           %li.header__bottom--sighin
             = link_to "ログイン", new_user_session_path

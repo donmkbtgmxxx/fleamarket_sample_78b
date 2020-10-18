@@ -67,15 +67,12 @@ Things you may want to cover:
 ## Cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|number|integer|null: false, unique: true|
-|year|integer|null: false|
-|month|integer|null: false|
+|customer_id|string|null: false|
+|card_id|string|null: false|
 |user|references|foreign_key: true|
 
 ### Association
 - belongs_to :user
-- belongs_to_active_hash :year
-- belongs_to_active_hash :month
 
 
 ## Itemsテーブル
@@ -106,7 +103,6 @@ Things you may want to cover:
 ## Purchasesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|date|date|null: false|
 |user|references|foreign_key: true|
 |item|references|foreign_key: true|
 

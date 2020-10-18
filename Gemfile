@@ -77,6 +77,7 @@ gem 'ancestry'
 gem 'jquery-rails'
 gem 'fog-aws'
 gem 'rails-i18n'
+gem 'payjp'
 
 # 消さないでください
 # gem 'public_suffix','4.0.5'
