@@ -59,7 +59,7 @@
             = f.label :あなたのお誕生日を選択してください
             %span.form-require 必須
           .birth__sentaku__field
-            = f.date_select :birthday, class:'text__region'
+            = f.date_select :birthday, use_month_numbers: true, start_year: 1920, default: Date.new(1989, 1, 1), class:'text__region'
 
       .actions
         .tugihesusumu__button
