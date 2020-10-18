@@ -65,6 +65,34 @@
               }
             }
           } 
+          &--purchaseButton {
+            display: flex;
+            justify-content: center;
+            .GoToPurchase {
+              display: block;
+              font-size: 20px;
+              font-weight: bold;
+              padding: 10px 0;
+              color: white;
+              border-radius: 3px;
+              text-decoration: none;
+              width: 400px;
+              height: 50px;
+              background-color: blue;
+            }
+            .SoldOut {
+              display: block;
+              font-size: 20px;
+              font-weight: bold;
+              padding: 10px 0;
+              color: white;
+              border-radius: 3px;
+              text-decoration: none;
+              width: 400px;
+              height: 50px;
+              background-color: rgb(196, 196, 196);
+            }
+          }
         }
         &__buttons {
           background-color: #fff;
@@ -97,7 +125,6 @@
               }
             }
           }
-    
         }
         &__comment {
           background-color: #fff;
