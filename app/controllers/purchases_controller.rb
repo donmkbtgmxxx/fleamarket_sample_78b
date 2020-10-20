@@ -1,7 +1,11 @@
 class PurchasesController < ApplicationController
   require 'payjp'
-  before_action :authenticate_user!, :set_category, :set_cards, :set_item
-  before_action :payjp_api, exept: [:new]
+  before_action :authenticate_user!, :set_category, :set_cards
+  before_action :set_item, except: [:index]
+  before_action :payjp_api, except: [:new]
+
+  def index
+  end
   
   def new
     if @cards.exists?

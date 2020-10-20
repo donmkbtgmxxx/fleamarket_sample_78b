@@ -1,0 +1,31 @@
+= render 'shared/header'
+.UserMyPage
+  .UserMyPage__content
+    = render 'welcome/sidebar'
+    .UserMyPage__content__main
+      .UserItemsPage
+        .UserItemsPage__SelectTab
+          .UserItemsPage__SelectTab__sell
+            =link_to '出品した商品', welcome_index_path, class: 'UserItemsPage__SelectTab__sell__text'
+          .UserItemsPage__SelectTab__buy
+            %h1.UserItemsPage__SelectTab__buy__text 購入した商品
+        .UserItemsPage__content
+          .UserItemsPage__content__label
+            %h2.UserItemsPage__content__label__date 購入日
+            %h2.UserItemsPage__content__label__name 商品名
+            %h2.UserItemsPage__content__label__price 値段
+          .UserItemsPage__conntent__ItemList
+            - current_user.purchases.each do |purchase|
+              .UserItemsPage__content__ItemList__item
+                .UserItemsPage__content__ItemList__item__date
+                  = purchase.created_at.strftime("%Y/%m/%d")
+                .UserItemsPage__content__ItemList__item__name
+                  = purchase.item.product_name
+                .UserItemsPage__content__ItemList__item__price
+                  ¥
+                  = purchase.item.price
+.fixedButton
+  %p 出品する
+  .fixedButton__image
+    = link_to 'items/new' do
+      =image_tag('icon/icon_camera.png', alt: "出品ボタン")
