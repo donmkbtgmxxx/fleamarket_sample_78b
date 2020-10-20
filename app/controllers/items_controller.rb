@@ -37,6 +37,17 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @purchase = @item.purchase
   end
+
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy
+
+    if item.destroyed?
+      redirect_to root_path
+    else
+      redirect_to welcome_index_path
+    end
+  end
   
   private
   # 親カテゴリー
