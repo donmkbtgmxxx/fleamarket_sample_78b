@@ -1,0 +1,424 @@
+.all{
+  background-color: #f8f8f8;
+  padding: 50px 0 50px 0;
+
+  .data{
+    overflow: scroll;
+    width: 70%;
+    margin: 0 auto;
+    background-color: #fff;
+
+    .gaiyou{
+      font-size: 30px;
+      border-bottom: 1px solid;
+      border-color: #f8f8f8;
+      height: 80px;
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+
+    .nyuuryokuform{
+      padding: 0 20px;
+
+      .field{
+        text-align: center;
+        margin-bottom: 18px;
+      }
+
+      .nickname{
+        margin: 0 auto;
+        width: 80%;
+        text-align: center;
+        &__label{
+          margin: 36px 0 18px 0;
+          font-weight: bold;
+          font-size: small;
+          .form__require{
+            background-color: red;
+            border-width: 0;
+            border-radius: 4px;
+            padding: 2px;
+            color: #fff;
+          }
+        }
+        &__field{
+          width: 60%;
+          margin: 0 auto;
+          .text__region{
+            width: 80%;
+          }
+        }
+      }
+
+      .email{
+        margin: 0 auto;
+        width: 80%;
+        text-align: center;
+        &__label{
+          margin: 36px 0 18px 0;
+          font-weight: bold;
+          font-size: small;
+          .form__require{
+            background-color: red;
+            border-width: 0;
+            border-radius: 4px;
+            padding: 2px;
+            color: #fff;
+          }
+        }
+        &__field{
+          width: 60%;
+          margin: 0 auto;
+          .text__region{
+            width: 80%;
+          }
+        }
+      }
+
+      .password{
+        margin: 0 auto;
+        width: 80%;
+        text-align: center;
+        &__label{
+          margin: 36px 0 18px 0;
+          font-weight: bold;
+          font-size: small;
+          .form__require{
+            background-color: red;
+            border-width: 0;
+            border-radius: 4px;
+            padding: 2px;
+            color: #fff;
+          }
+        }
+        &__field{
+          width: 60%;
+          margin: 0 auto;
+          .text__region{
+            width: 80%;
+          }
+        }
+        &__sai__label{
+          margin: 36px 0 18px 0;
+          font-weight: bold;
+          font-size: small;
+          .form__require{
+            background-color: red;
+            border-width: 0;
+            border-radius: 4px;
+            padding: 2px;
+            color: #fff;
+          }
+        }
+        &__sai__field{
+          width: 60%;
+          margin: 0 auto;
+          .text__region{
+            width: 80%;
+          }
+        }
+      }
+
+      .name__kanji{
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+        &__label{
+          margin: 36px 0 18px 0;
+          font-weight: bold;
+          font-size: small;
+          .form__require{
+            background-color: red;
+            border-width: 0;
+            border-radius: 4px;
+            padding: 2px;
+            color: #fff;
+          }
+        }
+        &__field{
+          width: 60%;
+          margin: 0 auto;
+          .name__region{
+            width: 40%;
+          }
+        }
+      }
+
+      .name__kana{
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+        &__label{
+          margin: 36px 0 18px 0;
+          font-weight: bold;
+          font-size: small;
+          .form__require{
+            background-color: red;
+            border-width: 0;
+            border-radius: 4px;
+            padding: 2px;
+            color: #fff;
+          }
+        }
+        &__field{
+          width: 60%;
+          margin: 0 auto 18px auto;
+          .name__region{
+            width: 40%;
+          }
+        }
+      }
+
+      .honnin{
+        width: 80%;
+        margin: 0 auto;
+        .ansin{
+          width: 60%;
+          margin: 0 auto;
+          &__text{
+          word-wrap: normal;
+          width: 80%;
+          margin: 0 auto;
+          }
+        }
+      }
+
+      .birth{
+        margin: 0 57.953px 0 57.953px;
+        text-align: center;
+        &__label{
+          margin: 36px 0 18px 0;
+          font-weight: bold;
+          font-size: small;
+          .form__require{
+            background-color: red;
+            border-width: 0;
+            border-radius: 4px;
+            padding: 2px;
+            color: #fff;
+          }
+        }
+        &__sentaku__field{
+          margin-bottom: 18px;
+        }
+      }
+
+      .yuubinbangou{
+        margin: 0 auto;
+        width: 80%;
+        text-align: center;
+        &__label{
+          margin: 36px 0 18px 0;
+          font-weight: bold;
+          font-size: small;
+          .form__require{
+            background-color: red;
+            border-width: 0;
+            border-radius: 4px;
+            padding: 2px;
+            color: #fff;
+          }
+        }
+        &__field{
+          width: 60%;
+          margin: 0 auto;
+          .postcode{
+            width: 80%;
+          }
+        }
+      }
+
+      .todouhuken{
+        margin: 0 auto;
+        width: 80%;
+        text-align: center;
+        &__label{
+          margin: 36px 0 18px 0;
+          font-weight: bold;
+          font-size: small;
+          .form__require{
+            background-color: red;
+            border-width: 0;
+            border-radius: 4px;
+            padding: 2px;
+            color: #fff;
+          }
+        }
+        &__field{
+          width: 60%;
+          margin: 0 auto;
+          .todouhuken__sentaku{
+            width: 80%;
+          }
+        }
+      }
+
+      .sityouson{
+        margin: 0 auto;
+        width: 80%;
+        text-align: center;
+        &__label{
+          margin: 36px 0 18px 0;
+          font-weight: bold;
+          font-size: small;
+          .form__require{
+            background-color: red;
+            border-width: 0;
+            border-radius: 4px;
+            padding: 2px;
+            color: #fff;
+          }
+        }
+        &__field{
+          width: 60%;
+          margin: 0 auto;
+          .city{
+            width: 80%;
+          }
+        }
+      }
+
+      .banti{
+        margin: 0 auto;
+        width: 80%;
+        text-align: center;
+        &__label{
+          margin: 36px 0 18px 0;
+          font-weight: bold;
+          font-size: small;
+          .form__require{
+            background-color: red;
+            border-width: 0;
+            border-radius: 4px;
+            padding: 2px;
+            color: #fff;
+          }
+        }
+        &__field{
+          width: 60%;
+          margin: 0 auto;
+          .block{
+            width: 80%;
+          }
+        }
+      }
+
+      .heyabangou{
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+        &__label{
+          margin: 36px 0 18px 0;
+          font-weight: bold;
+          font-size: small;
+          .form__require{
+            background-color: red;
+            border-width: 0;
+            border-radius: 4px;
+            padding: 2px;
+            color: #fff;
+          }
+        }
+        &__field{
+          width: 60%;
+          margin: 0 auto 18px auto;
+          .building{
+            width: 80%;
+          }
+        }
+      }
+
+      .denwabangou{
+        margin: 0 auto;
+        width: 80%;
+        text-align: center;
+        &__label{
+          margin: 36px 0 18px 0;
+          font-weight: bold;
+          font-size: small;
+          .form__require{
+            background-color: red;
+            border-width: 0;
+            border-radius: 4px;
+            padding: 2px;
+            color: #fff;
+          }
+        }
+        &__field{
+          width: 60%;
+          margin: 0 auto 18px auto;
+          .tel{
+            width: 80%;
+          }
+        }
+      }
+    }
+
+
+    .acount__sakusei{
+      text-align: center;
+      margin-bottom: 40px;
+      .btn-default.btn-mail{
+        text-decoration: none;
+        box-sizing:border-box;
+        width: 25%;
+        background-color: darkgreen;
+        border-width: 0;
+        border-radius: 4px;
+        padding: 10px;
+        color: #fff;
+      }
+    }
+
+    .actions{
+      text-align: center;
+      .rogin__btn{
+        box-sizing:border-box;
+        width: 25%;
+        background-color: #3CCACE;
+        border-width: 0;
+        border-radius: 4px;
+        padding: 10px;
+        color: #fff;
+        margin-bottom: 40px;
+      }
+      .tugiesusumu{
+        box-sizing:border-box;
+        width: 25%;
+        background-color: #3CCACE;
+        border-width: 0;
+        border-radius: 4px;
+        padding: 10px;
+        color: #fff;
+        margin-bottom: 40px;
+      }
+      .tourokusuru{
+        box-sizing:border-box;
+        width: 25%;
+        background-color: #3CCACE;
+        border-width: 0;
+        border-radius: 4px;
+        padding: 10px;
+        color: #fff;
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
+
+.tourokukanryou{
+  font-size: larger;
+  .tophemodoru{
+    text-align: center;
+    box-sizing:border-box;
+    width: 25%;
+    background-color: #3CCACE;
+    border-width: 0;
+    border-radius: 4px;
+    padding: 10px;
+    color: #fff;
+    margin-bottom: 40px;
+  }
+}
