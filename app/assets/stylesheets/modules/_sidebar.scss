@@ -1,4 +1,4 @@
-#welcome-mypage, #welcome-signout, #cards-new, #cards-show {
+#welcome-mypage, #welcome-signout, #welcome-index, #purchases-index, #cards-new, #cards-show {
   * {
     box-sizing: border-box;
   }
@@ -57,7 +57,6 @@
             text-align: center;
             &:hover {opacity: 0.6;}
           }
-
         }
       }
     }

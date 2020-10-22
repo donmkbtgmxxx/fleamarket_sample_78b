@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
   before_action :set_category, only: [:new, :create]
+  before_action :set_item, only: [:show, :destroy]
 
   #jsonで親の名前で検索し、紐づく小カテゴリーの配列を取得
   def get_category_children
@@ -34,14 +35,25 @@ class ItemsController < ApplicationController
   end
   
   def show
-    @item = Item.find(params[:id])
     @purchase = @item.purchase
+  end
+
+  def destroy
+    if @item.destroy
+      redirect_to root_path
+    else
+      redirect_to welcome_index_path
+    end
   end
   
   private
   # 親カテゴリー
   def set_category
     @parents = Category.where(ancestry: nil)
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
   
   def item_params

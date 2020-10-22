@@ -1,0 +1,45 @@
+= render 'shared/header'
+.UserMyPage
+  .UserMyPage__content
+    = render 'sidebar'
+    .UserMyPage__content__main
+      .UserItemsPage
+        .UserItemsPage__SelectTab
+          .UserItemsPage__SelectTab__sell
+            %h1.UserItemsPage__SelectTab__sell__text 出品した商品
+          .UserItemsPage__SelectTab__buy
+            =link_to '購入した商品', purchases_path, class: 'UserItemsPage__SelectTab__buy__text'
+        .UserItemsPage__content
+          .UserItemsPage__content__label
+            %h2.UserItemsPage__content__label__date 出品日
+            %h2.UserItemsPage__content__label__name 商品名
+            %h2.UserItemsPage__content__label__price 値段
+            %h2.UserItemsPage__content__label__status 状態
+            %h2.UserItemsPage__content__label__sold 売却日
+          .UserItemsPage__conntent__ItemList
+            - current_user.items.each do |item|
+              .UserItemsPage__content__ItemList__item
+                .UserItemsPage__content__ItemList__item__date
+                  = item.created_at.strftime("%Y/%m/%d")
+                .UserItemsPage__content__ItemList__item__name
+                  = item.product_name
+                .UserItemsPage__content__ItemList__item__price
+                  ¥
+                  = item.price
+                .UserItemsPage__content__ItemList__item__status
+                  - if item.purchase.blank?
+                    %h2.UserItemsPage__content__ItemList__item__status__onsale 出品中
+                  - else
+                    %h2.UserItemsPage__content__ItemList__item__status__soldout 売却済み
+                .UserItemsPage__content__ItemList__item__delete
+                  - if item.purchase.blank?
+                    .UserItemsPage__content__ItemList__item__delete__button
+                      = link_to '出品を取り消す', item_path(item.id), method: :delete, class: 'UserItemsPage__content__ItemList__item__delete__button__btn'
+                  - else
+                    .UserItemsPage__content__ItemList__item__delete__button
+                      = item.purchase.created_at.strftime("%Y/%m/%d")
+.fixedButton
+  %p 出品する
+  .fixedButton__image
+    = link_to new_item_path do
+      =image_tag('icon/icon_camera.png', alt: "出品ボタン")
