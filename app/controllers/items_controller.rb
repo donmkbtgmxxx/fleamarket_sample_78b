@@ -42,7 +42,7 @@ class ItemsController < ApplicationController
     item = Item.find(params[:id])
     item.destroy
 
-    if item.destroyed?
+    if item.destroy
       redirect_to root_path
     else
       redirect_to welcome_index_path
