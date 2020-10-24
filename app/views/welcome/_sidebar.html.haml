@@ -1,0 +1,25 @@
+.UserMyPage__content__sidebar
+  .link.PageTitle
+    = link_to 'マイページトップ', mypage_path, class: 'text'
+    .icon.fas.fa-angle-right
+  .link
+    = link_to '出品する', new_item_path, class: 'text'
+    .icon.fas.fa-angle-right
+  .link
+    = link_to '出品した商品一覧・出品取り消し', welcome_index_path, class: 'text'
+    .icon.fas.fa-angle-right
+  .link
+    = link_to '購入した商品一覧', purchases_path, class: 'text'
+    .icon.fas.fa-angle-right
+  .link
+    = link_to 'クレジットカードの登録・削除', new_card_path, class: 'text'
+    .icon.fas.fa-angle-right
+  .link
+    = link_to 'プロフィール', '#', class: 'text'
+    .icon.fas.fa-angle-right
+  .link
+    = link_to '届け先住所の変更', '#', class: 'text'
+    .icon.fas.fa-angle-right
+  .link
+    = link_to 'ログアウト', signout_path, method: :get, class: 'text'
+    .icon.fas.fa-angle-right

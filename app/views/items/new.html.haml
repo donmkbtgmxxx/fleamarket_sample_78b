@@ -1,3 +1,4 @@
+= render 'shared/header'
 .SellingPage
   .SellingPage__header
     .SellingPage__header__icon
@@ -5,20 +6,22 @@
         = image_tag('logo/logo.png', alt: "ヘッダーロゴ")
   .SellingPage__content
     .SellingPage__content__form
-      = form_with model: @item, local: true do |f|
+      = form_for(@item) do |f|
+        = render 'error_form', locals: { item: @item }
         .FormField
           .FormField__label
             .FormField__label__title
               .FormField__label__title__name 出品画像
               .FormField__label__title--must 必須
           %h1 最大10枚までアップロードできます
-          .ImageUploader
-            %p.ImageUploader__text 
-              ドラッグ&ドロップ
-              %br またはクリックしてファイルをアップロード
-            = f.label :image, class: 'ImageUploader__image' do
-              = icon('fas', 'camera fa-2x')
-              = f.file_field :image, class: 'ImageUploader__image__file'
+          #image-box-1
+            %label.item-num-0#image-box__container{for: "img-file"}
+              %i.fas.fa-camera
+              %p クリックしてアップロード
+            = f.fields_for :item_images do |i|
+              .input-area
+                = i.file_field :image, type: 'file', name: "item[item_images_attributes][][src]", value:"", style: "display:none", id:"img-file"
+
         .Underline
         .FormField
           .FormField__label
@@ -26,7 +29,7 @@
               .FormField__label__title__name 商品名
               .FormField__label__title--must 必須
           .FormField__input
-            = f.text_field :name, class: 'FormField__input--short', placeholder: '40文字まで'
+            = f.text_field :product_name, class: 'FormField__input--short', placeholder: '40文字まで'
         .FormField
           .FormField__label
             .FormField__label__title
@@ -41,22 +44,31 @@
             .FormField__label__title
               .FormField__label__title__name カテゴリー
               .FormField__label__title--must 必須
-          .FormField__input
-            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {}, {class: "FormField__input--short"}
+
+          .FormField__input#category_box
+            .pulldown#partent_box
+              = f.collection_select :category_id, @parents.all, :id, :name, {include_blank: "選択してください"}, {class: "FormField__input--short", id: "parent_category", name: ""}
+
+            .pulldown.item_input__body__category__children#children_box
+              -#親カテゴリー選択によって子カテゴリー表示
+            .pulldown.item_input__body__category__grandchildren#grandchildren_box
+              -#子カテゴリー選択によって孫カテゴリー表示
+
         .FormField
           .FormField__label
             .FormField__label__title
               .FormField__label__title__name ブランド
               .FormField__label__title--free 任意
           .FormField__input
-            = f.text_field :brand, class: 'FormField__input--short', placeholder: '例）シャネル'
+            = f.fields_for :brand do |i|
+              = i.text_field :brand_name, class: 'FormField__input--short', placeholder: '例）シャネル'
         .FormField
           .FormField__label
             .FormField__label__title
               .FormField__label__title__name 商品の状態
               .FormField__label__title--must 必須
           .FormField__input
-            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {}, {class: "FormField__input--short"}
+            = f.collection_select :condition_id, Condition.all, :id, :name, {include_blank: "選択してください"}, {class: "FormField__input--short"}
         .Underline
         .FormField
           %h1 配送について
@@ -65,21 +77,21 @@
               .FormField__label__title__name 配送料の負担
               .FormField__label__title--must 必須
           .FormField__input
-            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {}, {class: "FormField__input--short"}
+            = f.collection_select :shipping_fee_id, ShippingFee.all, :id, :name, {include_blank: "選択してください"}, {class: "FormField__input--short"}
         .FormField
           .FormField__label
             .FormField__label__title
               .FormField__label__title__name 発送元の地域
               .FormField__label__title--must 必須
           .FormField__input
-            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {}, {class: "FormField__input--short"}
+            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: "選択してください"}, {class: "FormField__input--short"}
         .FormField
           .FormField__label
             .FormField__label__title
               .FormField__label__title__name 発送までの日数
               .FormField__label__title--must 必須
           .FormField__input
-            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {}, {class: "FormField__input--short"}
+            = f.collection_select :day_to_ship_id, DayToShip.all, :id, :name, {include_blank: "選択してください"}, {class: "FormField__input--short"}
         .Underline
         .FormField
           %h1 価格（¥300〜¥9,999,999）
@@ -97,3 +109,4 @@
     .SellingPage__footer__icon
       = link_to root_path do
         = image_tag('logo/logo.png', alt: "フッターロゴ")
+
