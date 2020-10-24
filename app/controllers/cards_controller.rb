@@ -1,7 +1,7 @@
 class CardsController < ApplicationController
   require 'payjp'
   before_action :authenticate_user!, :set_category, :set_cards
-  before_action :payjp_api, exept: [:new]
+  before_action :payjp_api, except: [:new]
   
   def new
     if @cards.exists?
