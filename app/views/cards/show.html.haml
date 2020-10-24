@@ -17,7 +17,7 @@
             .Card__Info__exp
               %h2 有効期限
               .Card__Info__exp__month
-                = @card_info.exp_month
+                = sprintf("%02d", @card_info.exp_month)
               %h2 /
               .Card__Info__exp__year
                 = @card_info.exp_year - 2000
