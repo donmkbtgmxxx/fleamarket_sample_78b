@@ -6,10 +6,11 @@
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application'
+    %script{type: "text/javascript", src: "https://js.pay.jp/v1/"}
+    -# = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
 
   %body{:id => "#{controller.controller_name}-#{controller.action_name}"}
-    = render 'shared/header'
     = yield
     = render 'shared/bottomBanner'
     = render 'shared/footer'
