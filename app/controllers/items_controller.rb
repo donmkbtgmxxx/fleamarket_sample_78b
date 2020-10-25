@@ -53,7 +53,11 @@ class ItemsController < ApplicationController
   end
 
   def set_item
-    @item = Item.find(params[:id])
+    if Item.ids.include?(params[:id].to_i)
+      @item = Item.find(params[:id])
+    else
+      redirect_to root_path
+    end
   end
   
   def item_params
