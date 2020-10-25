@@ -56,7 +56,7 @@
           %h3.Address__content__ad
             = Prefecture.find(@address.prefecture_id).name + @address.city + @address.block + @address.building
         .Confirmation__Address__change
-          = link_to '変更する', '#', method: :get, class: 'Confirmation__Address__change__btn'
+          = link_to '変更する', edit_address_path(current_user.address.id), method: :get, class: 'Confirmation__Address__change__btn'
       .Underline
       .Confirmation__submit
         = form_with model: [@item, @purchase] do |f|
