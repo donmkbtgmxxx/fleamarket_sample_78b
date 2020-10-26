@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
-  before_action :set_category, only: [:new, :create]
+  before_action :set_category, only: [:new, :create, :show]
   before_action :set_item, only: [:show, :destroy]
 
   #jsonで親の名前で検索し、紐づく小カテゴリーの配列を取得
