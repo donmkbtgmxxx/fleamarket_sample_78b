@@ -1,0 +1,103 @@
+* {
+  box-sizing: border-box;
+}
+
+::placeholder {
+  color: gray;
+  font-size: 14px;
+}
+
+@mixin logo() {
+  width: 100vw;
+  height: 126px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__icon {
+    width: 200px;
+    height: 50px;
+    display: block;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+h3 {
+  font-size: 12px;
+  color: rgb(100, 100, 100);
+  text-align: center;
+}
+
+.LoginPage {
+  background-color: #f8f8f8;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  &__Logo {
+    @include logo();
+  }
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .LoginForm {
+      background-color: white;
+      width: 430px;
+      height: calc(100vh - 126px - 126px);
+      &__SignUp {
+        display: block;
+        border-bottom: #f8f8f8 solid 2px;
+        padding: 30px 70px;
+        &__link {
+          display: flex;
+          justify-content: center;
+          &__btn {
+            margin: 10px;
+            height: 35px;
+            width: 100%;
+            color: white;
+            font-size: 14px;
+            background-color: rgb(60, 137, 253);
+            text-decoration: none;
+            text-align: center;
+            padding: 7px 0;
+            border-radius: 3px;
+          }
+        }
+      }
+      &__SignIn {
+        display: block;
+        padding: 30px 80px;
+        &__Form {
+          display: block;
+          justify-content: center;
+          &__box {
+            margin: 10px 0;
+            width: 100%;
+            height: 40px;
+            font-size: 14px;
+            padding: 0 8px;
+            border: rgb(170, 170, 170) solid 1px;
+            border-radius: 3px;
+          }
+        }
+        &__Submit {
+          margin: 10px 0;
+          &__btn {
+            width: 100%;
+            height: 35px;
+            font-size: 14px;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            background-color: #3ccace;
+            &:hover {
+              opacity: 0.5;
+            }
+          }
+        }
+      }
+    }
+  }
+}
