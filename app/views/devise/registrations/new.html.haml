@@ -1,73 +1,66 @@
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .all
-    .data
-      .gaiyou 会員情報登録
-
-      .nyuuryokuform
-
-        .nickname
-          .nickname__label
-            = f.label :ニックネームを入力してください
-            %span.form__require 必須
-          .nickname__field
-            = f.text_field :nickname, :placeholder => "例) フリマー", class:'text__region'
-
-        .email
-          .email__label
-            = f.label :emailアドレスを入力してください
-            %span.form__require 必須
-          .email__field
-            = f.email_field :email, autofocus: true, autocomplete: "email" , :placeholder => "PC携帯どちらもOK!", class:'text__region'
-
-        .password
-          .password__label
-            = f.label :パスワードを入力してください
-            %span.form__require 必須
-            - if @minimum_password_length
-              %em
-          .password__field
-            = f.password_field :password, autocomplete: "new-password", :placeholder => "半角英数字7文字以上", class:'text__region'
-          .password__sai__label
-            = f.label :パスワードを再入力してください
-            %span.form__require 必須
-          .password__sai__field
-            = f.password_field :password_confirmation, autocomplete: "new-password", :placeholder => "パスワード確認用", class:'text__region'
-
-        .name__kanji
-          .name__kanji__label
-            = f.label :お名前（漢字）を入力してください
-            %span.form__require 必須
-          .name__kanji__field
-            = f.text_field :family_name_kanji, :placeholder => "例) 山田", class:'name__region'
-            = f.text_field :first_name_kanji, :placeholder => "例) 花子", class:'name__region'
-
-        .name__kana
-          .name__kana__label
-            = f.label :お名前（かな）を入力してください
-            %span.form__require 必須
-          .name_kana__field
-            = f.text_field :family_name_kana, :placeholder => "例) やまだ", class:'name__region'
-            = f.text_field :first_name_kana, :placeholder => "例) はなこ", class:'name__region'
-              
-        .honnin 
-          .ansin
-            .ansin__text 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
-
-        .birth
-          .birth__label
-            = f.label :あなたのお誕生日を選択してください
-            %span.form-require 必須
-          .birth__sentaku__field
-            = f.date_select :birthday, use_month_numbers: true, start_year: 1920, default: Date.new(1989, 1, 1), class:'text__region'
-
-      .actions
-        .tugihesusumu__button
-          %a(href="app/views/items/new.html.haml")
-            = f.submit "次へ進む", class:'tugiesusumu'
-          
-  .fixedButton
-    %p 出品する
-    .fixedButton__image
-      = link_to '#' do
-        =image_tag('icon/icon_camera.png', alt: "出品ボタン")
+.SignupPage
+  .SignupPage__Logo
+    .SignupPage__Logo__icon
+      = link_to root_path do
+        = image_tag('logo/logo.png', alt: "ヘッダーロゴ")
+  .SignupPage__content
+    .SignupForm
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = render "devise/shared/error_messages", resource: resource
+        .SignupForm__title
+          %h1.title 会員情報入力
+        .SignupForm__content
+          .SignupForm__content__text
+            .SignupForm__content__text--title ニックネーム
+            .SignupForm__content__text--must 必須
+          .SignupForm__content__form
+            =f.text_field :nickname, placeholder: '例)フリマー', class: 'SignupForm__content__form__box'
+        .SignupForm__content
+          .SignupForm__content__text
+            .SignupForm__content__text--title メールアドレス
+            .SignupForm__content__text--must 必須
+          .SignupForm__content__form
+            =f.email_field :email, autofocus: true, autocomplete: 'email', placeholder: '例)PC、携帯どちらもOK!', class: 'SignupForm__content__form__box'
+        .SignupForm__content
+          .SignupForm__content__text
+            .SignupForm__content__text--title パスワード
+            .SignupForm__content__text--must 必須
+          .SignupForm__content__form
+            =f.password_field :password, autocomplete: 'new-password', placeholder: '半角英数字7文字以上', class: 'SignupForm__content__form__box'
+        .SignupForm__content
+          .SignupForm__content__text
+            .SignupForm__content__text--title パスワード確認用
+            .SignupForm__content__text--must 必須
+          .SignupForm__content__form
+            =f.password_field :password_confirmation, autocomplete: 'new-password', placeholder: 'パスワード確認用', class: 'SignupForm__content__form__box'
+        .SignupForm__content
+          .SignupForm__content__text
+            .SignupForm__content__text--title お名前(漢字)
+            .SignupForm__content__text--must 必須
+          .SignupForm__content__form
+            =f.text_field :family_name_kanji, placeholder: '例)山田', class: 'SignupForm__content__form__box'
+            =f.text_field :first_name_kanji, placeholder: '例)花子', class: 'SignupForm__content__form__box'
+        .SignupForm__content
+          .SignupForm__content__text
+            .SignupForm__content__text--title お名前(カナ)
+            .SignupForm__content__text--must 必須
+          .SignupForm__content__form
+            =f.text_field :family_name_kana, placeholder: '例)ヤマダ', class: 'SignupForm__content__form__box'
+            =f.text_field :first_name_kana, placeholder: '例)ハナコ', class: 'SignupForm__content__form__box'
+        .SignupForm__content
+          .SignupForm__content__text
+            .SignupForm__content__text--title 本人確認
+          .SignupForm__content__comment
+            %p.comment 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+        .SignupForm__content
+          .SignupForm__content__text
+            .SignupForm__content__text--title 生年月日
+            .SignupForm__content__text--must 必須
+          .SignupForm__content__form
+            != sprintf(f.date_select(:birthday, with_css_classes:'SignupForm__content__form__box', use_month_numbers:true, start_year: 1920, end_year:2000, prompt:"--", date_separator:'%s'),'年','月')+'日'
+        .SignupForm__Submit
+          = f.submit "次へ進む", class:'SignupForm__Submit__btn'
+  .SignupPage__Logo
+    .SignupPage__Logo__icon
+      = link_to root_path do
+        = image_tag('logo/logo.png', alt: "ヘッダーロゴ")
