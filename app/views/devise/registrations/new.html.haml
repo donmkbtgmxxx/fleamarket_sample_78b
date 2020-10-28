@@ -57,7 +57,7 @@
             .SignupForm__content__text--title 生年月日
             .SignupForm__content__text--must 必須
           .SignupForm__content__form
-            != sprintf(f.date_select(:birthday, with_css_classes:'SignupForm__content__form__box', use_month_numbers:true, start_year: 1920, end_year:2000, prompt:"--", date_separator:'%s'),'年','月')+'日'
+            != sprintf(f.date_select(:birthday, with_css_classes:'SignupForm__content__form__box', use_month_numbers:true, start_year: 1920, end_year:Time.now.year, prompt:"--", date_separator:'%s'),'年','月')+'日'
         .SignupForm__Submit
           = f.submit "次へ進む", class:'SignupForm__Submit__btn'
   .SignupPage__Logo
