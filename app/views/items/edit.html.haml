@@ -1,0 +1,133 @@
+= render 'shared/header'
+.SellingPage
+  .SellingPage__header
+    .SellingPage__header__icon
+      = link_to root_path do
+        = image_tag('logo/logo.png', alt: "ヘッダーロゴ")
+  .SellingPage__content
+    .SellingPage__content__form
+      = form_for(@item) do |f|
+        = render 'error_form', locals: { item: @item }
+        .FormField
+          .FormField__label
+            .FormField__label__title
+              .FormField__label__title__name 出品画像
+              .FormField__label__title--must 必須
+
+          %h1 最大5枚までアップロードできます
+          .post__drop__box__container
+            .prev-content
+              //JSで挿入したhtmlと同じ形 each文でのプレビュー表示
+              - @item.item_images.each do |image|
+                .preview-box
+                  .upper-box
+                    = image_tag image.src.url, width: "112", height: "112", alt: "preview"
+                  .lower-box
+                    .update-box
+                      %label.edit-btn 編集
+                    .delete-box
+                      .delete-btn
+                        %span 削除
+            .label-content
+
+              //プレビューの数に合わせてforオプションを指定
+              = f.label :"item_images_attributes_#{@item.item_images.length}_src", class: "label-box", id: "label-box--#{@item.item_images.length}" do
+                %pre.label-box__text-visible クリックしてファイルをアップロード
+            .hidden-content
+              = f.fields_for :item_images do |i|
+
+                //プレビューが出ている分のfile_fieldとdelete用のチェックボックスを設置
+                = i.file_field :src, type:"file", class: "hidden-field"
+                = i.check_box :_destroy, class: "hidden-checkbox"
+
+                //5つのfile_fieldを準備するに当たって、足りない分を表示
+              - @item.item_images.length.upto(4) do |i|
+                %input{name: "item[item_images_attributes][#{i}][src]", id: "item_item_images_attributes_#{i}_src", class:"hidden-field", type:"file"}
+
+        .Underline
+        .FormField
+          .FormField__label
+            .FormField__label__title
+              .FormField__label__title__name 商品名
+              .FormField__label__title--must 必須
+          .FormField__input
+            = f.text_field :product_name, class: 'FormField__input--short', placeholder: '40文字まで'
+        .FormField
+          .FormField__label
+            .FormField__label__title
+              .FormField__label__title__name 商品の説明
+              .FormField__label__title--must 必須
+          .FormField__input
+            = f.text_area :description, class: 'FormField__input--long', placeholder: '商品の説明（必須1,000文字以内)&#13;&#10;(色、素材、重さ、定価、注意点など)&#13;&#10;&#13;&#10;例) 2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'.html_safe
+        .Underline
+        .FormField
+          %h1 商品の詳細
+          .FormField__label
+            .FormField__label__title
+              .FormField__label__title__name カテゴリー
+              .FormField__label__title--must 必須
+
+          .FormField__input#category_box
+            .pulldown#partent_box
+              = f.collection_select :category_id, @parents.all, :id, :name, {include_blank: "選択してください", selected: @item.category&.root_id }, {class: "FormField__input--short", id: "parent_category", name: ""}
+
+            .pulldown.item_input__body__category__children#children_box
+              = f.collection_select :category_id, @category_children, :id, :name, {include_blank: "選択してください", selected: @item.category.parent.id }, {class: "FormField__input--short", id: "parent_category", name: ""}
+            .pulldown.item_input__body__category__grandchildren#grandchildren_box
+              = f.collection_select :category_id, @category_grandchildren, :id, :name, {include_blank: "選択してください"}, {class: "FormField__input--short", id: "parent_category", name: ""}
+
+        .FormField
+          .FormField__label
+            .FormField__label__title
+              .FormField__label__title__name ブランド
+              .FormField__label__title--free 任意
+          .FormField__input
+            = f.fields_for :brand do |i|
+              = i.text_field :brand_name, class: 'FormField__input--short', placeholder: '例）シャネル'
+        .FormField
+          .FormField__label
+            .FormField__label__title
+              .FormField__label__title__name 商品の状態
+              .FormField__label__title--must 必須
+          .FormField__input
+            = f.collection_select :condition_id, Condition.all, :id, :name, {include_blank: "選択してください"}, {class: "FormField__input--short"}
+        .Underline
+        .FormField
+          %h1 配送について
+          .FormField__label
+            .FormField__label__title
+              .FormField__label__title__name 配送料の負担
+              .FormField__label__title--must 必須
+          .FormField__input
+            = f.collection_select :shipping_fee_id, ShippingFee.all, :id, :name, {include_blank: "選択してください"}, {class: "FormField__input--short"}
+        .FormField
+          .FormField__label
+            .FormField__label__title
+              .FormField__label__title__name 発送元の地域
+              .FormField__label__title--must 必須
+          .FormField__input
+            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: "選択してください"}, {class: "FormField__input--short"}
+        .FormField
+          .FormField__label
+            .FormField__label__title
+              .FormField__label__title__name 発送までの日数
+              .FormField__label__title--must 必須
+          .FormField__input
+            = f.collection_select :day_to_ship_id, DayToShip.all, :id, :name, {include_blank: "選択してください"}, {class: "FormField__input--short"}
+        .Underline
+        .FormField
+          %h1 価格（¥300〜¥9,999,999）
+          .FormField__label
+            .FormField__label__title
+              .FormField__label__title__name 販売価格
+              .FormField__label__title--must 必須
+            .FormField__label__price
+              ¥
+              = f.number_field :price, class: 'FormField__label__price__value'
+        .Submit
+          = f.submit '編集する', class: 'Submit__btn'
+        .Notice 禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
+  .SellingPage__footer
+    .SellingPage__footer__icon
+      = link_to root_path do
+        = image_tag('logo/logo.png', alt: "フッターロゴ")
