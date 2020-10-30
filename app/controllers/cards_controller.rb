@@ -17,9 +17,9 @@ class CardsController < ApplicationController
       card_id:     customer.default_card
     )
       if @card.save
-        redirect_to root_path
+        redirect_to action: "new"
       else
-        redirect_to new_user_card_path(current_user)
+        redirect_to new_card_path
       end
   end
 
