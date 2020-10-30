@@ -5,8 +5,9 @@
         = image_tag('logo/logo.png', alt: "ヘッダーロゴ")
   .SignupPage__content
     .SignupForm
-      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-        = render "devise/shared/error_messages", resource: resource
+      = form_for(@user, url: user_registration_path) do |f|
+        .SignupForm__error
+          = render "devise/shared/error_messages", resource: @user
         .SignupForm__title
           %h1.title 会員情報入力
         .SignupForm__content
