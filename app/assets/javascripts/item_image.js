@@ -40,31 +40,6 @@ $(document).on('turbolinks:load', function(){
         $('.label-content').hide();
       }
     }
-    // // 投稿失敗時
-    // //items/:iページへリンクした際のアクション=======================================
-    // if (window.location.href.match(/\/items\/\d/)){
-    //   //登録済み画像のプレビュー表示欄の要素を取得する
-    //   // prevで直前の要素を抽出する
-    //   var prevContent = $('.label-content').prev();
-    //   // replaceで置換する
-    //   // 0-9以外の文字を置換
-    //   labelWidth = (620 - $(prevContent).css('width').replace(/[^0-9]/g, ''));
-    //   $('.label-content').css('width', labelWidth);
-    //   //プレビューにidを追加
-    //   $('.preview-box').each(function(index, box){
-    //     $(box).attr('id', `preview-box__${index}`);
-    //   })
-    //   //削除ボタンにidを追加
-    //   $('.delete-box').each(function(index, box){
-    //     $(box).attr('id', `delete_btn_${index}`);
-    //   })
-    //   var count = $('.preview-box').length;
-    //   //プレビューが5あるときは、投稿ボックスを消しておく
-    //   if (count == 5) {
-    //     $('.label-content').hide();
-    //   }
-    // }
-    //============================================================================
 
     // ラベルのwidth操作
     function setLabel() {
