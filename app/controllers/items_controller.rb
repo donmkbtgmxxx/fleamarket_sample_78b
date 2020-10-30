@@ -16,8 +16,9 @@ class ItemsController < ApplicationController
   # 商品一覧
   def index
     @parents = Category.where(ancestry: nil)
-    # @item = Item.find(params[:id])
     @items = Item.all.order(created_at: :desc)
+    @brandItems = Item.where(brand_id: Brand.where.not(brand_name: "").ids).order(created_at: :desc)
+    @nobrandItems = Item.where(brand_id: Brand.where(brand_name: "").ids).order(created_at: :desc)
   end
 
   # 商品出品
@@ -70,11 +71,24 @@ class ItemsController < ApplicationController
 
   def update
     @parents = Category.where(ancestry: nil)
+    # binding.pry
     if @item.update(item_params)
       flash[:notice] = "編集が完了しました"
       redirect_to root_path
     else
-      render action: :edit, alert: "商品を更新できませんでした"
+        #カテゴリーデータ取得
+      @grandchild_category = @item.category
+      @child_category = @grandchild_category.parent 
+      @category_parent = @child_category.parent
+
+      #カテゴリー一覧を作成
+      @category = Category.find(params[:id])
+      # 紐づく孫カテゴリーの親（子カテゴリー）の一覧を配列で取得
+      @category_children = @item.category.parent.parent.children
+      # 紐づく孫カテゴリーの一覧を配列で取得
+      @category_grandchildren = @item.category.parent.children
+      render :edit, alert: "商品を更新できませんでした"
+      # redirect_to edit_item_path(@item), alert: @item.errors.full_messages
     end
   end
   
