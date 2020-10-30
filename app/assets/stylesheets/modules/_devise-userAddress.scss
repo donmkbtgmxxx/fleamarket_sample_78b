@@ -55,6 +55,11 @@ h1 {
     .AddressForm {
       background-color: white;
       width: 650px;
+      &__error {
+        padding: 20px;
+        color: red;
+        font-size: 14px;
+      }
       .PageTitle {
         height: 60px;
         border-bottom: #f8f8f8 solid 2px;
