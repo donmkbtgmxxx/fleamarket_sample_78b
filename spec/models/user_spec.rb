@@ -63,7 +63,7 @@ describe User do
     # it "is invalid without a family_name_kanji" do
       user = build(:user, family_name_kanji: nil)
       user.valid?
-      expect(user.errors[:family_name_kanji]).to include("を入力してください")
+      expect(user.errors[:family_name_kanji]).to include("は不正な値です")
     end
 
     it "family_name_kanjiが全角文字なら登録できること" do
@@ -83,7 +83,7 @@ describe User do
     # it "is invalid without a first_name_kanji" do
       user = build(:user, first_name_kanji: nil)
       user.valid?
-      expect(user.errors[:first_name_kanji]).to include("を入力してください")
+      expect(user.errors[:first_name_kanji]).to include("は不正な値です")
     end
 
     it "first_name_kanjiが全角文字なら登録できること" do
@@ -103,7 +103,7 @@ describe User do
     # it "is invalid without a family_name_kana" do
       user = build(:user, family_name_kana: nil)
       user.valid?
-      expect(user.errors[:family_name_kana]).to include("を入力してください")
+      expect(user.errors[:family_name_kana]).to include("は不正な値です")
     end
 
     it "family_name_kanaがカタカナなら登録できること" do
@@ -123,7 +123,7 @@ describe User do
     # it "is invalid without a first_name_kana" do
       user = build(:user, first_name_kana: nil)
       user.valid?
-      expect(user.errors[:first_name_kana]).to include("を入力してください")
+      expect(user.errors[:first_name_kana]).to include("は不正な値です")
     end
 
     it "first_name_kanaがカタカナなら登録できること" do

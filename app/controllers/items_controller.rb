@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
   before_action :set_category, only: [:new, :create, :edit, :update]
-  before_action :set_item, only: [:edit, :update]
+  before_action :set_item, only: [:show, :destroy, :edit, :update]
 
   #jsonで親の名前で検索し、紐づく小カテゴリーの配列を取得
   def get_category_children
@@ -41,9 +41,6 @@ class ItemsController < ApplicationController
       else
         render 'new'
       end
-      # flash.now[:alert] = '出品に失敗しました'
-      # render action: :new
-      # redirect_to new_item_path,alert: '出品に失敗しました'
     end
   end
 
@@ -92,7 +89,18 @@ class ItemsController < ApplicationController
     end
   end
   
+  def show
+    @purchase = @item.purchase
+  end
 
+  def destroy
+    if @item.destroy
+      redirect_to root_path
+    else
+      redirect_to welcome_index_path
+    end
+  end
+  
   private
   # 親カテゴリー
   def set_category
@@ -100,9 +108,13 @@ class ItemsController < ApplicationController
   end
 
   def set_item
-    @item = Item.find(params[:id])
+    if Item.ids.include?(params[:id].to_i)
+      @item = Item.find(params[:id])
+    else
+      redirect_to root_path
+    end
   end
-
+  
   def item_params
     params.require(:item).permit(
       :product_name, :description, :category_id, :condition_id, :shipping_fee_id, :prefecture_id, :day_to_ship_id, :price, item_images_attributes: [:src, :_destroy, :id], brand_attributes: [:brand_name, :id]

@@ -1,0 +1,28 @@
+= render 'shared/header'
+.UserMyPage
+  .UserMyPage__content
+    = render 'welcome/sidebar'
+    .UserMyPage__content__main
+      .MainContent
+        .MainContent__title
+          %h1.MainContent__title__text 登録されているカード
+        .Underline
+        .Card
+          .Card__Info
+            .Card__Info__brand
+              = @card_info.brand
+            .Card__Info__number
+              **** **** ****
+              = @card_info.last4
+            .Card__Info__exp
+              %h2 有効期限
+              .Card__Info__exp__month
+                = sprintf("%02d", @card_info.exp_month)
+              %h2 /
+              .Card__Info__exp__year
+                = @card_info.exp_year - 2000
+          .Card__delete
+            = link_to '削除する', card_path(@cards.first.id), method: :delete, class: 'btn'
+        .Underline
+= render 'shared/bottomBanner'
+= render 'shared/footer'
