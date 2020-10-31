@@ -14,16 +14,3 @@
 @import "rogin,new_sinkikaiin,new_address.scss";
 @import "modules/sell";
 @import "modules/category";
-
-.notifications {
-  color: white;
-  text-align: center;  
-
-  .notice {
-    background-color: #17b7ea;
-  }
-
-  .alert {
-    background-color: #f44336;
-  }
-}

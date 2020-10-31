@@ -28,7 +28,7 @@ describe Item do
     it "descriptionが空では出品できないこと" do
       item = build(:item, description: nil)
       item.valid?
-      expect(item.errors[:description]).to include("を入力してください。")
+      expect(item.errors[:description]).to include("入力してください。")
     end
 
     it "category_idが空では出品できないこと" do
