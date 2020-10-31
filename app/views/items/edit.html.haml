@@ -123,7 +123,8 @@
               ¥
               = f.number_field :price, class: 'FormField__label__price__value'
         .Submit
-          = f.submit '編集する', class: 'Submit__btn'
+          = f.submit '商品情報を更新', class: 'Submit__btn'
+          = link_to '出品を取り消す', item_path(@item.id), class: 'Submit__destroy', method: :delete
         .Notice 禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
   .SellingPage__footer
     .SellingPage__footer__icon

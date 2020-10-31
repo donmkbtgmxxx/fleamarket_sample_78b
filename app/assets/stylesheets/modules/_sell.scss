@@ -143,12 +143,32 @@
           display: flex;
           align-items: center;
           justify-content: center;
+          flex-direction: column;
           &__btn {
             background-color:#3ccace;
             color: white;
             font-weight: bold;
             width: 350px;
             height: 50px;
+            text-align: center;
+            font-size: 18px;
+            border: none;
+            border-radius: 3px;
+            &:hover {
+              opacity: 0.5;
+            }
+          }
+          &__destroy {
+            text-decoration: none;
+            align-items: center;
+            justify-content: center;
+            background-color:#f44336;
+            color: white;
+            font-weight: bold;
+            width: 350px;
+            height: 50px;
+            margin: 5px 0;
+            padding-top: 10px;
             text-align: center;
             font-size: 18px;
             border: none;
@@ -252,10 +272,10 @@
   //file_fieldのcss
   .hidden-content {
     .hidden-field {
-      // display: none;
+      display: none;
     }
     .hidden-checkbox {
-      // display: none;
+      display: none;
     }
   }
 }

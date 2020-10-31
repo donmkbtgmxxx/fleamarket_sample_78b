@@ -90,6 +90,7 @@ class ItemsController < ApplicationController
   end
   
   def show
+    @parents = Category.where(ancestry: nil)
     @purchase = @item.purchase
   end
 
