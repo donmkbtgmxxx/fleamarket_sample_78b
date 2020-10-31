@@ -2,6 +2,9 @@
 @import "modules/welcome";
 @import "modules/sidebar";
 @import "modules/mypage-sell";
+@import "modules/devise-signin";
+@import "modules/devise-signup";
+@import "modules/devise-userAddress";
 @import "modules/mypage-buy";
 @import "modules/items";
 @import "modules/cards";
@@ -11,6 +14,6 @@
 @import "modules/address";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import "rogin,new_sinkikaiin,new_address.scss";
 @import "modules/sell";
 @import "modules/category";
+@import "modules/flash";

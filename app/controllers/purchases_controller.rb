@@ -28,7 +28,7 @@ class PurchasesController < ApplicationController
 
     @purchase = Purchase.new(purchase_params)
     if @purchase.save
-      redirect_to root_path
+      redirect_to root_path, notice: '商品を購入しました。'
     else
       redirect_to item_confirmation_path(@item.id)
     end
