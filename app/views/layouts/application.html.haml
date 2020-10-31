@@ -11,4 +11,7 @@
     -# = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
 
   %body{:id => "#{controller.controller_name}-#{controller.action_name}"}
+    .notifications
+      - flash.each do |key, value|
+        = content_tag(:div, value, class: key)
     = yield
