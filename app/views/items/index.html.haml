@@ -78,7 +78,58 @@
     .pickupcontainer__productHead
       新規投稿商品
     .lists
-      = render 'item_list'
+      .lists__product
+        =image_tag('pict/cleanroom_boujinfuku.png', alt: "商品1")
+        .product__detail
+          %h3.product__detail--name
+            テスト
+          %ul
+            %li.product__detail--price 
+              1000円
+            %li.product__detail--likeButton
+              = link_to item_path(1) do
+                <i class="far fa-heart"></i> 1
+          .product__detail--tax
+            (税込)
+      .lists__product
+        =image_tag('pict/game_gaming_chair.png', alt: "商品2")
+        .product__detail
+          %h3.product__detail--name
+            テスト2
+          %ul
+            %li.product__detail--price 
+              500円
+            %li.product__detail--likeButton
+              = link_to item_path(2) do
+                <i class="far fa-heart"></i> 3
+          .product__detail--tax
+            (税込)
+      .lists__product
+        =image_tag('pict/fashion_fishing_vest.png', alt: "商品3")
+        .product__detail
+          %h3.product__detail--name
+            テスト3
+          %ul
+            %li.product__detail--price 
+              2000円
+            %li.product__detail--likeButton
+              = link_to item_path(3) do
+                <i class="far fa-heart"></i> 
+          .product__detail--tax
+            (税込)
+      .lists__product
+        =image_tag('pict/money_saifu_kozeni_compact.png', alt: "商品4")
+        .product__detail
+          %h3.product__detail--name
+            テスト4
+          %ul
+            %li.product__detail--price 
+              100円
+            %li.product__detail--likeButton
+              = link_to item_path(4) do
+                <i class="far fa-heart"></i> 5
+          .product__detail--tax
+            (税込)
                 
   %section.pickupcontainer.padding-bottom
     .pickupcontainer__head
@@ -86,7 +137,59 @@
     .pickupcontainer__productHead
       アーカイバ
     .lists
-      = render 'item_list_with_brand'
+      .lists__product
+        =image_tag('pict/smartphone_new.png', alt: "商品4")
+        .product__detail
+          %h3.product__detail--name
+            テスト
+          %ul
+            %li.product__detail--price 
+              1000円
+            %li.product__detail--likeButton
+              = link_to '#' do
+                %i.far.fa-heart
+
+          .product__detail--tax
+            (税込)
+      .lists__product
+        =image_tag('pict/travel_bag.png', alt: "商品4")
+        .product__detail
+          %h3.product__detail--name
+            テスト
+          %ul
+            %li.product__detail--price 
+              1000円
+            %li.product__detail--likeButton
+              = link_to '#' do
+                %i.far.fa-heart
+          .product__detail--tax
+            (税込)
+      .lists__product
+        =image_tag('pict/watch_face_arm_woman.png', alt: "商品4")
+        .product__detail
+          %h3.product__detail--name
+            テスト
+          %ul
+            %li.product__detail--price 
+              1000円
+            %li.product__detail--likeButton
+              = link_to '#' do
+                %i.far.fa-heart
+          .product__detail--tax
+            (税込)
+      .lists__product
+        =image_tag('pict/medical_cream_tube_close.png', alt: "商品4")
+        .product__detail
+          %h3.product__detail--name
+            テスト
+          %ul
+            %li.product__detail--price 
+              1000円
+            %li.product__detail--likeButton
+              = link_to '#' do
+                %i.far.fa-heart
+          .product__detail--tax
+            (税込)
 .fixedButton
   %p 出品する
   .fixedButton__image
