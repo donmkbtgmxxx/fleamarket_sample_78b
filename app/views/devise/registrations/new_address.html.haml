@@ -5,8 +5,9 @@
         = image_tag('logo/logo.png', alt: "ヘッダーロゴ")
   .UserAddressPage__content
     .AddressForm
-      = form_for(@address) do |f|
-        = render "devise/shared/error_messages", resource: @address
+      = form_for @address do |f|
+        .AddressForm__error
+          = render "devise/shared/error_messages", resource: @address
         .PageTitle
           %h1.PageTitle__text お届け先住所の登録
         .AddressForm__content
