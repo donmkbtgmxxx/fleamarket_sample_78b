@@ -18,7 +18,7 @@
     = link_to 'プロフィール', '#', class: 'text'
     .icon.fas.fa-angle-right
   .link
-    = link_to '届け先住所の変更', '#', class: 'text'
+    = link_to '届け先住所の変更', edit_address_path(current_user.address.id), class: 'text'
     .icon.fas.fa-angle-right
   .link
     = link_to 'ログアウト', signout_path, method: :get, class: 'text'
