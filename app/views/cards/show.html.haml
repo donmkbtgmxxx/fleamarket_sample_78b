@@ -24,3 +24,5 @@
           .Card__delete
             = link_to '削除する', card_path(@cards.first.id), method: :delete, class: 'btn'
         .Underline
+= render 'shared/bottomBanner'
+= render 'shared/footer'

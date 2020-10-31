@@ -55,7 +55,7 @@ class CardsController < ApplicationController
   end
 
   def set_cards
-    @cards = Card.where(user_id: current_user.id)
+    @cards = current_user.cards
   end
 
 end
