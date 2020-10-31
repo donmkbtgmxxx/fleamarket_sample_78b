@@ -34,7 +34,7 @@
                 .UserItemsPage__content__ItemList__item__delete
                   - if item.purchase.blank?
                     .UserItemsPage__content__ItemList__item__delete__button
-                      = link_to '出品を取り消す', item_path(item.id), method: :delete, class: 'UserItemsPage__content__ItemList__item__delete__button__btn'
+                      = link_to '商品を編集する', edit_item_path(item.id), class: 'UserItemsPage__content__ItemList__item__delete__button__btn'
                   - else
                     .UserItemsPage__content__ItemList__item__delete__button
                       = item.purchase.created_at.strftime("%Y/%m/%d")
