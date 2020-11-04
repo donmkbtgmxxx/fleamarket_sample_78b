@@ -4,12 +4,15 @@
       %h1.header__upper--icon
         %a(href="/") 
           =image_tag('logo/logo.png', alt: "ヘッダーロゴ")
-      .header__upper--search
-        %form{:action => "/", :method => "post"}
-          %input{:name => "search", :placeholder => "キーワードから探す", :type => "search"}/
-          %button{type: "submit"}
-            .searchButton
-              = image_tag('icon/icon-search 1.png', alt: "サーチボタン")
+      .header__upper__search
+        = form_with url: search_items_path, local: true, method: :get do |form|
+          .FormField
+            .FormField__input
+              = form.text_field :keyword, class: 'FormField__input__box', placeholder: 'キーワードから探す'
+          .Submit
+            = form.submit '検索する' do
+              .img
+                = image_tag('icon/icon-search 1.png', alt: "サーチボタン")
     .header__content--bottom
       %ul.bottom-left
         = render 'shared/category'
@@ -19,8 +22,6 @@
         - if user_signed_in?
           %li.header__bottom--mypage
             = link_to "マイページ", mypage_path
-          -# %li.header__bottom--signout  
-          -#   = link_to "ログアウト", destroy_user_session_path, method: :delete
         - else
           %li.header__bottom--sighin
             = link_to "ログイン", new_user_session_path
