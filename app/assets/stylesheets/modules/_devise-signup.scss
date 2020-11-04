@@ -1,142 +1,145 @@
-* {
-  box-sizing: border-box;
-}
+#registrations-new {
 
-::placeholder {
-  color: gray;
-  font-size: 14px;
-}
+  * {
+    box-sizing: border-box;
+  }
 
-@mixin logo() {
-  width: 100vw;
-  height: 126px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  &__icon {
-    width: 200px;
-    height: 50px;
-    display: block;
-    img {
-      width: 100%;
+  ::placeholder {
+    color: gray;
+    font-size: 14px;
+  }
+
+  @mixin logo() {
+    width: 100vw;
+    height: 126px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__icon {
+      width: 200px;
+      height: 50px;
+      display: block;
+      img {
+        width: 100%;
+      }
     }
   }
-}
 
-@mixin title_info() {
-  width: 35px;
-  text-align: center;
-  color: white;
-  font-size: 12px;
-  font-weight: bold;
-  margin-left: 10px;
-  padding: 3px 0;
-  border-radius: 3px;
-}
-
-@mixin form_box() {
-  height: 45px;
-  font-size: 14px;
-  margin: 5px;
-  color: rgb(100, 100, 100);
-  padding: 0 8px;
-  border: rgb(170, 170, 170) solid 1px;
-  border-radius: 3px;
-}
-
-h1 {
-  font-size: 24px;
-  font-weight: bold;
-  color: rgb(100, 100, 100);
-  text-align: center;
-}
-
-p {
-  font-size: 14px;
-  color: rgb(100, 100, 100);
-}
-
-#user_birthday_1i {
-  width: 120px;
-  @include form_box();
-}
-
-#user_birthday_2i, #user_birthday_3i {
-  width: 80px;
-  @include form_box();
-}
-
-.SignupPage {
-  background-color: #f8f8f8;
-  width: 100vw;
-  display: block;
-  &__Logo {
-    @include logo();
+  @mixin title_info() {
+    width: 35px;
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 10px;
+    padding: 3px 0;
+    border-radius: 3px;
   }
-  &__content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .SignupForm {
-      background-color: white;
-      width: 650px;
-      &__error {
-        padding: 20px;
-        color: red;
-        font-size: 14px;
-      }
-      &__title {
-        height: 60px;
-        border-bottom: #f8f8f8 solid 2px;
-        margin-bottom: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      &__content {
-        display: block;
-        padding: 10px 120px;
-        &__text {
+
+  @mixin form_box() {
+    height: 45px;
+    font-size: 14px;
+    margin: 5px;
+    color: rgb(100, 100, 100);
+    padding: 0 8px;
+    border: rgb(170, 170, 170) solid 1px;
+    border-radius: 3px;
+  }
+
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(100, 100, 100);
+    text-align: center;
+  }
+
+  p {
+    font-size: 14px;
+    color: rgb(100, 100, 100);
+  }
+
+  #user_birthday_1i {
+    width: 120px;
+    @include form_box();
+  }
+
+  #user_birthday_2i, #user_birthday_3i {
+    width: 80px;
+    @include form_box();
+  }
+
+  .SignupPage {
+    background-color: #f8f8f8;
+    width: 100vw;
+    display: block;
+    &__Logo {
+      @include logo();
+    }
+    &__content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .SignupForm {
+        background-color: white;
+        width: 650px;
+        &__error {
+          padding: 20px;
+          color: red;
+          font-size: 14px;
+        }
+        &__title {
+          height: 60px;
+          border-bottom: #f8f8f8 solid 2px;
+          margin-bottom: 20px;
           display: flex;
-          &--title {
-            font-size: 14px;
-            font-weight: bold;
-            padding: 2px 0;
-            color: rgb(100, 100, 100);
-          }
-          &--must {
-            background-color: rgb(235, 50, 50);
-            @include title_info();
-          }
-          &--free {
-            background-color: rgb(145, 145, 145);
-            @include title_info();
-          }
-        } 
-        &__form {
-          display: flex;
-          justify-content: space-between;
           align-items: center;
-          &__box {
-            width: 100%;
-            @include form_box();
+          justify-content: center;
+        }
+        &__content {
+          display: block;
+          padding: 10px 120px;
+          &__text {
+            display: flex;
+            &--title {
+              font-size: 14px;
+              font-weight: bold;
+              padding: 2px 0;
+              color: rgb(100, 100, 100);
+            }
+            &--must {
+              background-color: rgb(235, 50, 50);
+              @include title_info();
+            }
+            &--free {
+              background-color: rgb(145, 145, 145);
+              @include title_info();
+            }
+          } 
+          &__form {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            &__box {
+              width: 100%;
+              @include form_box();
+            }
           }
         }
-      }
-      &__Submit {
-        margin: 20px 0;
-        display: flex;
-        justify-content: center;
-        &__btn {
-          width: 300px;
-          height: 40px;
-          font-size: 14px;
-          color: white;
-          border: none;
-          border-radius: 3px;
-          background-color: #3ccace;
-          &:hover {
-            opacity: 0.5;
+        &__Submit {
+          margin: 20px 0;
+          display: flex;
+          justify-content: center;
+          &__btn {
+            width: 300px;
+            height: 40px;
+            font-size: 14px;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            background-color: #3ccace;
+            &:hover {
+              opacity: 0.5;
+            }
           }
         }
       }
