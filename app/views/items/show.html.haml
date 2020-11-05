@@ -3,49 +3,57 @@
     .item
       .item__content
         %h2.item__content--subtitle
-          テスト
+          = @item.product_name
         .item__content--image
           .image__big
-            =image_tag('pict/fashion_fishing_vest')
+            = image_tag @item.item_images[0].src.url
           %ul
             %li.image__small
-              =image_tag('pict/fashion_fishing_vest')
+              = image_tag @item.item_images[1].src.url
+            %li.image__small
+              = image_tag @item.item_images[2].src.url
+            %li.image__small
+              = image_tag @item.item_images[0].src.url
         .item__content--price
-          ￥10000
+          ¥
+          = @item.price
         %p (税込)送料込み
         .item__content--description
-          テストテストテストテストテストテストテスト
+          = @item.description
         .item__content--table
           %table
             %tr 
               %th 出品者
-              %td aaa
+              %td 
+                = @user_nickname
             %tr 
               %th カテゴリー
               %td.colorBlue
-                レディース
+                = link_to "#{@category_parent.name}"
                 %br/
-                トップス
+                = link_to "#{@category_child.name}"
                 %br/
-                Tシャツ/カットソー(半袖/袖なし)
+                = link_to "#{@category_grandchild.name}"
             %tr
               %th ブランド
               %td 
-            %tr
-              %th 商品のサイズ
-              %td 
+                = @item.brand.brand_name
             %tr
               %th 商品の状態
-              %td 新品/未使用
+              %td 
+                = Condition.find(@item.condition_id).name
             %tr
               %th 配送料の負担
-              %td 送料込み（出品者負担）
+              %td 
+                = ShippingFee.find(@item.shipping_fee_id).name
             %tr
               %th 発送元の地域
-              %td.colorBlue 北海道
+              %td.colorBlue 
+                = Prefecture.find(@item.prefecture_id).name
             %tr
               %th 発送日の目安
-              %td 1~2日で発送
+              %td 
+                = DayToShip.find(@item.day_to_ship_id).name
 
         .item__buttons
           .item__buttons--likeButton
