@@ -35,7 +35,7 @@
             .AddressForm__content__text--title 都道府県
             .AddressForm__content__text--must 必須
           .AddressForm__content__form
-            =f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class: 'AddressForm__content__form__box'})
+            =f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {include_blank: "選択してください"}, {class: 'AddressForm__content__form__box'})
         .AddressForm__content
           .AddressForm__content__text
             .AddressForm__content__text--title 市区町村
