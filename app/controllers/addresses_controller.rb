@@ -7,7 +7,7 @@ class AddressesController < ApplicationController
   def update
     @address = current_user.address
     if @address.update(address_params)
-      redirect_to root_path
+      redirect_to root_path, notice: '届け先住所を変更しました。'
     else
       render :edit
     end
