@@ -6,7 +6,7 @@
   .SellingPage__content
     .SellingPage__content__form
       = form_for(@item) do |f|
-        = render 'error_form', locals: { item: @item }
+        = render 'shared/error_form', locals: { item: @item }
         .FormField
           .FormField__label
             .FormField__label__title
