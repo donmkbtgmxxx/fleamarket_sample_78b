@@ -4,47 +4,76 @@
     .item
       .item__content
         %h2.item__content--subtitle
-          テスト
+          = @item.product_name
         .item__content--image
           .image__big
+            = image_tag @item.item_images[0].src.url
           %ul
             %li.image__small
+              - if @item.item_images[0].present?
+                = image_tag @item.item_images[0].src.url
+              - else 
+                .image__small__none 
+            %li.image__small
+              - if @item.item_images[1].present?
+                = image_tag @item.item_images[1].src.url
+              - else 
+                .image__small__none 画像無し
+            %li.image__small
+              - if @item.item_images[2].present?
+                = image_tag @item.item_images[2].src.url
+              - else 
+                .image__small__none 画像無し 
+            %li.image__small
+              - if @item.item_images[3].present?
+                = image_tag @item.item_images[3].src.url
+              - else 
+                .image__small__none 画像無し
+            %li.image__small
+              - if @item.item_images[4].present?
+                = image_tag @item.item_images[4].src.url
+              - else 
+                .image__small__none 画像無し
         .item__content--price
-          ￥10000
+          ¥
+          = @item.price
         %p (税込)送料込み
         .item__content--description
-          テストテストテストテストテストテストテスト
+          = @item.description
         .item__content--table
           %table
             %tr 
               %th 出品者
-              %td aaa
+              %td 
+                = @user_nickname
             %tr 
               %th カテゴリー
               %td.colorBlue
-                レディース
+                = link_to "#{@category_parent.name}"
                 %br/
-                トップス
+                = link_to "#{@category_child.name}"
                 %br/
-                Tシャツ/カットソー(半袖/袖なし)
+                = link_to "#{@category_grandchild.name}"
             %tr
               %th ブランド
               %td 
-            %tr
-              %th 商品のサイズ
-              %td 
+                = @item.brand.brand_name
             %tr
               %th 商品の状態
-              %td 新品/未使用
+              %td 
+                = Condition.find(@item.condition_id).name
             %tr
               %th 配送料の負担
-              %td 送料込み（出品者負担）
+              %td 
+                = ShippingFee.find(@item.shipping_fee_id).name
             %tr
               %th 発送元の地域
-              %td.colorBlue 北海道
+              %td 
+                = Prefecture.find(@item.prefecture_id).name
             %tr
               %th 発送日の目安
-              %td 1~2日で発送
+              %td 
+                = DayToShip.find(@item.day_to_ship_id).name
 
         .item__buttons
           .item__buttons--likeButton
@@ -71,29 +100,12 @@
         
       .item__select
         .item__select--previousButton
-          = link_to '#' do
+          = link_to item_path(@item.id-1) do
             < 前の商品
         .item__select--nextButton
-          = link_to '#' do
+          = link_to item_path(@item.id+1) do
             次の商品 >
 
-      .item__recommend
-        .item__recommend--subtitle
-          %h2 レディースをもっと見る
-        .lists
-          .lists__product
-            =image_tag('pict/cleanroom_boujinfuku.png', alt: "商品1")
-            .product__detail
-              %h3.product__detail--name
-                テスト
-              %ul
-                %li.product__detail--price 
-                  1000円
-                %li.product__detail--likeButton
-                  = link_to '#' do
-                    <i class="far fa-heart"></i> 1
-              .product__detail--tax
-                (税込)
 .fixedButton
   %p 出品する
   .fixedButton__image
