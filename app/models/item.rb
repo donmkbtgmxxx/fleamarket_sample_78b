@@ -13,8 +13,9 @@ belongs_to_active_hash :ShippingFee
 belongs_to_active_hash :DayToShip
 belongs_to_active_hash :prefecture
 
-validates :item_images, presence: { message: "は1枚以上選択してください。" }
-validates :item_images, length: { minimum: 1, maximum: 5 }
+validates :item_images, presence: { message: "を選択してください。" }
+validates :item_images, length: { minimum: 1, too_short: "は1枚以上選択してください" }
+validates :item_images, length: { maximum: 5, too_long: "は5枚以下選択してください" }
 validates :product_name, presence: { message: "を入力してください。" }
 validates :description, presence: { message: "を入力してください。" }
 validates :category_id, presence: { message: "を選択してください。" }

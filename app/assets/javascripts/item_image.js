@@ -162,6 +162,12 @@ $(document).on('turbolinks:load', function(){
       return html;
     }
     
+
+
+
+
+
+    
     // 投稿失敗時
     //items/:iページへリンクした際のアクション=======================================
     if (window.location.href.match(/\/items\/\d/)){

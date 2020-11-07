@@ -3,6 +3,16 @@
     box-sizing: border-box;
   }
 
+  .SettingGroupForm__errors {
+    h2 {
+      font-size: 15px;
+      font-weight: bold;
+    }
+    padding: 20px;
+    color: red;
+    font-size: 14px;
+}
+
   ::placeholder {
     color: gray;
   }
