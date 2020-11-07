@@ -103,7 +103,7 @@ class ItemsController < ApplicationController
 
   def destroy
     if @item.destroy
-      redirect_to root_path
+      redirect_to root_path, notice: '出品を取り消しました。'
     else
       redirect_to welcome_index_path
     end
