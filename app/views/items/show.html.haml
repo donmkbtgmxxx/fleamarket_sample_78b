@@ -9,11 +9,30 @@
             = image_tag @item.item_images[0].src.url
           %ul
             %li.image__small
-              = image_tag @item.item_images[1].src.url
+              - if @item.item_images[0].present?
+                = image_tag @item.item_images[0].src.url
+              - else 
+                .image__small__none 
             %li.image__small
-              = image_tag @item.item_images[2].src.url
+              - if @item.item_images[1].present?
+                = image_tag @item.item_images[1].src.url
+              - else 
+                .image__small__none 画像無し
             %li.image__small
-              = image_tag @item.item_images[0].src.url
+              - if @item.item_images[2].present?
+                = image_tag @item.item_images[2].src.url
+              - else 
+                .image__small__none 画像無し 
+            %li.image__small
+              - if @item.item_images[3].present?
+                = image_tag @item.item_images[3].src.url
+              - else 
+                .image__small__none 画像無し
+            %li.image__small
+              - if @item.item_images[4].present?
+                = image_tag @item.item_images[4].src.url
+              - else 
+                .image__small__none 画像無し
         .item__content--price
           ¥
           = @item.price
@@ -48,7 +67,7 @@
                 = ShippingFee.find(@item.shipping_fee_id).name
             %tr
               %th 発送元の地域
-              %td.colorBlue 
+              %td 
                 = Prefecture.find(@item.prefecture_id).name
             %tr
               %th 発送日の目安
@@ -80,29 +99,12 @@
         
       .item__select
         .item__select--previousButton
-          = link_to '#' do
+          = link_to item_path(@item.id-1) do
             < 前の商品
         .item__select--nextButton
-          = link_to '#' do
+          = link_to item_path(@item.id+1) do
             次の商品 >
 
-      .item__recommend
-        .item__recommend--subtitle
-          %h2 レディースをもっと見る
-        .lists
-          .lists__product
-            =image_tag('pict/cleanroom_boujinfuku.png', alt: "商品1")
-            .product__detail
-              %h3.product__detail--name
-                テスト
-              %ul
-                %li.product__detail--price 
-                  1000円
-                %li.product__detail--likeButton
-                  = link_to '#' do
-                    <i class="far fa-heart"></i> 1
-              .product__detail--tax
-                (税込)
 .fixedButton
   %p 出品する
   .fixedButton__image

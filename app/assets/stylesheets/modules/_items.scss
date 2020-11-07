@@ -17,12 +17,29 @@
           &--image {
             align-items: center;
             .image__big {
-              width: 50%;
+              width: 100%;
               margin: 0 auto;
+              height: 100%;
+              img{
+                width: 35%;
+              }
             }
-            .image__small {
-              width: 20%;
-              margin: 0 auto;
+            ul{
+              display: flex;
+              .image__small {
+                width: 20%;
+                margin: 0 auto;
+                &__none{
+                  margin-right: 5px;
+                  height: 100%;
+                  background-color: lightgray;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 10px;
+                  opacity: 0.5;
+                }
+              }
             }
           }
           &--price {
@@ -50,9 +67,9 @@
                   text-align: left;
                   padding: 15px 15px;
                   width: 60%;
-                }
-                td.colorBlue {
-                  color: #3cc9ce;
+                  a{
+                  text-decoration: none;
+                  }
                 }
               }
             }
