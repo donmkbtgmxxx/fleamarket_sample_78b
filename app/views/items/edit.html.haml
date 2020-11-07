@@ -6,7 +6,7 @@
   .SellingPage__content
     .SellingPage__content__form
       = form_for(@item) do |f|
-        = render 'error_form', locals: { item: @item }
+        = render 'shared/error_form', locals: { item: @item }
         .FormField
           .FormField__label
             .FormField__label__title
@@ -26,7 +26,7 @@
                       .delete-btn
                         %span 削除
             .label-content
-
+              
               //プレビューの数に合わせてforオプションを指定
               = f.label :"item_images_attributes_#{@item.item_images.length}_src", class: "label-box", id: "label-box--#{@item.item_images.length}" do
                 %pre.label-box__text-visible クリックしてファイルをアップロード
@@ -34,7 +34,7 @@
               = f.fields_for :item_images do |i|
 
                 //プレビューが出ている分のfile_fieldとdelete用のチェックボックスを設置
-                = i.file_field :src, type:"file", class: "hidden-field", name: "item[item_images_attributes][#{i}][src]"
+                = i.file_field :src, type:"file", class: "hidden-field"
                 = i.check_box :_destroy, class: "hidden-checkbox"
 
                 //5つのfile_fieldを準備するに当たって、足りない分を表示
