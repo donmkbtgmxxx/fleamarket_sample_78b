@@ -6,10 +6,10 @@
     = link_to '出品する', new_item_path, class: 'text'
     .icon.fas.fa-angle-right
   .link
-    = link_to '出品した商品一覧', '#', class: 'text'
+    = link_to '出品した商品一覧・商品の編集', welcome_index_path, class: 'text'
     .icon.fas.fa-angle-right
   .link
-    = link_to '購入した商品一覧', '#', class: 'text'
+    = link_to '購入した商品一覧', purchases_path, class: 'text'
     .icon.fas.fa-angle-right
   .link
     = link_to 'クレジットカードの登録・削除', new_card_path, class: 'text'
@@ -18,7 +18,7 @@
     = link_to 'プロフィール', '#', class: 'text'
     .icon.fas.fa-angle-right
   .link
-    = link_to '届け先住所の変更', '#', class: 'text'
+    = link_to '届け先住所の変更', edit_address_path(current_user.address.id), class: 'text'
     .icon.fas.fa-angle-right
   .link
     = link_to 'ログアウト', signout_path, method: :get, class: 'text'

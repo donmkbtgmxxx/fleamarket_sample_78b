@@ -160,6 +160,7 @@
           font-size: 18px;
           margin: 20px 0 30px;
           line-height: 1.5;
+          color: #fff;
         }
         .dlButton {
           display: flex;
@@ -259,15 +260,26 @@
             background-color: white;
             color: #333;
             padding: 16px;
-            &--name {
-              text-align: left;
+            a {
+              text-decoration: none;
+              .product__detail--name {
+                text-align: center;
+                font-size: 15px;
+                color: #333;
+              }
+
             }
             ul {
               display: flex;
               justify-content: space-between;
               align-items: center;
-              .product__detail--price {
-                font-weight: bold;
+              a {
+                color: #333;
+                .product__detail--price {
+                  font-weight: bold;
+                  text-decoration: none;
+                }
+
               }
               .product__detail--likeButton {
                 a {
@@ -289,4 +301,10 @@
     }
   }
     
+}
+
+.SoldOut {
+  color: #fff;
+  background-color: #ff0000;
+  margin: 0 auto;
 }

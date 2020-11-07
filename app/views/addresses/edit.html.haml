@@ -1,0 +1,65 @@
+= render 'shared/header'
+.UserMyPage
+  .UserMyPage__content
+    = render 'welcome/sidebar'
+    .UserMyPage__content__main
+      %h1.PageTitle お届け先住所変更
+      .AddressForm
+        = form_with model: @address do |f|
+          .AddressForm__content
+            .AddressForm__content__text
+              .AddressForm__content__text--title お名前(漢字)
+              .AddressForm__content__text--must 必須
+            .AddressForm__content__form
+              =f.text_field :family_name_kanji, placeholder: '例)山田', class: 'AddressForm__content__form__box'
+              =f.text_field :first_name_kanji, placeholder: '例)花子', class: 'AddressForm__content__form__box'
+          .AddressForm__content
+            .AddressForm__content__text
+              .AddressForm__content__text--title お名前(カナ)
+              .AddressForm__content__text--must 必須
+            .AddressForm__content__form
+              =f.text_field :family_name_kana, placeholder: '例)ヤマダ', class: 'AddressForm__content__form__box'
+              =f.text_field :first_name_kana, placeholder: '例)ハナコ', class: 'AddressForm__content__form__box'
+          .AddressForm__content
+            .AddressForm__content__text
+              .AddressForm__content__text--title 郵便番号
+              .AddressForm__content__text--must 必須
+            .AddressForm__content__form
+              =f.text_field :postcode, placeholder: '例)123-4567', class: 'AddressForm__content__form__box'
+          .AddressForm__content
+            .AddressForm__content__text
+              .AddressForm__content__text--title 都道府県
+              .AddressForm__content__text--must 必須
+            .AddressForm__content__form
+              =f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {include_blank: "選択してください"}, {class: 'AddressForm__content__form__box'})
+          .AddressForm__content
+            .AddressForm__content__text
+              .AddressForm__content__text--title 市区町村
+              .AddressForm__content__text--must 必須
+            .AddressForm__content__form
+              =f.text_field :city, placeholder: '例)名古屋市中区', class: 'AddressForm__content__form__box'
+          .AddressForm__content
+            .AddressForm__content__text
+              .AddressForm__content__text--title 番地
+              .AddressForm__content__text--must 必須
+            .AddressForm__content__form
+              =f.text_field :block, placeholder: '例)栄1-2-3', class: 'AddressForm__content__form__box'
+          .AddressForm__content
+            .AddressForm__content__text
+              .AddressForm__content__text--title 建物名
+              .AddressForm__content__text--free 任意
+            .AddressForm__content__form
+              =f.text_field :building, placeholder: '例)コーポA棟205', class: 'AddressForm__content__form__box'
+          .AddressForm__content
+            .AddressForm__content__text
+              .AddressForm__content__text--title 電話番号
+              .AddressForm__content__text--free 任意
+            .AddressForm__content__form
+              =f.text_field :tel, placeholder: '例)09055557777', class: 'AddressForm__content__form__box'
+          .AddressForm__submit
+            = f.submit '変更する', class: 'AddressForm__submit__btn'
+.fixedButton
+  %p 出品する
+  .fixedButton__image
+    = link_to new_item_path do
+      =image_tag('icon/icon_camera.png', alt: "出品ボタン")

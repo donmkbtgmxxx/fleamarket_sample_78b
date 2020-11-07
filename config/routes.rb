@@ -10,6 +10,10 @@ Rails.application.routes.draw do
     get 'addresses', to: 'users/registrations#new_address'
     post 'addresses', to: 'users/registrations#create_address'
   end
+  resources :addresses, only: [:edit, :update]
+
+  resources :welcome, only: [:index]
+  resources :purchases, only: [:index]
 
   resources :items do
     resources :purchases, only: [:new, :create]
@@ -26,3 +30,4 @@ Rails.application.routes.draw do
   resources :cards, only: [:show, :new, :create, :destroy]
   
 end
+
