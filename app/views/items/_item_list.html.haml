@@ -1,5 +1,5 @@
 - @nobrandItems.first(5).each do |item|
-  - if item.user_id == current_user.id
+  - if user_signed_in? && item.user_id == current_user.id
     = link_to edit_item_path(item.id) do
       .lists__product
         = image_tag item.item_images[0].src.url
@@ -31,3 +31,4 @@
                 (税込)
             -else
               .SoldOut SOLD OUT
+
